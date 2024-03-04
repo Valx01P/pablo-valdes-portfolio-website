@@ -17,16 +17,9 @@ export default function Home() {
     
 
   return (
-    <div className={`${darkMode && "dark"}`}>
+    <div className={`${darkMode && "dark"} light text-black dark:background dark:text-white h-[100dvh]`}>
       <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-
-      <main className="bg-yellow-100 dark:background flex min-h-screen flex-col items-center justify-between p-24">
-        <div className="">
-          <h1 className="text-4xl font-bold text-center">Welcome to my portfolio</h1>
-          <p className="text-center">This is a simple example of how to implement dark mode in a Next.js app</p>
-
-        </div>
-      </main>
+      <HeroSection  />
     </div>
   );
 }
