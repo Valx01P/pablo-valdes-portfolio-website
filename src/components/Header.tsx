@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import useScreenWidth from '@/hooks/useScreenWidth';
 
 type HeaderProps = {
   darkMode: boolean;
@@ -10,23 +9,29 @@ type HeaderProps = {
 };
   
   const Header = (props: HeaderProps) => {
-  const screenWidth = useScreenWidth();
   const githubIconFileName = props.darkMode ? 'github-light-2.svg' : 'github-dark-2.svg';
   const linkedinIconFileName = props.darkMode ? 'linkedin-light.svg' : 'linkedin-dark.svg';
   const toggleIconFileName = props.darkMode ? 'sun-2.svg' : 'moon.svg';
 
   return (
-    <header className="h-[10dvh] light dark:background text-black dark:text-white w-full max-sm:px-3">
+    <header className="h-[11dvh] light dark:background text-black dark:text-white w-full max-sm:px-3 flex justify-center">
       <nav className="container mx-auto flex items-center justify-between py-4">
 
         
         {/* Title */}
-        <div className="flex items-center w-1/4 max-lg:w-1/2 max-[465px]:w-1/5 gap-5 justify-start">
-          <Link href="/" className='p-4'>
-          <h1 className="roboto-black text-4xl text-black dark:text-white whitespace-nowrap max-sm:text-3xl">
-              {screenWidth < 465 ? 'PV' : 'Pablo Valdes'}
-            </h1>
-          </Link>
+        <div className="flex items-center w-1/4 max-lg:w-1/2 max-[465px]:hidden gap-5 justify-start">
+            <Link href="/" className='p-4'>
+                <h1 className="roboto-black text-4xl text-black dark:text-white whitespace-nowrap max-sm:text-3xl">
+                    Pablo Valdes
+                </h1>
+            </Link>
+        </div>
+        <div className="flex items-center min-[465px]:hidden max-[465px]:w-1/4 max-[300px]:w-1/5 gap-5 justify-center">
+            <Link href="/" className='p-4'>
+                <h1 className="items-center roboto-black text-4xl text-black dark:text-white whitespace-nowrap max-sm:text-3xl">
+                    PV
+                </h1>
+            </Link>
         </div>
         
     
@@ -42,7 +47,7 @@ type HeaderProps = {
         
 
         {/* Social Icons, Resume, Dark Mode Toggle */}
-        <div className="flex items-center w-1/4 max-lg:w-1/2 max-[465px]:w-4/5 justify-end gap-3">
+        <div className="flex items-center w-1/4 max-lg:w-1/2 max-[465px]:w-3/4 max-[300px]:w-4/5 justify-end gap-3">
           <Link href='https://github.com/Valx01P' className='flex text-black'>
             <Image src={`/${githubIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
           </Link>

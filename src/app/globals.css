@@ -31,6 +31,15 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+/* .general-bg {
+  background-image: linear-gradient(#161616, #104a54 ,#15798b),
+  url("/noise-bg.jpeg");
+} */
+
+/* .general-bg {
+  background-image: url("/night-bg.jpeg");
+} */
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -102,7 +111,7 @@ body {
   
   .text-transition-dark:hover {
     background-position: 0 100%;
-    text-shadow: 0 0 4px #1494f6;
+    /* text-shadow: 0 0 4px #1494f6; */
   }
 
   .text-transition-light {
@@ -125,6 +134,12 @@ body {
     background-position: 0 100%;
   }
   
+  
+  .css-orb {
+    background-image: radial-gradient(ellipse at 50% 50%, rgb(107 96 255 / 1) 0%, rgb(133 124 255 / 0) 56.61%);
+  }
+
+
   /* Fonts */
   .roboto-thin {
     font-family: "Roboto", sans-serif;
