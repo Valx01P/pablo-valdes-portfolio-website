@@ -53,7 +53,7 @@ type HeaderProps = {
           <Link href='https://linkedin.com/in/your-linkedin-profile' className='flex text-black max-[350px]:hidden'>
             <Image src={`/${linkedinIconFileName}`} width={32} height={32} alt="linkedin icon" className='hover:scale-125' />
           </Link>
-          <button className="light resume-btn-light dark:background dark:resume-btn-dark p-2 rounded-lg max-sm:p-1.5 max-[350px]:hidden">
+          <button className="bg-transparent resume-btn-light dark:resume-btn-dark p-2 rounded-lg max-sm:p-1.5 max-[350px]:hidden">
             Resume
           </button>
           <button onClick={props.toggleDarkMode} className="light dark:background text-black dark:text-white p-2 max-[350px]:hidden">

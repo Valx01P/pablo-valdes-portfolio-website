@@ -7,6 +7,10 @@
   @apply transition-colors duration-200;
 }
 
+svg {
+  @apply transition-colors duration-0;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -75,8 +79,11 @@ body {
   .background {
     background-color: #161616;
   }
+  .background-2 {
+    background-color: #212121;
+  }
   .background-card {
-    background-color: #1f1f1f;
+    background-color: #2b2a2a;
   }
   /* .background-nav {
     background-color: #0d0f11;
@@ -91,16 +98,24 @@ body {
     background-color: #f5efe6
   }
 
+  .light-2 {
+    background-color: #fceacd; /* ffdda9 */
+  }
+
+  .light-card {
+    background-color: rgb(247, 213, 162);
+  }
+
   .resume-btn-dark {
     border: 1.5px solid #2680c5;
     color: #2680c5;
-    transition: border-color 0.8s ease, color 0.8s ease; /* Transition for smooth color and border change */
+    transition: transform 0.4s ease; /* Transition for smooth color and border change */
   }
 
   .resume-btn-light {
     border: 1.5px solid #000;
     color: #000;
-    transition: transform 0.3s ease; /* Adjust the duration and timing function as needed */
+    transition: transform 0.8s ease; /* Adjust the duration and timing function as needed */
     /* transition: border-color 0s ease, color 0.6s ease; */
   }
 
@@ -108,8 +123,8 @@ body {
     background-color: #2680c5;
     color: #ffffff;
     box-shadow: 0 0 10px 5px rgba(38, 128, 197, 0.7); /* Add a glow effect on hover */
-    --tw-scale-x: 1.00;
-    --tw-scale-y: 1.00;
+    --tw-scale-x: 1.10;
+    --tw-scale-y: 1.10;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 /* stretches border width left and right
@@ -273,6 +288,48 @@ body {
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
+  .btn-transition-dark {
+    /* position: relative;
+    display: inline-block; */
+    /* font-size: 2em; */
+    /* font-weight: 800; */
+    color: white;
+    overflow: hidden;
+    background: linear-gradient(to right, #2680c5, #1494f6 50%, white 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 275ms ease, transform 0.5s ease, border-color 0.4s ease;
+  }
+  
+  .btn-transition-dark:hover {
+    background-position: 0 100%;
+    border-color: #2680c5;
+    --tw-scale-x: 1.25;
+    --tw-scale-y: 1.25;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    /* text-shadow: 0 0 4px #1494f6; */
+  }
+
+  .btn-transition-light {
+    /* position: relative;
+    display: inline-block; */
+    /* font-size: 2em; */
+    /* font-weight: 800; */
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 275ms ease, transform 0.5s ease;
+  }
+  
+  .btn-transition-light:hover {
+    background-position: 0 100%;
+    --tw-scale-x: 1.25;
+    --tw-scale-y: 1.25;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
   .text-transition-dark {
     /* position: relative;
     display: inline-block; */
@@ -349,6 +406,11 @@ body {
     font-size: 1.5rem;
     line-height: 2rem;
     font-display: italic;
+  }
+
+  .text-section-title {
+    font-size: 3.5rem;
+    line-height: 4rem;
   }
 
   /* mobile versions */

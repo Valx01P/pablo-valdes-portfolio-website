@@ -4,7 +4,7 @@ type Props = {}
 
 const AboutSection = (props: Props) => {
   return (
-    <div className=''>AboutSection</div>
+    <div className='bg-slate-200 h-dvh'>AboutSection</div>
   )
 }
 
