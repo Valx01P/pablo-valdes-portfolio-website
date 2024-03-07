@@ -321,13 +321,18 @@ body {
   }
 
   .text-small {
-    font-size: 3rem;
-    line-height: 3rem;
+    font-size: 2.8rem;
+    line-height: 2.8rem;
+  }
+
+  .text-small-2 {
+    font-size: 2.9rem;
+    line-height: 2.8rem;
   }
 
   .text-heading {
     font-size: 5rem;
-    line-height: 6rem;
+    line-height: 5.5rem;
   }
 
   .text-subheading {
@@ -349,15 +354,15 @@ body {
   /* mobile versions */
   
   .mob-text-small {
-    font-size: 2rem;
-    line-height: 3rem;
+    font-size: 2.2rem;
+    line-height: 2.2rem;
   }
 
   .mob-text-heading {
     font-size: 4rem;
     line-height: 6rem;
-    text-wrap: balance;
     justify-self: center;
+    text-wrap: wrap;
   }
 
   .mob-text-subheading {

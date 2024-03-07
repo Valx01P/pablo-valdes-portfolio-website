@@ -17,9 +17,10 @@ export default function Home() {
     
 
   return (
-    <div className={`${darkMode && "dark"} light text-black dark:background dark:text-white h-auto`}>
+    <main className={`${darkMode && "dark"} light text-black dark:background dark:text-white h-auto`}>
       <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <HeroSection darkMode={darkMode} />
-    </div>
+      <ProjectSection darkMode={darkMode} />
+    </main>
   );
 }
