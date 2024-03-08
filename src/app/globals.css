@@ -106,9 +106,13 @@ body {
     background-color: rgb(247, 213, 162);
   }
 
+  .tool-txt-color {
+    color: #8710f0;
+  }
+
   .resume-btn-dark {
-    border: 1.5px solid #2680c5;
-    color: #2680c5;
+    border: 1.5px solid rgb(59 130 246);
+    color: rgb(59 130 246);
     transition: transform 0.4s ease; /* Transition for smooth color and border change */
   }
 
@@ -120,7 +124,7 @@ body {
   }
 
   .resume-btn-dark:hover {
-    background-color: #2680c5;
+    background-color: rgb(59 130 246);
     color: #ffffff;
     box-shadow: 0 0 10px 5px rgba(38, 128, 197, 0.7); /* Add a glow effect on hover */
     --tw-scale-x: 1.10;
