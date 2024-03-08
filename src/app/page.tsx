@@ -3,6 +3,7 @@ import { useState } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ProjectSection from "@/components/ProjectSection";
+import ToolSection from "@/components/ToolSection";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -21,6 +22,7 @@ export default function Home() {
       <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <HeroSection darkMode={darkMode} />
       <ProjectSection darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      <ToolSection darkMode={darkMode} />
       <AboutSection />
     </main>
   );
