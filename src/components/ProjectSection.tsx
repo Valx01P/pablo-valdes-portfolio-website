@@ -220,7 +220,7 @@ const ProjectSection = ( props: ProjectProps ) => {
         <div className='flex max-[1420px]:flex-col-reverse max-[1420px]:justify-center h-auto w-full flex-row my-4 p-8 light-card dark:background-card rounded-lg'>
           <div className='max-[1420px]:w-full flex max-[1420px]:items-center max-[1420px]:pt-8 flex-col items-start gap-4 roboto-medium w-1/2 px-4'>
             <h1 className='max-[430px]:text-2xl text-black dark:text-white text-4xl'>Misc. Projects</h1>
-            <p className='max-[430px]:text-xl max-[1420px]:w-auto flex max-[1420px]:text-balance max-[1420px]:text-center text-black dark:text-white text-2xl w-4/5'>An assortment of miscellaneous projects not given much attention as they were for simple practice, experimentation, or basic learning from when I started my journey coding.</p>
+            <p className='max-[430px]:text-xl max-[1420px]:w-auto flex max-[1420px]:text-balance max-[1420px]:text-center text-black dark:text-white text-2xl w-4/5'>An assortment of miscellaneous projects not given much attention here as they were for simple practice, experimentation, or basic learning from when I started my journey coding.</p>
             <div className='flex flex-row flex-wrap justify-center gap-3 text-xl'>
               <div className='flex flex-wrap text-balance text-center border-2 rounded-full border-transparent py-1 px-3 background text-white hover:scale-110'>
                 Web Development

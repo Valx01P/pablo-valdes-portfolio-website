@@ -23,7 +23,7 @@ export default function Home() {
       <HeroSection darkMode={darkMode} />
       <ProjectSection darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <ToolSection darkMode={darkMode} />
-      <AboutSection />
+      <AboutSection darkMode={darkMode} />
     </main>
   );
 }

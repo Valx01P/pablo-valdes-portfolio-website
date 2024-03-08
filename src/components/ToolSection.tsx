@@ -13,7 +13,7 @@ const ToolSection = (props: ToolProps) => {
         </div>
         {/* Tool content */}
         <div className='flex flex-col h-auto w-full mt-16 mb-4 p-8 pb-12 light-card dark:background-card rounded-lg gap-4'>
-          <h2 className='px-4 py-4 text-3xl max-[300px]:text-2xl'>These are the main tools I&apos;ve used in projects.</h2>
+          <h2 className='px-4 py-4 text-3xl max-[300px]:text-2xl'>Here are some of the tools I&apos;ve used in designing, creating, and deploying projects.</h2>
           <div className='flex max-[1040px]:flex-col max-[1040px]:gap-6 flex-row flex-wrap px-4 roboto-medium'>
             <div className='flex max-[1040px]:gap-2 flex-1 flex-col gap-4'>
               <h3 className='text-black dark:text-white text-3xl min-[1040px]:border-b-2 min-[1040px]:dark:border-blue-500 min-[1040px]:border-black max-[300px]:text-xl max-[1040px]:flex w-min max-[1040px]:border-2 max-[1040px]:rounded-sm max-[1040px]:border-black dark:max-[1040px]:border-white max-[1040px]:py-1 max-[1040px]:px-3 max-[1040px]:transparent'>Backend</h3>
@@ -57,6 +57,7 @@ const ToolSection = (props: ToolProps) => {
             <div className='flex max-[1040px]:gap-2 flex-1 flex-col gap-4'>
               <h3 className='text-black dark:text-white text-3xl min-[1040px]:border-b-2 min-[1040px]:dark:border-blue-500 min-[1040px]:border-black max-[300px]:text-xl max-[1040px]:flex w-min max-[1040px]:border-2 max-[1040px]:rounded-sm max-[1040px]:border-black dark:max-[1040px]:border-white max-[1040px]:py-1 max-[1040px]:px-3 max-[1040px]:transparent'>Design</h3>
               <div className='flex max-[1040px]:gap-6 max-[1040px]:py-2 max-[1040px]:flex-row max-[1040px]:flex-wrap flex-col gap-4'>
+              <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>Microsoft Whiteboard</p>
                 <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>Browser Extensions</p>
                 <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>Chrome Dev Tools</p>
                 <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>Adobe Express</p>
