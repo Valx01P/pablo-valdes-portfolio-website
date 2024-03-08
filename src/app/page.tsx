@@ -24,6 +24,7 @@ export default function Home() {
       <ProjectSection darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <ToolSection darkMode={darkMode} />
       <AboutSection darkMode={darkMode} />
+      {/* <ContactSection darkMode={darkMode} /> */}
     </main>
   );
 }
