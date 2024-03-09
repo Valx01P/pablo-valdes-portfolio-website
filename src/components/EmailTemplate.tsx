@@ -5,7 +5,7 @@ interface EmailTemplateProps {
   firstName: string;
   lastName: string;
   message: string;
-  phone: string;
+  phone?: string;
   subject: string;
 }
 
