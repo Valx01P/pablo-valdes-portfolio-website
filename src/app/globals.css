@@ -73,6 +73,22 @@ body {
         max-width: 1536px;
     }
 }
+
+  .send-btn {
+    background: rgb(3,0,57);
+    background: linear-gradient(90deg, rgba(3,0,57,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    color: #ffffff;
+    transition: transform 0.4s ease; /* Transition for smooth color and border change */
+  }
+  .send-btn:hover {
+    background-color: #1494f6;
+    color: #ffffff;
+    box-shadow: 0 0 10px 5px rgba(38, 128, 197, 0.7); /* Add a glow effect on hover */
+    --tw-scale-x: 1.04;
+    --tw-scale-y: 1.04;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
   .text-balance {
     text-wrap: balance;
   }
@@ -82,6 +98,56 @@ body {
   .background-2 {
     background-color: #212121;
   }
+  .background-3 {
+    /* background-color: #6d6c6c; */
+    /* background: rgb(13,15,17);
+    background: radial-gradient(circle, rgba(13,15,17,1) 0%, rgba(43,42,42,1) 35%, rgba(22,22,22,1) 100%); */
+    background: rgb(13,15,17);
+    background: radial-gradient(circle, rgba(13,15,17,1) 0%, rgba(109,108,108,1) 0%, rgba(22,22,22,1) 100%);
+  }
+
+  .background-contact {
+    background-color: #0d0f11;
+    box-shadow: 0 0 10px 5px rgba(88, 88, 88, 0.7);
+  }
+
+  .border-gradient {
+    border-top-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(to right, rgba(0,212,255,1) 0%, rgb(13, 13, 163) 50%, rgb(0, 81, 255) 100%) 1;
+    /* border-image: linear-gradient(to right, darkblue, darkorchid) 1; */
+  }
+
+  .border-gradient-bottom {
+    border-bottom-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(to right, rgba(0,212,255,1), rgb(0, 81, 255)) 1;
+    /* border-image: linear-gradient(to right, darkblue, darkorchid) 1; */
+  }
+
+  .border-gradient-2 {
+    border-top-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(to right, black, black) 1;
+  }
+
+  .border-gradient-bottom-2 {
+    border-bottom-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(to right, black, black) 1;
+  }
+
+  /* .gradient-border {
+    border-top: 2px solid transparent;
+    background: rgb(13,15,17);
+    background: radial-gradient(circle, rgba(13,15,17,1) 0%, rgba(109,108,108,1) 0%, rgba(22,22,22,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: border-color 0.4s ease, color 0.6s ease;
+  } 
+  */
+
   .background-card {
     background-color: #2b2a2a;
   }

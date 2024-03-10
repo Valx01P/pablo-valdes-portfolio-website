@@ -1,10 +1,12 @@
 import React from 'react'
 
-type Props = {}
+type FooterProps = {
+  darkMode: boolean;
+}
 
-const Footer = (props: Props) => {
+const Footer = (props: FooterProps) => {
   return (
-    <div>Footer</div>
+    <div className='background h-svh'>Footer</div>
   )
 }
 

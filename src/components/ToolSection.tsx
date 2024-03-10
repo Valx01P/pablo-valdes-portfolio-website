@@ -9,60 +9,60 @@ const ToolSection = (props: ToolProps) => {
     <section className='pt-12 light-2 dark:background-2 w-full text-black dark:text-white flex justify-center'>
       <div className='h-auto layout-container flex flex-col justify-center align-middle px-4'>
         <div className='h-auto w-full flex flex-1 max-[850px]:justify-center'>
-          <h1 className='text-black dark:text-white text-section-title merriweather-bold'>Tools</h1>
+          <h1 className='text-black dark:text-white text-section-title merriweather-bold max-[420px]:text-4xl'>Tools</h1>
         </div>
         {/* Tool content */}
         <div className='flex flex-col h-auto w-full mt-16 mb-4 p-8 pb-12 light-card dark:background-card rounded-lg gap-4'>
-          <h2 className='px-4 py-4 text-3xl max-[300px]:text-2xl'>Here are some of the tools I&apos;ve used in designing, creating, and deploying projects.</h2>
+          <h2 className='text-black dark:text-white px-4 py-4 text-3xl max-[420px]:text-xl'>Here are some of the tools I&apos;ve used in designing, creating, and deploying projects.</h2>
           <div className='flex max-[1040px]:flex-col max-[1040px]:gap-6 flex-row flex-wrap px-4 roboto-medium'>
             <div className='flex max-[1040px]:gap-2 flex-1 flex-col gap-4'>
-              <h3 className='text-black dark:text-white text-3xl min-[1040px]:border-b-2 min-[1040px]:dark:border-blue-500 min-[1040px]:border-black max-[300px]:text-xl max-[1040px]:flex w-min max-[1040px]:border-2 max-[1040px]:rounded-sm max-[1040px]:border-black dark:max-[1040px]:border-white max-[1040px]:py-1 max-[1040px]:px-3 max-[1040px]:transparent'>Backend</h3>
+              <h3 className='text-black dark:text-white text-3xl dark:border-gradient-bottom border-gradient-bottom-2 max-[420px]:text-xl max-[1040px]:flex w-min'>Backend</h3>
               <div className='flex max-[1040px]:gap-6 max-[1040px]:py-2 max-[1040px]:flex-row max-[1040px]:flex-wrap flex-col gap-4'>
-                <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>Node.js</p>
-                <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>Express.js</p>
-                <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>MongoDB</p>
-                <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>EJS</p>
+                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Node.js</p>
+                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Express.js</p>
+                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>MongoDB</p>
+                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>EJS</p>
               </div>
             </div>
             <div className='flex max-[1040px]:gap-2 flex-1 flex-col gap-4'>
-              <h3 className='text-black dark:text-white text-3xl min-[1040px]:border-b-2 min-[1040px]:dark:border-blue-500 min-[1040px]:border-black max-[300px]:text-xl max-[1040px]:flex w-min max-[1040px]:border-2 max-[1040px]:rounded-sm max-[1040px]:border-black dark:max-[1040px]:border-white max-[1040px]:py-1 max-[1040px]:px-3 max-[1040px]:transparent'>Frontend</h3>
+              <h3 className='text-black dark:text-white text-3xl dark:border-gradient-bottom border-gradient-bottom-2 max-[420px]:text-xl max-[1040px]:flex w-min'>Frontend</h3>
               <div className='flex max-[1040px]:gap-6 max-[1040px]:py-2 max-[1040px]:flex-row max-[1040px]:flex-wrap flex-col gap-4'>
-                <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>React.js</p>
-                <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>Next.js</p>
-                <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>HTML</p>
-                <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>CSS</p>
-                <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>Bootstrap</p>
-                <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>Tailwind CSS</p>
-                <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>Shadcn/UI</p>
-                <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>Redux</p>
-                <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>Zustand</p>
-                <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>Zod</p>
+                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>React.js</p>
+                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Next.js</p>
+                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>HTML</p>
+                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>CSS</p>
+                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Bootstrap</p>
+                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Tailwind CSS</p>
+                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Shadcn/UI</p>
+                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Redux</p>
+                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Zustand</p>
+                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Zod</p>
               </div>
             </div>
             <div className='flex max-[1040px]:gap-2 flex-1 flex-col gap-4'>
-              <h3 className='text-black dark:text-white text-3xl min-[1040px]:border-b-2 min-[1040px]:dark:border-blue-500 min-[1040px]:border-black max-[300px]:text-xl max-[1040px]:flex w-min max-[1040px]:border-2 max-[1040px]:rounded-sm max-[1040px]:border-black dark:max-[1040px]:border-white max-[1040px]:py-1 max-[1040px]:px-3 max-[1040px]:transparent'>Other</h3>
+              <h3 className='text-black dark:text-white text-3xl dark:border-gradient-bottom border-gradient-bottom-2 max-[420px]:text-xl max-[1040px]:flex w-min'>Other</h3>
               <div className='flex max-[1040px]:gap-6 max-[1040px]:py-2 max-[1040px]:flex-row max-[1040px]:flex-wrap flex-col gap-4'>
-                <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>Typescript</p>
-                <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>Javascript</p>
-                <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>VS Code</p>
-                <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>Git/Github</p>
-                <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>UploadThing</p>
-                <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>OnRender</p>
-                <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>Vercel</p>
-                <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>Clerk</p>
-                <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>Unix</p>
-                <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>APIs</p>
+                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Typescript</p>
+                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Javascript</p>
+                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>VS Code</p>
+                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Git/Github</p>
+                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>UploadThing</p>
+                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>OnRender</p>
+                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Vercel</p>
+                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Clerk</p>
+                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Unix</p>
+                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>APIs</p>
               </div>
             </div>
             <div className='flex max-[1040px]:gap-2 flex-1 flex-col gap-4'>
-              <h3 className='text-black dark:text-white text-3xl min-[1040px]:border-b-2 min-[1040px]:dark:border-blue-500 min-[1040px]:border-black max-[300px]:text-xl max-[1040px]:flex w-min max-[1040px]:border-2 max-[1040px]:rounded-sm max-[1040px]:border-black dark:max-[1040px]:border-white max-[1040px]:py-1 max-[1040px]:px-3 max-[1040px]:transparent'>Design</h3>
+              <h3 className='text-black dark:text-white text-3xl dark:border-gradient-bottom border-gradient-bottom-2 max-[420px]:text-xl max-[1040px]:flex w-min'>Design</h3>
               <div className='flex max-[1040px]:gap-6 max-[1040px]:py-2 max-[1040px]:flex-row max-[1040px]:flex-wrap flex-col gap-4'>
-              <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>Microsoft Whiteboard</p>
-                <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>Browser Extensions</p>
-                <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>Chrome Dev Tools</p>
-                <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>Adobe Express</p>
-                <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>Figma</p>
-                <p className='text-black dark:text-white text-2xl max-[300px]:text-xl'>Canva</p>
+              <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Microsoft Whiteboard</p>
+                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Browser Extensions</p>
+                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Chrome Dev Tools</p>
+                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Adobe Express</p>
+                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Figma</p>
+                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Canva</p>
               </div>
             </div>
           </div>
