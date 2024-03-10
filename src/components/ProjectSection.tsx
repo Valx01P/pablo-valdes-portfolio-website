@@ -23,7 +23,7 @@ const ProjectSection = ( props: ProjectProps ) => {
   );
 
   return (
-    <section className='pt-16 pb-12 light-2 dark:background-2 w-full text-black dark:text-white flex justify-center'>
+    <section className='pt-16 light-2 dark:background-2 w-full text-black dark:text-white flex justify-center'>
       <div className='h-auto layout-container flex flex-col justify-center align-middle items-start px-4'>
         <div className='h-auto w-full flex flex-1 max-[850px]:justify-center'>
           <h1 className='text-black dark:text-white text-section-title merriweather-bold'>Projects</h1>

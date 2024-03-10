@@ -51,14 +51,14 @@ const ContactSection = (props: ContactProps) => {
   };
 
   return (
-    <section className='pb-16 light-2 dark:background-2 w-full text-black dark:text-white flex justify-center'>
+    <section className='pt-12 light-2 dark:background-2 w-full text-black dark:text-white flex justify-center'>
       <div className='h-auto layout-container flex flex-col justify-center align-middle px-4'>
         <div className='h-auto w-full flex flex-1 max-[850px]:justify-center'>
           <h1 className='text-black dark:text-white text-section-title merriweather-bold'>Contact</h1>
         </div>
         {/* Contact content */}
         <div className='flex flex-col h-auto w-full mt-16 mb-4 p-8 pb-12 light-card dark:background-card rounded-lg gap-4'>
-          <div className='flex flex-1 text-black'>
+          <div className='flex flex-1 text-black flex-col'>
             <h1 className='dark:text-white'>Contact Us</h1>
             <form onSubmit={handleSubmit(sendEmail)}>
               <div className='flex flex-col gap-4'>
