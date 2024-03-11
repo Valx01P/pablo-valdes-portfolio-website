@@ -56,7 +56,7 @@ const ContactSection = (props: ContactProps) => {
   const linkedinIconFileName = props.darkMode ? 'linkedin-light.svg' : 'linkedin-dark.svg';
 
   return (
-    <section className='pt-12 pb-24 light-2 dark:background-2 w-full text-black dark:text-white flex justify-center'>
+    <section id='contact' className='pt-12 pb-24 light-2 dark:background-2 w-full text-black dark:text-white flex justify-center'>
       <div className='h-auto layout-container flex flex-col justify-center align-middle px-4'>
         <div className='h-auto w-full flex flex-1 max-[850px]:justify-center'>
           <h1 className='text-black dark:text-white text-section-title merriweather-bold max-[420px]:text-4xl'>Contact</h1>
@@ -67,18 +67,18 @@ const ContactSection = (props: ContactProps) => {
             <div className='flex max-[1200px]:flex-col flex-row'>
               {/* CTA */}
               <div className='flex flex-col max-[1200px]:w-full max-[1200px]:pb-12 max-[1200px]:text-center max-[1200px]:pr-0 w-1/2 pr-16 gap-2'>
-                <h1 className='text-black dark:text-white text-5xl roboto-bold max-[420px]:text-2xl'>Get In Touch</h1>
-                <p className='dark:text-white flex text-3xl max-[420px]:text-lg'>Have a question or want to work together? Send me a message and let&apos;s talk!</p>
+                <h1 className='text-black dark:text-white text-4xl roboto-bold max-[420px]:text-2xl'>Get In Touch</h1>
+                <p className='dark:text-white flex text-2xl max-[420px]:text-lg'>Have a question or want to work together? Send me a message and let&apos;s talk!</p>
                 <h1 className='text-black dark:text-white text-4xl roboto-bold pt-8 max-[420px]:text-xl'>Availability</h1>
-                <p className='dark:text-white flex text-3xl max-[420px]:text-lg'>Currently available for freelance or full-time positions. Contact me for any inquiries.</p>
+                <p className='dark:text-white flex text-2xl max-[420px]:text-lg'>Currently available for freelance or full-time positions. Contact me for any inquiries.</p>
                 <div>
                   <h1 className='text-black dark:text-white text-4xl roboto-bold flex-1 pt-8 max-[420px]:text-xl'>Let&apos;s Connect!</h1>
                   <div className='flex max-[1200px]:justify-center justify-start items-center gap-4 pt-3'>
                     <Link href='https://github.com/Valx01P' className='flex text-black max-[420px]:hidden'>
-                      <Image src={`/${githubIconFileName}`} width={60} height={60} alt="github icon" className='hover:scale-125' />
+                      <Image src={`/${githubIconFileName}`} width={45} height={45} alt="github icon" className='hover:scale-125' />
                     </Link>
                     <Link href='https://linkedin.com/in/your-linkedin-profile' className='flex text-black max-[420px]:hidden'>
-                      <Image src={`/${linkedinIconFileName}`} width={64} height={64} alt="linkedin icon" className='hover:scale-125' />
+                      <Image src={`/${linkedinIconFileName}`} width={48} height={48} alt="linkedin icon" className='hover:scale-125' />
                     </Link>
                     <Link href='https://github.com/Valx01P' className='flex text-black min-[420px]:hidden'>
                       <Image src={`/${githubIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
