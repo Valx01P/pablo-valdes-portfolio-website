@@ -5,6 +5,7 @@ import Link from 'next/link';
 type AboutProps = {
   darkMode: boolean;
   toggleDarkMode: () => void;
+  swagMode: boolean;
 }
 
 const AboutSection = (props: AboutProps) => {
@@ -17,7 +18,7 @@ const AboutSection = (props: AboutProps) => {
           <h1 className='text-black dark:text-white text-section-title merriweather-bold max-[420px]:text-4xl'>About</h1>
         </div>
         {/* About content */}
-        <div className='flex flex-col h-auto w-full mt-16 mb-4 p-8 pb-12 light-card dark:background-card rounded-lg gap-6 roboto-medium dark:roboto-regular'>
+        <div className={`${props.swagMode && "swag-bg"} flex flex-col h-auto w-full mt-16 mb-4 p-8 pb-12 light-card dark:background-card rounded-lg gap-6 roboto-medium dark:roboto-regular`}>
 
           <div className='flex flex-1 flex-col h-auto gap-2'>
             <h2 className='text-black dark:text-white text-3xl leading-10 max-[420px]:text-lg'>How it started</h2>

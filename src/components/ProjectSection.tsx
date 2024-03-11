@@ -5,6 +5,7 @@ import Link from 'next/link'
 type ProjectProps = {
   darkMode: boolean;
   toggleDarkMode: () => void;
+  swagMode: boolean;
 };
 
 const ProjectSection = ( props: ProjectProps ) => {
@@ -29,7 +30,7 @@ const ProjectSection = ( props: ProjectProps ) => {
           <h1 className='text-black dark:text-white text-section-title merriweather-bold max-[420px]:text-4xl'>Projects</h1>
         </div>
         {/* Project 1 */}
-        <div className='max-[1420px]:flex-col h-auto w-full flex flex-row mt-16 mb-4 p-8 light-card dark:background-card rounded-lg'>
+        <div className={`${props.swagMode && "swag-bg-card"} max-[1420px]:flex-col h-auto w-full flex flex-row mt-16 mb-4 p-8 light-card dark:background-card rounded-lg`}>
           <div className='max-[1420px]:w-auto flex max-[1420px]:justify-center w-1/2 items-center'>
             <Image src={`/${portfolioSiteFileName}`} width={700} height={350} alt="chess icon" onClick={props.toggleDarkMode} className='cursor-pointer border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
           </div>
@@ -45,6 +46,12 @@ const ProjectSection = ( props: ProjectProps ) => {
               </div>
               <div className='border-2 rounded-full border-transparent py-1 px-3 background text-white hover:scale-110'>
                 Typescript
+              </div>
+              <div className='border-2 rounded-full border-transparent py-1 px-3 background text-white hover:scale-110'>
+                Zustand
+              </div>
+              <div className='border-2 rounded-full border-transparent py-1 px-3 background text-white hover:scale-110'>
+                Resend
               </div>
             </div>
             <div className='max-[420px]:text-sm flex max-[420px]:flex-col max-[420px]:items-center flex-row text-xl gap-4'>
@@ -63,7 +70,7 @@ const ProjectSection = ( props: ProjectProps ) => {
           </div>
         </div>
         {/* Project 2 */}
-        <div className='flex max-[1420px]:flex-col-reverse max-[1420px]:justify-center h-auto w-full flex-row my-4 p-8 light-card dark:background-card rounded-lg'>
+        <div className={`${props.swagMode && "swag-bg-card"} flex max-[1420px]:flex-col-reverse max-[1420px]:justify-center h-auto w-full flex-row my-4 p-8 light-card dark:background-card rounded-lg`}>
           <div className='max-[1420px]:w-full flex max-[1420px]:items-center max-[1420px]:pt-8 flex-col items-start gap-4 roboto-medium w-1/2 px-4'>
             <h1 className='max-[420px]:text-xl text-black dark:text-white text-4xl'>iServer</h1>
             <p className='max-[420px]:text-base max-[1420px]:w-auto flex max-[1420px]:text-balance max-[1420px]:text-center text-black dark:text-white text-2xl w-4/5'>An image uploading website with third party auth, design inspired by imgbb.com. Made to statically serve image urls for websites.</p>
@@ -103,9 +110,9 @@ const ProjectSection = ( props: ProjectProps ) => {
           </div>
         </div>
         {/* Project 3 */}
-        <div className='max-[1420px]:flex-col h-auto w-full flex flex-row my-4 p-8 light-card dark:background-card rounded-lg'>
+        <div className={`${props.swagMode && "swag-bg-card"} max-[1420px]:flex-col h-auto w-full flex flex-row my-4 p-8 light-card dark:background-card rounded-lg`}>
           <div className='max-[1420px]:w-auto flex max-[1420px]:justify-center w-1/2 items-center'>
-            <Image src={`/practical-synth-extension.png`} width={700} height={350} alt="chess icon" onClick={props.toggleDarkMode} className='cursor-pointer border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
+            <Image src={`/practical-synth-extension.png`} width={700} height={350} alt="chess icon" className='border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
           </div>
           <div className='max-[1420px]:w-full flex max-[1420px]:items-center max-[1420px]:pt-8 flex-col items-start gap-4 roboto-medium w-1/2 px-4'>
             <h1 className='max-[420px]:text-xl max-[450px]:text-center flex flex-wrap text-balance text-center justify-center text-black dark:text-white text-4xl'>Practical Synth Theme</h1>
@@ -134,7 +141,7 @@ const ProjectSection = ( props: ProjectProps ) => {
           </div>
         </div>
         {/* Project 4 */}
-        <div className='flex max-[1420px]:flex-col-reverse max-[1420px]:justify-center h-auto w-full flex-row my-4 p-8 light-card dark:background-card rounded-lg'>
+        <div className={`${props.swagMode && "swag-bg-card"} flex max-[1420px]:flex-col-reverse max-[1420px]:justify-center h-auto w-full flex-row my-4 p-8 light-card dark:background-card rounded-lg`}>
           <div className='max-[1420px]:w-full flex max-[1420px]:items-center max-[1420px]:pt-8 flex-col items-start gap-4 roboto-medium w-1/2 px-4'>
             <h1 className='max-[420px]:text-xl max-[450px]:text-center flex flex-wrap text-balance text-center justify-center text-black dark:text-white text-4xl'>Theoretical Stonk Plays</h1>
             <p className='max-[420px]:text-base max-[1420px]:w-auto flex max-[1420px]:text-balance max-[1420px]:text-center text-black dark:text-white text-2xl w-4/5'>My favorite project, uses a third party API to get stock aggregate data for charts. Allows user to form theoretical stock plays based on state actions.</p>
@@ -174,9 +181,9 @@ const ProjectSection = ( props: ProjectProps ) => {
           </div>
         </div>
         {/* Project 5 */}
-        <div className='max-[1420px]:flex-col h-auto w-full flex flex-row my-4 p-8 light-card dark:background-card rounded-lg'>
+        <div className={`${props.swagMode && "swag-bg-card"} max-[1420px]:flex-col h-auto w-full flex flex-row my-4 p-8 light-card dark:background-card rounded-lg`}>
           <div className='max-[1420px]:w-auto flex max-[1420px]:justify-center w-1/2 items-center'>
-            <Image src={`/g-planner-site.png`} width={700} height={350} alt="chess icon" onClick={props.toggleDarkMode} className='cursor-pointer border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
+            <Image src={`/g-planner-site.png`} width={700} height={350} alt="chess icon" className='border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
           </div>
           <div className='max-[1420px]:w-full flex max-[1420px]:items-center max-[1420px]:pt-8 flex-col items-start gap-4 roboto-medium w-1/2 px-4'>
             <h1 className='max-[420px]:text-xl max-[450px]:text-center flex flex-wrap text-balance text-center justify-center text-black dark:text-white text-4xl'>General Planner</h1>
@@ -217,7 +224,7 @@ const ProjectSection = ( props: ProjectProps ) => {
           </div>
         </div>
         {/* Misc. Projects */}
-        <div className='flex max-[1420px]:flex-col-reverse max-[1420px]:justify-center h-auto w-full flex-row my-4 p-8 light-card dark:background-card rounded-lg'>
+        <div className={`${props.swagMode && "swag-bg-card"} flex max-[1420px]:flex-col-reverse max-[1420px]:justify-center h-auto w-full flex-row my-4 p-8 light-card dark:background-card rounded-lg`}>
           <div className='max-[1420px]:w-full flex max-[1420px]:items-center max-[1420px]:pt-8 flex-col items-start gap-4 roboto-medium w-1/2 px-4'>
             <h1 className='max-[420px]:text-xl max-[450px]:text-center flex flex-wrap text-balance text-center justify-center text-black dark:text-white text-4xl'>Misc. Projects</h1>
             <p className='max-[420px]:text-base max-[1420px]:w-auto flex max-[1420px]:text-balance max-[1420px]:text-center text-black dark:text-white text-2xl w-4/5'>An assortment of miscellaneous projects not given much attention here as they were for simple practice, experimentation, or basic learning from when I started my journey coding.</p>

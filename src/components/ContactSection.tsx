@@ -9,6 +9,7 @@ import * as z from 'zod'
 
 type ContactProps = {
   darkMode: boolean;
+  swagMode: boolean;
 };
 
 type EmailForm = {
@@ -62,7 +63,7 @@ const ContactSection = (props: ContactProps) => {
           <h1 className='text-black dark:text-white text-section-title merriweather-bold max-[420px]:text-4xl'>Contact</h1>
         </div>
         {/* Contact content */}
-        <div className='flex flex-col h-auto w-full mt-16 mb-4 p-8 pb-12 light-card dark:background-card rounded-lg gap-4'>
+        <div className={`${props.swagMode && "swag-bg"} flex flex-col h-auto w-full mt-16 mb-4 p-8 pb-12 light-card dark:background-card rounded-lg gap-4`}>
           <div className='flex flex-1 text-black flex-col'>
             <div className='flex max-[1200px]:flex-col flex-row'>
               {/* CTA */}
@@ -91,7 +92,7 @@ const ContactSection = (props: ContactProps) => {
               </div>
               {/* Form Start */}
               <div className='flex flex-1 justify-center items-center'>
-                <form onSubmit={handleSubmit(sendEmail)} className='flex max-[1200px]:w-full w-min background-contact p-8 rounded-lg'>
+                <form onSubmit={handleSubmit(sendEmail)} className={`${props.swagMode && "swag-bg-contact"} flex max-[1200px]:w-full w-min background-contact p-8 rounded-lg`}>
                   <div className='flex flex-1 flex-col gap-4 max-[200px]:w-1/5 max-[250px]:w-1/4 max-[290px]:w-1/3 max-[420px]:w-1/2 max-[380px]:w-2/3 max-[440px]:w-4/5'>
                     {/* First Name & Last Name Inputs */}
                     <div className='flex gap-4 max-[720px]:flex-col'>

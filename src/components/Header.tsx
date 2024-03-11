@@ -5,6 +5,7 @@ import Link from 'next/link';
 type HeaderProps = {
   darkMode: boolean;
   toggleDarkMode: () => void;
+  swagMode: boolean;
 };
   
   const Header = (props: HeaderProps) => {

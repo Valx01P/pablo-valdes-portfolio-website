@@ -3,6 +3,7 @@ import Image from 'next/image'
 
 type HeroProps = {
   darkMode: boolean;
+  swagMode: boolean;
 };
 
 const HeroSection = (props: HeroProps) => {
