@@ -13,7 +13,7 @@ export default function Home() {
   const { darkMode, toggleDarkMode, swagMode, toggleSwagMode } = useTheme();
 
   return ( //if darkMode is true, add the dark class to the main element
-    <main className={`${darkMode && "dark"} light dark:background text-black dark:bg-blue-500 dark:text-white h-auto`}>
+    <main className={`${darkMode && "dark"} light dark:background text-black dark:text-white h-auto`}>
       <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} swagMode={swagMode} />
       <HeroSection darkMode={darkMode} swagMode={swagMode} />
       <ProjectSection darkMode={darkMode} toggleDarkMode={toggleDarkMode} swagMode={swagMode} />

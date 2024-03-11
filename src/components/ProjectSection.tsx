@@ -55,14 +55,14 @@ const ProjectSection = ( props: ProjectProps ) => {
               </div>
             </div>
             <div className='max-[420px]:text-sm flex max-[420px]:flex-col max-[420px]:items-center flex-row text-xl gap-4'>
-              <Link href="/" className='btn-transition-light dark:btn-transition-dark border-2 rounded-sm bg-transparent py-1 pl-3.5 pr-4 hover:scale-110 text-black dark:text-white border-black dark:border-white relative'>Details
+              <Link href="/" title='Open details page for this project' className='btn-transition-light dark:btn-transition-dark border-2 rounded-sm bg-transparent py-1 pl-3.5 pr-4 hover:scale-110 text-black dark:text-white border-black dark:border-white relative'>Details
               {arrow}
               </Link>
               <div className='max-[420px]:text-sm flex flex-row text-xl gap-4 items-center'>
-              <Link href="/" >
+              <Link href="/" title='View the Github Repository for this project' >
                 <Image src={`/${githubIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
               </Link>
-              <Link href="/" >
+              <Link href="/" title='Go to the deployed live site'>
                 <Image src={`/${eyeIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
               </Link>
               </div>
@@ -92,14 +92,14 @@ const ProjectSection = ( props: ProjectProps ) => {
               </div>
             </div>
             <div className='max-[420px]:text-sm flex max-[420px]:flex-col max-[420px]:items-center flex-row text-xl gap-4'>
-              <Link href="/" className='btn-transition-light dark:btn-transition-dark border-2 rounded-sm bg-transparent py-1 pl-3.5 pr-4 hover:scale-110 text-black dark:text-white border-black dark:border-white relative'>Details
+              <Link href="/" title='Open details page for this project' className='btn-transition-light dark:btn-transition-dark border-2 rounded-sm bg-transparent py-1 pl-3.5 pr-4 hover:scale-110 text-black dark:text-white border-black dark:border-white relative'>Details
               {arrow}
               </Link>
               <div className='max-[420px]:text-sm flex flex-row text-xl gap-4 items-center'>
-              <Link href="/" >
+              <Link href="/" title='View the Github Repository for this project' >
                 <Image src={`/${githubIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
               </Link>
-              <Link href="/" >
+              <Link href="/" title='Go to the deployed live site'>
                 <Image src={`/${eyeIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
               </Link>
               </div>
@@ -126,14 +126,14 @@ const ProjectSection = ( props: ProjectProps ) => {
               </div>
             </div>
             <div className='max-[420px]:text-sm flex max-[420px]:flex-col max-[420px]:items-center flex-row text-xl gap-4'>
-              <Link href="/" className='btn-transition-light dark:btn-transition-dark border-2 rounded-sm bg-transparent py-1 pl-3.5 pr-4 hover:scale-110 text-black dark:text-white border-black dark:border-white relative'>Details
+              <Link href="/" title='Open details page for this project' className='btn-transition-light dark:btn-transition-dark border-2 rounded-sm bg-transparent py-1 pl-3.5 pr-4 hover:scale-110 text-black dark:text-white border-black dark:border-white relative'>Details
               {arrow}
               </Link>
               <div className='max-[420px]:text-sm flex flex-row text-xl gap-4 items-center'>
-              <Link href="/" >
+              <Link href="/" title='View the Github Repository for this project' >
                 <Image src={`/${githubIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
               </Link>
-              <Link href="/" >
+              <Link href="/" title='View live on Visual Studio Marketplace'>
                 <Image src={`/${eyeIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
               </Link>
               </div>
@@ -163,14 +163,14 @@ const ProjectSection = ( props: ProjectProps ) => {
               </div>
             </div>
             <div className='max-[420px]:text-sm flex max-[420px]:flex-col max-[420px]:items-center flex-row text-xl gap-4'>
-              <Link href="/" className='btn-transition-light dark:btn-transition-dark border-2 rounded-sm bg-transparent py-1 pl-3.5 pr-4 hover:scale-110 text-black dark:text-white border-black dark:border-white relative'>Details
+              <Link href="/" title='Open details page for this project' className='btn-transition-light dark:btn-transition-dark border-2 rounded-sm bg-transparent py-1 pl-3.5 pr-4 hover:scale-110 text-black dark:text-white border-black dark:border-white relative'>Details
               {arrow}
               </Link>
               <div className='max-[420px]:text-sm flex flex-row text-xl gap-4 items-center'>
-              <Link href="/" >
+              <Link href="/" title='View the Github Repository for this project' >
                 <Image src={`/${githubIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
               </Link>
-              <Link href="/" >
+              <Link href="/" title='Go to the deployed live site'>
                 <Image src={`/${eyeIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
               </Link>
               </div>
@@ -209,14 +209,14 @@ const ProjectSection = ( props: ProjectProps ) => {
               </div>
             </div>
             <div className='max-[420px]:text-sm flex max-[420px]:flex-col max-[420px]:items-center flex-row text-xl gap-4'>
-              <Link href="/" className='btn-transition-light dark:btn-transition-dark border-2 rounded-sm bg-transparent py-1 pl-3.5 pr-4 hover:scale-110 text-black dark:text-white border-black dark:border-white relative'>Details
+              <Link href="/" title='Open details page for this project' className='btn-transition-light dark:btn-transition-dark border-2 rounded-sm bg-transparent py-1 pl-3.5 pr-4 hover:scale-110 text-black dark:text-white border-black dark:border-white relative'>Details
               {arrow}
               </Link>
               <div className='max-[420px]:text-sm flex flex-row text-xl gap-4 items-center'>
-              <Link href="/" >
+              <Link href="/" title='View the Github Repository for this project' >
                 <Image src={`/${githubIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
               </Link>
-              <Link href="/" >
+              <Link href="/" title='Go to the deployed live site'>
                 <Image src={`/${eyeIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
               </Link>
               </div>
@@ -237,7 +237,7 @@ const ProjectSection = ( props: ProjectProps ) => {
               </div>
             </div>
             <div className='max-[420px]:text-sm flex max-[420px]:flex-col max-[420px]:items-center flex-row text-xl gap-4'>
-              <Link href="/" className='btn-transition-light dark:btn-transition-dark border-2 rounded-sm bg-transparent py-1 pl-3.5 pr-4 hover:scale-110 text-black dark:text-white border-black dark:border-white relative'>Details
+              <Link href="/" title='Open details page for these lesser projects' className='btn-transition-light dark:btn-transition-dark border-2 rounded-sm bg-transparent py-1 pl-3.5 pr-4 hover:scale-110 text-black dark:text-white border-black dark:border-white relative'>Details
               {arrow}
               </Link>
             </div>

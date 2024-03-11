@@ -75,10 +75,10 @@ const ContactSection = (props: ContactProps) => {
                 <div>
                   <h1 className='text-black dark:text-white text-4xl roboto-bold flex-1 pt-8 max-[420px]:text-xl'>Let&apos;s Connect!</h1>
                   <div className='flex max-[1200px]:justify-center justify-start items-center gap-4 pt-3'>
-                    <Link href='https://github.com/Valx01P' className='flex text-black max-[420px]:hidden'>
+                    <Link href='https://github.com/Valx01P' title='View my Github profile' className='flex text-black max-[420px]:hidden'>
                       <Image src={`/${githubIconFileName}`} width={45} height={45} alt="github icon" className='hover:scale-125' />
                     </Link>
-                    <Link href='https://linkedin.com/in/your-linkedin-profile' className='flex text-black max-[420px]:hidden'>
+                    <Link href='https://linkedin.com/in/your-linkedin-profile' title='View my LinkedIn profile' className='flex text-black max-[420px]:hidden'>
                       <Image src={`/${linkedinIconFileName}`} width={48} height={48} alt="linkedin icon" className='hover:scale-125' />
                     </Link>
                     <Link href='https://github.com/Valx01P' className='flex text-black min-[420px]:hidden'>
@@ -181,7 +181,7 @@ const ContactSection = (props: ContactProps) => {
                     </div>
 
                     {/* Submit Button */}
-                    <button type="submit" disabled={isSubmitting} className={`p-2 rounded-md send-btn max-[420px]:text-sm ${isSubmitting ? 'bg-gray-600 border-gray-600' : 'bg-blue-500'} text-white`}>
+                    <button type="submit" title='Do it' disabled={isSubmitting} className={`p-2 rounded-md send-btn max-[420px]:text-sm ${isSubmitting ? 'bg-gray-600 border-gray-600' : 'bg-blue-500'} text-white`}>
                       {isSubmitting ? 'Loading' : 'Send Message'}
                     </button>
                   </div>

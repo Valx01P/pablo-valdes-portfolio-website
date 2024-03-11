@@ -178,6 +178,31 @@ body {
     background-color: transparent;
   }
 
+  .pointer-bg {
+    background: rgb(13,15,17);
+    background: linear-gradient(180deg, rgba(13,15,17,1) 0%, rgb(56, 55, 55) 50%, rgb(11, 11, 11) 100%);
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 9999px;
+    border-color: rgba(13,15,17,1);
+    transition: transform 0.4s ease; /* Transition for smooth color and border change */
+  }
+
+  /* rounded border gradient */
+  /* .btn-gradient-2 {
+    background: linear-gradient(white, white) padding-box,
+    linear-gradient(to right, darkblue, darkorchid) border-box;
+    border-radius: 50em;
+    border: 4px solid transparent;
+  } */
+  
+
+  .pointer-bg:hover {
+    --tw-scale-x: 1.10;
+    --tw-scale-y: 1.10;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+  
   .background-card {
     background-color: #2b2a2a;
   }
@@ -187,6 +212,7 @@ body {
   .header-bg {
     background-color: #330c35; /* bg-fuchsia-900 ; #701A75 altered to be darker */
   }
+
   .white {
     color: #ffffff;
   }

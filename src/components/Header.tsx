@@ -46,26 +46,26 @@ type HeaderProps = {
           <a onClick={() => scrollToSection('header')} className='roboto-regular text-xl text-black text-transition-light dark:text-white dark:text-transition-dark cursor-pointer'>
             Home
           </a>
-          <a onClick={() => scrollToSection('projects')}  className='roboto-regular text-xl text-black text-transition-light dark:text-white dark:text-transition-dark cursor-pointer'>Projects</a>
-          <a onClick={() => scrollToSection('about')}  className='roboto-regular text-xl text-black text-transition-light dark:text-white dark:text-transition-dark cursor-pointer'>About</a>
-          <a onClick={() => scrollToSection('contact')}  className='roboto-regular text-xl text-black text-transition-light dark:text-white dark:text-transition-dark cursor-pointer'>Contact</a>
+          <a onClick={() => scrollToSection('projects')} className='roboto-regular text-xl text-black text-transition-light dark:text-white dark:text-transition-dark cursor-pointer'>Projects</a>
+          <a onClick={() => scrollToSection('about')} className='roboto-regular text-xl text-black text-transition-light dark:text-white dark:text-transition-dark cursor-pointer'>About</a>
+          <a onClick={() => scrollToSection('contact')} className='roboto-regular text-xl text-black text-transition-light dark:text-white dark:text-transition-dark cursor-pointer'>Contact</a>
         </div>
         
 
         {/* Social Icons, Resume, Dark Mode Toggle */}
         <div className="flex items-center w-1/4 max-lg:w-1/2 max-[520px]:w-3/4 max-[300px]:w-4/5 justify-end gap-3 max-[300px]:gap-1">
           <Link href='https://github.com/Valx01P' className='flex text-black max-[350px]:hidden'>
-            <Image src={`/${githubIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
+            <Image src={`/${githubIconFileName}`} title='View my Github profile' width={30} height={30} alt="github icon" className='hover:scale-125' />
           </Link>
           <Link href='https://linkedin.com/in/your-linkedin-profile' className='flex text-black max-[350px]:hidden'>
-            <Image src={`/${linkedinIconFileName}`} width={32} height={32} alt="linkedin icon" className='hover:scale-125' />
+            <Image src={`/${linkedinIconFileName}`} title='View my LinkedIn profile' width={32} height={32} alt="linkedin icon" className='hover:scale-125' />
           </Link>
-          <a href="/Pablo_Valdes_Resume.pdf" target="_blank" rel="noopener noreferrer">
+          <a href="/Pablo_Valdes_Resume.pdf" title='Open resume in new tab' target="_blank" rel="noopener noreferrer">
             <button className="bg-transparent resume-btn-light dark:resume-btn-dark p-2 rounded-lg max-sm:p-1.5 max-[350px]:hidden">
               Resume
             </button>
           </a>
-          <button onClick={props.toggleDarkMode} className="light dark:background text-black dark:text-white p-2 max-[350px]:hidden">
+          <button onClick={props.toggleDarkMode} title='Theme switcher' className="light dark:background text-black dark:text-white p-2 max-[350px]:hidden">
             <Image src={`/${toggleIconFileName}`} width={30} height={30} alt="dark mode" className='hover:scale-125' />
           </button>
 

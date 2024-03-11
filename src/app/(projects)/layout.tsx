@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
+import DetailsSidebar from "@/components/DetailsSidebar";
 
 export const metadata: Metadata = {
   title: "Details",
-  description: "My full stack developer portfolio website",
+  description: "Project Details Page",
+  icons: {
+    icon: '/icon-two.svg'
+  }
 };
 
 export default function RootLayout({
@@ -12,9 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={"background"}>
-        <h1 className="w-full text-white">bruh details layout</h1>
-        {children}
+      <body className="background flex justify-between">
+          <DetailsSidebar />
+          {children}
       </body>
     </html>
   );
