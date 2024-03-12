@@ -19,9 +19,9 @@ const HeroSection = (props: HeroProps) => {
       <div className="layout-container flex flex-row max-[850px]:flex-col justify-between max-[850px]:justify-center items-center gap-y-8">
         <div className='flex flex-col items-start max-[850px]:items-center max-[850px]:pt-8 gap-y-4 px-4 max-[1416px]:pt-12'>
         <p className='max-[420px]:text-3xl roboto-medium text-small max-[1416px]:text-small-2 max-[600px]:mob-text-small text-black dark:text-white'>Hey there, I&apos;m</p>
-        <h1 className="max-[420px]:text-5xl text-heading max-[600px]:mob-text-heading max-[600px]:text-center font-bold text-black dark:text-white merriweather-bold">Pablo Valdes</h1>
+        <h1 className={`${props.swagMode && "text-gradient"} max-[420px]:text-5xl text-heading max-[600px]:mob-text-heading max-[600px]:text-center font-bold text-black dark:text-white merriweather-bold`}>Pablo Valdes</h1>
         <p className='max-[420px]:text-2xl roboto-medium text-subheading max-[600px]:mob-text-subheading max-[600px]:text-center text-black dark:text-white'>Motivated Full Stack Developer, <br/>
-        <span className='max-[420px]:text-2xl roboto-medium text-lesser-subheading max-[600px]:mob-text-lesser-subheading max-[600px]:text-center text-black dark:text-white'>Nature Enjoyer, <span className='max-[420px]:text-2xl text-nowrap text-black dark:text-white'>& Bad Chess Player 😅</span><br/></span></p>
+        <span className='max-[420px]:text-2xl roboto-medium text-lesser-subheading max-[600px]:mob-text-lesser-subheading max-[600px]:text-center text-black dark:text-white'>Nature Enjoyer, <span className='max-[420px]:text-2xl text-nowrap text-black dark:text-white'>& Bad Chess Player {!props.swagMode ? <span>😅</span> : <span>😎</span>}</span><br/></span></p>
         <p className='max-[420px]:text-xl mb-28 max-[850px]:mb-2 roboto-medium-italic text-quote max-[600px]:mob-text-quote max-[600px]:text-center text-black dark:text-white'>“Never stop dreaming,<br/> never stop believing,<br/> never give up,<br/> never stop trying,<br/> and never stop learning.” <br/>– Roy Bennett</p>
         </div>
         <div className='px-4 max-[850px]:mb-6'>

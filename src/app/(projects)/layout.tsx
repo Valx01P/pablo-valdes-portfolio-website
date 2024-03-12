@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="background flex justify-between">
+      <body className="bg-yt flex justify-between">
           <DetailsSidebar />
           {children}
       </body>
