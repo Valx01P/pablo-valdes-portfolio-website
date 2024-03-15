@@ -59,12 +59,12 @@ const ProjectSection = ( props: ProjectProps ) => {
               {arrow}
               </Link>
               <div className='max-[420px]:text-sm flex flex-row text-xl gap-4 items-center'>
-              <Link href="/" title='View the Github Repository for this project' >
+              <a href="https://github.com/Valx01P/pablo-valdes-portfolio-website" target="_blank" rel="noopener noreferrer" title='View the Github Repository for this project' >
                 <Image src={`/${githubIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
-              </Link>
-              <Link href="/" title='Go to the deployed live site'>
+              </a>
+              <a href="/" title='Go to the deployed live site'>
                 <Image src={`/${eyeIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
-              </Link>
+              </a>
               </div>
             </div>
           </div>
@@ -96,12 +96,12 @@ const ProjectSection = ( props: ProjectProps ) => {
               {arrow}
               </Link>
               <div className='max-[420px]:text-sm flex flex-row text-xl gap-4 items-center'>
-              <Link href="/" title='View the Github Repository for this project' >
+              <a href="https://github.com/Valx01P/image-transfer-site-master" target="_blank" rel="noopener noreferrer" title='View the Github Repository for this project' >
                 <Image src={`/${githubIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
-              </Link>
-              <Link href="/" title='Go to the deployed live site'>
+              </a>
+              <a href="https://image-transfer-site-master.vercel.app/" target="_blank" rel="noopener noreferrer" title='Go to the deployed live site'>
                 <Image src={`/${eyeIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
-              </Link>
+              </a>
               </div>
             </div>
           </div>
@@ -130,12 +130,12 @@ const ProjectSection = ( props: ProjectProps ) => {
               {arrow}
               </Link>
               <div className='max-[420px]:text-sm flex flex-row text-xl gap-4 items-center'>
-              <Link href="/" title='View the Github Repository for this project' >
+              <a href="https://github.com/Valx01P/practical-synth" target="_blank" rel="noopener noreferrer" title='View the Github Repository for this project' >
                 <Image src={`/${githubIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
-              </Link>
-              <Link href="/" title='View live on Visual Studio Marketplace'>
+              </a>
+              <a href="https://marketplace.visualstudio.com/items?itemName=PabloValdes019.practical-synth" target="_blank" rel="noopener noreferrer" title='View live on Visual Studio Marketplace'>
                 <Image src={`/${eyeIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
-              </Link>
+              </a>
               </div>
             </div>
           </div>
@@ -167,12 +167,12 @@ const ProjectSection = ( props: ProjectProps ) => {
               {arrow}
               </Link>
               <div className='max-[420px]:text-sm flex flex-row text-xl gap-4 items-center'>
-              <Link href="/" title='View the Github Repository for this project' >
+              <a href="https://github.com/Valx01P/theoretical-stock-plays-site" target="_blank" rel="noopener noreferrer" title='View the Github Repository for this project' >
                 <Image src={`/${githubIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
-              </Link>
-              <Link href="/" title='Go to the deployed live site'>
+              </a>
+              <a href="https://theoretical-stock-plays-site.vercel.app/" target="_blank" rel="noopener noreferrer" title='Go to the deployed live site'>
                 <Image src={`/${eyeIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
-              </Link>
+              </a>
               </div>
             </div>
           </div>
@@ -213,12 +213,12 @@ const ProjectSection = ( props: ProjectProps ) => {
               {arrow}
               </Link>
               <div className='max-[420px]:text-sm flex flex-row text-xl gap-4 items-center'>
-              <Link href="/" title='View the Github Repository for this project' >
+              <a href="https://github.com/Valx01P/generalplanner" target="_blank" rel="noopener noreferrer" title='View the Github Repository for this project' >
                 <Image src={`/${githubIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
-              </Link>
-              <Link href="/" title='Go to the deployed live site'>
+              </a>
+              <a href="https://general-planner.onrender.com/" target="_blank" rel="noopener noreferrer" title='Go to the deployed live site'>
                 <Image src={`/${eyeIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
-              </Link>
+              </a>
               </div>
             </div>
           </div>

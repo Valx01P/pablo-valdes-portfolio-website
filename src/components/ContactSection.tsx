@@ -47,6 +47,9 @@ const ContactSection = (props: ContactProps) => {
       if (res.status === 200) {
         toast.success(`Hey ${data.firstName}, your message has been sent!`);
       }
+      if (res.status === 429) {
+        toast.error('Too many requests. Please try again later.');
+      }
     } catch (error: z.ZodError | any) {
       toast.error('Validation error:', error);
       toast.error('Please fill in the form correctly.');
@@ -75,30 +78,31 @@ const ContactSection = (props: ContactProps) => {
                 <div>
                   <h1 className='text-black dark:text-white text-4xl roboto-bold flex-1 pt-8 max-[420px]:text-xl'>Let&apos;s Connect!</h1>
                   <div className='flex max-[1200px]:justify-center justify-start items-center gap-4 pt-3'>
-                    <Link href='https://github.com/Valx01P' title='View my Github profile' className='flex text-black max-[420px]:hidden'>
+                    <a href='https://github.com/Valx01P' target="_blank" rel="noopener noreferrer" title='View my Github profile' className='flex text-black max-[420px]:hidden'>
                       <Image src={`/${githubIconFileName}`} width={45} height={45} alt="github icon" className='hover:scale-125' />
-                    </Link>
-                    <Link href='https://linkedin.com/in/your-linkedin-profile' title='View my LinkedIn profile' className='flex text-black max-[420px]:hidden'>
+                    </a>
+                    <a href='https://www.linkedin.com/in/pablo-valdes-98a91124a/' target="_blank" rel="noopener noreferrer" title='View my LinkedIn profile' className='flex text-black max-[420px]:hidden'>
                       <Image src={`/${linkedinIconFileName}`} width={48} height={48} alt="linkedin icon" className='hover:scale-125' />
-                    </Link>
-                    <Link href='https://github.com/Valx01P' className='flex text-black min-[420px]:hidden'>
+                    </a>
+                    <a href='https://github.com/Valx01P' target="_blank" rel="noopener noreferrer" className='flex text-black min-[420px]:hidden'>
                       <Image src={`/${githubIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
-                    </Link>
-                    <Link href='https://linkedin.com/in/your-linkedin-profile' className='flex text-black min-[420px]:hidden'>
+                    </a>
+                    <a href='https://www.linkedin.com/in/pablo-valdes-98a91124a/' target="_blank" rel="noopener noreferrer" className='flex text-black min-[420px]:hidden'>
                       <Image src={`/${linkedinIconFileName}`} width={32} height={32} alt="linkedin icon" className='hover:scale-125' />
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>
               {/* Form Start */}
               <div className='flex flex-1 justify-center items-center'>
-                <form onSubmit={handleSubmit(sendEmail)} className={`${props.swagMode && "swag-bg-contact"} flex max-[1200px]:w-full w-min background-contact p-8 rounded-lg`}>
+                <form onSubmit={handleSubmit(sendEmail)} autoComplete="off" className={`${props.swagMode && "swag-bg-contact"} flex max-[1200px]:w-full w-min background-contact p-8 rounded-lg`}>
                   <div className='flex flex-1 flex-col gap-4 max-[200px]:w-1/5 max-[250px]:w-1/4 max-[290px]:w-1/3 max-[420px]:w-1/2 max-[380px]:w-2/3 max-[440px]:w-4/5'>
                     {/* First Name & Last Name Inputs */}
                     <div className='flex gap-4 max-[720px]:flex-col'>
                       <div className='flex flex-1 flex-col max-[420px]:text-sm'>
                         <p className='text-white text-lg max-[420px]:text-sm'>First Name</p>
                         <input
+                          autoComplete="off"
                           type="text"
                           {...register('firstName')}
                           disabled={isSubmitting}
@@ -112,6 +116,7 @@ const ContactSection = (props: ContactProps) => {
                       <div className='flex flex-1 flex-col max-[420px]:text-sm'>
                         <p className='text-white text-lg max-[420px]:text-sm'>Last Name</p>
                         <input
+                          autoComplete="off"
                           type="text"
                           {...register('lastName')}
                           disabled={isSubmitting}
@@ -128,6 +133,7 @@ const ContactSection = (props: ContactProps) => {
                       <div className='flex flex-1 flex-col max-[420px]:text-sm'>
                         <p className='text-white text-lg max-[420px]:text-sm'>Email</p>
                         <input
+                          autoComplete="off"
                           type="text"
                           {...register('email')}
                           disabled={isSubmitting}
@@ -141,6 +147,7 @@ const ContactSection = (props: ContactProps) => {
                       <div className='flex flex-1 flex-col max-[420px]:text-sm'>
                         <p className='text-white text-lg max-[420px]:text-sm'>Phone (optional)</p>
                         <input
+                          autoComplete="off"
                           type="text"
                           {...register('phone')}
                           disabled={isSubmitting}
@@ -154,6 +161,7 @@ const ContactSection = (props: ContactProps) => {
                     <div className='flex flex-1 flex-col max-[420px]:text-sm'>
                       <p className='text-white text-lg max-[420px]:text-sm'>Subject</p>
                       <input
+                        autoComplete="off"
                         type="text"
                         {...register('subject')}
                         disabled={isSubmitting}
@@ -169,6 +177,7 @@ const ContactSection = (props: ContactProps) => {
                     <div className='flex flex-1 flex-col max-[420px]:text-sm'>
                       <p className='text-white text-lg max-[420px]:text-sm'>Message</p>
                       <textarea
+                        autoComplete="off"
                         {...register('message')}
                         disabled={isSubmitting}
                         placeholder="Message"

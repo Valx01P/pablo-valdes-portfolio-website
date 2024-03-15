@@ -18,10 +18,13 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
   subject,
 }) => (
   <div>
-    <h1>Welcome, {firstName}!</h1>
-    <p>You have a new message from {email}:</p>
-    <p>Subject: {subject}</p>
-    <p>Message: {message}</p>
-    {phone && <p>Phone: {phone}</p>}
+    <h1>Welcome, Pablo!</h1>
+    <h2>You have a new message from {firstName}: <span>{email}</span></h2>
+    <hr />
+    <h2>{subject}</h2>
+    <h2>{message}</h2>
+    <hr />
+    {phone && <h2>Phone: {phone}</h2>}
+    <h2>Best, {firstName} {lastName}</h2>
   </div>
 );
