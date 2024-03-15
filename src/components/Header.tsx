@@ -66,7 +66,7 @@ type HeaderProps = {
             </button>
           </a>
           <button onClick={props.toggleDarkMode} title='Theme switcher' className="light dark:background text-black dark:text-white p-2 max-[350px]:hidden">
-            <Image src={`/${toggleIconFileName}`} width={30} height={30} alt="dark mode" className='hover:scale-125' />
+            <Image src={`/${toggleIconFileName}`} width={30} height={30} alt="theme switcher" className='hover:scale-125' />
           </button>
 
           {/* Mobile */}
@@ -80,7 +80,7 @@ type HeaderProps = {
             Resume
           </button>
           <button onClick={props.toggleDarkMode} className="light dark:background text-black dark:text-white p-1 min-[350px]:hidden">
-            <Image src={`/${toggleIconFileName}`} width={22} height={22} alt="dark mode" className='hover:scale-125' />
+            <Image src={`/${toggleIconFileName}`} width={22} height={22} alt="theme switcher" className='hover:scale-125' />
           </button>
           {/* Mobile End */}
         </div>

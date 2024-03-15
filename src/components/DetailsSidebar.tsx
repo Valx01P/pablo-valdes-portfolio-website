@@ -53,45 +53,47 @@ const DetailsSidebar = () => {
         </div>
           
         {/* Desktop  Menu */}
-        <div className={`${!isMobileMenuOpen && "hidden"} fixed h-full top-0 left-[70px] w-1/2 max-[900px]:w-2/3 light-3-gradient dark:dark-gradient-2`}>
+        <div className={`${!isMobileMenuOpen && "hidden"} fixed h-full top-0 left-[70px] w-full`}>
+          <div className='fixed h-full top-0 w-1/2 max-[900px]:w-2/3 light-3-gradient dark:dark-gradient-2'>
+            <div className='flex flex-col gap-4 items-center justify-center w-full h-full pb-8'>
+              <div>
+                <h1 className='text-3xl roboto-bold text-black dark:text-white pb-8 px-6 text-center text-wrap'>Project Navigation Menu</h1>
+              </div>
+                          
+              <div>
+                <Link href="/theoretical-stonk-plays">
+                  <h1 className='text-2xl roboto-bold text-black dark:text-white grow'>Theoretical Stonk Plays</h1>
+                </Link>
+              </div>
 
-          <div className='flex flex-col gap-4 items-center justify-center w-full h-full pb-8'>
-            <div>
-              <h1 className='text-3xl roboto-bold text-black dark:text-white pb-8 px-6 text-center text-wrap'>Project Navigation Menu</h1>
-            </div>
-                        
-            <div>
-              <Link href="/theoretical-stonk-plays">
-                <h1 className='text-2xl roboto-bold text-black dark:text-white grow'>Theoretical Stonk Plays</h1>
-              </Link>
-            </div>
+              <div>
+                <Link href="/practical-synth-theme">
+                  <h1 className='text-2xl roboto-bold text-black dark:text-white grow'>Practical Synth Theme</h1>
+                </Link>
+              </div>
+              
+              <div>
+                <Link href="/general-planner">
+                  <h1 className='text-2xl roboto-bold text-black dark:text-white grow'>General Planner</h1>
+                </Link>
+              </div>
 
-            <div>
-              <Link href="/practical-synth-theme">
-                <h1 className='text-2xl roboto-bold text-black dark:text-white grow'>Practical Synth Theme</h1>
-              </Link>
-            </div>
-            
-            <div>
-              <Link href="/general-planner">
-                <h1 className='text-2xl roboto-bold text-black dark:text-white grow'>General Planner</h1>
-              </Link>
-            </div>
+              <div>
+                <Link href="/portfolio">
+                  <h1 className='text-2xl roboto-bold text-black dark:text-white grow'>Portfolio</h1>
+                </Link>
+              </div>
 
-            <div>
-              <Link href="/portfolio">
-                <h1 className='text-2xl roboto-bold text-black dark:text-white grow'>Portfolio</h1>
-              </Link>
-            </div>
-
-            <div>
-              <Link href="/iserver">
-                <h1 className='text-2xl roboto-bold text-black dark:text-white grow'>iServer</h1>
-              </Link>
+              <div>
+                <Link href="/iserver">
+                  <h1 className='text-2xl roboto-bold text-black dark:text-white grow'>iServer</h1>
+                </Link>
+              </div>
             </div>
           </div>
+          <div className='backdrop-blur-sm fixed w-1/2 max-[900px]:w-1/3 h-full top-0 right-[-70px]' onClick={toggleMobileMenu}></div>
         </div>
-          
+
       </div>
     </nav>
 

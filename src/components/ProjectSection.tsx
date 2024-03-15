@@ -32,7 +32,7 @@ const ProjectSection = ( props: ProjectProps ) => {
         {/* Project 1 */}
         <div className={`${props.swagMode && "swag-bg-card"} max-[1420px]:flex-col h-auto w-full flex flex-row mt-16 mb-4 p-8 light-card dark:background-card rounded-lg`}>
           <div className='max-[1420px]:w-auto flex max-[1420px]:justify-center w-1/2 items-center'>
-            <Image src={`/${portfolioSiteFileName}`} width={700} height={350} alt="chess icon" onClick={props.toggleDarkMode} className='cursor-pointer border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
+            <Image src={`/${portfolioSiteFileName}`} width={700} height={350} alt="project preview" onClick={props.toggleDarkMode} className='cursor-pointer border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
           </div>
           <div className='max-[1420px]:w-full flex max-[1420px]:items-center max-[1420px]:pt-8 flex-col items-start gap-4 roboto-medium w-1/2 px-4'>
             <h1 className='max-[420px]:text-xl max-[450px]:text-center text-black dark:text-white text-4xl'>My Portfolio</h1>
@@ -106,13 +106,13 @@ const ProjectSection = ( props: ProjectProps ) => {
             </div>
           </div>
           <div className='max-[1420px]:w-auto flex max-[1420px]:justify-center w-1/2 items-center'>
-            <Image src={`/i-server-site.png`} width={750} height={350} alt="chess icon" className='border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
+            <Image src={`/i-server-site.png`} width={750} height={350} alt="project preview" className='border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
           </div>
         </div>
         {/* Project 3 */}
         <div className={`${props.swagMode && "swag-bg-card"} max-[1420px]:flex-col h-auto w-full flex flex-row my-4 p-8 light-card dark:background-card rounded-lg`}>
           <div className='max-[1420px]:w-auto flex max-[1420px]:justify-center w-1/2 items-center'>
-            <Image src={`/practical-synth-extension.png`} width={700} height={350} alt="chess icon" className='border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
+            <Image src={`/practical-synth-extension.png`} width={700} height={350} alt="project preview" className='border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
           </div>
           <div className='max-[1420px]:w-full flex max-[1420px]:items-center max-[1420px]:pt-8 flex-col items-start gap-4 roboto-medium w-1/2 px-4'>
             <h1 className='max-[420px]:text-xl max-[450px]:text-center flex flex-wrap text-balance text-center justify-center text-black dark:text-white text-4xl'>Practical Synth Theme</h1>
@@ -177,13 +177,13 @@ const ProjectSection = ( props: ProjectProps ) => {
             </div>
           </div>
           <div className='max-[1420px]:w-auto flex max-[1420px]:justify-center w-1/2 items-center'>
-            <Image src={`/t-stonk-plays-site.png`} width={750} height={350} alt="chess icon" className='border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
+            <Image src={`/t-stonk-plays-site.png`} width={750} height={350} alt="project preview" className='border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
           </div>
         </div>
         {/* Project 5 */}
         <div className={`${props.swagMode && "swag-bg-card"} max-[1420px]:flex-col h-auto w-full flex flex-row my-4 p-8 light-card dark:background-card rounded-lg`}>
           <div className='max-[1420px]:w-auto flex max-[1420px]:justify-center w-1/2 items-center'>
-            <Image src={`/g-planner-site.png`} width={700} height={350} alt="chess icon" className='border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
+            <Image src={`/g-planner-site.png`} width={700} height={350} alt="project preview" className='border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
           </div>
           <div className='max-[1420px]:w-full flex max-[1420px]:items-center max-[1420px]:pt-8 flex-col items-start gap-4 roboto-medium w-1/2 px-4'>
             <h1 className='max-[420px]:text-xl max-[450px]:text-center flex flex-wrap text-balance text-center justify-center text-black dark:text-white text-4xl'>General Planner</h1>
@@ -243,7 +243,7 @@ const ProjectSection = ( props: ProjectProps ) => {
             </div>
           </div>
           <div className='max-[1420px]:w-auto flex max-[1420px]:justify-center w-1/2 items-center'>
-            <Image src={`/misc-box.svg`} width={550} height={350} alt="chess icon" className='border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
+            <Image src={`/misc-box.svg`} width={550} height={350} alt="project preview" className='border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
           </div>
         </div>
       </div>

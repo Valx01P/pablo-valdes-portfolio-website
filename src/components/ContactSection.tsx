@@ -182,7 +182,7 @@ const ContactSection = (props: ContactProps) => {
 
                     {/* Submit Button */}
                     <button type="submit" title='Do it' disabled={isSubmitting} className={`p-2 rounded-md send-btn max-[420px]:text-sm ${isSubmitting ? 'bg-gray-600 border-gray-600' : 'bg-blue-500'} text-white`}>
-                      {isSubmitting ? 'Loading' : 'Send Message'}
+                      {isSubmitting ? 'Loading...' : 'Send Message'}
                     </button>
                   </div>
                 </form>
