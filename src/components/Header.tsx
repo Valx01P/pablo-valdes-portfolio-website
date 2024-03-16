@@ -22,7 +22,7 @@ type HeaderProps = {
   };
 
   return (
-    <header id='header' className="h-[11dvh] light dark:background text-black dark:text-white w-full max-sm:px-3 flex justify-center">
+    <header id='header' className="h-auto light dark:background text-black dark:text-white w-full max-sm:px-3 flex justify-center">
       <nav className="layout-container mx-auto flex items-center justify-between py-4">
         {/* Title */}
         <div className="flex items-center w-1/4 max-lg:w-1/2 max-[520px]:hidden gap-5 justify-start">

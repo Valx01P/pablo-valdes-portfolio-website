@@ -30,7 +30,7 @@ const AboutSection = (props: AboutProps) => {
             </p>
           </div>
 
-          <div className='flex flex-1 flew-row max-[1400px]:flex-col h-auto max-[1400px]:gap-4 border-gradient-2 dark:border-gradient'>
+          <div className='flex flex-1 flew-row max-[1400px]:flex-col h-auto max-[1400px]:gap-4 max-[1400px]:justify-center max-[1400px]:items-center border-gradient-2 dark:border-gradient'>
             <div className='flex flex-1 flex-col gap-2'>
               <h2 className='text-black dark:text-white text-3xl leading-10 w-auto pt-5 max-[420px]:text-lg'>How it&apos;s going</h2>
               <p className='text-black dark:text-white text-xl leading-10 mr-8 max-[420px]:text-sm'>About two years later, after a long journey of learning, experimenting, struggling, and so much more, I improved my Fullstack Development skills drastically. 
@@ -41,7 +41,7 @@ const AboutSection = (props: AboutProps) => {
                 have also gifted me a fellowship in <span className='underline dark:no-underline roboto-medium-italic text-green-500 text-2xl max-[420px]:text-base'><a href="https://mlt.org/" target="_blank">MLT</a></span>, a program for <span className='underline dark:no-underline roboto-medium-italic text-fuchsia-500 text-2xl max-[420px]:text-base'><a href="https://www.youtube.com/watch?v=z7bWsvmUA8g" target="_blank">diverse talent</a></span> that I am truly grateful to be a part of.
               </p>
             </div>
-            <div className='flex flex-1 justify-center w-auto pt-5'>
+            <div className='flex flex-1 justify-center max-[1400px]:me-img w-auto pt-5'>
               <Image src={`/${myselfFileName}`} width={1080} height={1080} alt="chess icon" className='rounded-lg cursor-pointer' onClick={props.toggleDarkMode} />
             </div>
           </div>

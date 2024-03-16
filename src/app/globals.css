@@ -74,6 +74,17 @@ body {
     }
 }
 
+@media (max-height: 850px) {
+  .max-h-850px\:h-auto {
+      height: auto;
+  }
+}
+
+  .me-img {
+    @apply 
+    max-[1400px]:max-w-[550px] max-[1400px]:max-h-[550px];
+  }
+
   .yt-img {
     @apply 
     max-[1200px]:max-w-[1000px] max-[1200px]:max-h-[530px]
