@@ -141,7 +141,7 @@ const DetailsSidebar = () => {
             {mobileIcon}
           </button>
 
-          <div className='flex flex-col gap-4 items-center justify-center w-full h-max'>
+          <div className='flex flex-col gap-4 items-center justify-center w-full h-full'>
             <div>
               <h1 className='text-3xl roboto-bold text-black dark:text-white pb-8 px-6 text-center text-wrap'>Project Navigation Menu</h1>
             </div>
