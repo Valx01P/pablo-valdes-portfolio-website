@@ -13,7 +13,7 @@ const HeroSection = (props: HeroProps) => {
 
 
   return (
-    <section id='hero' className="h-auto max-[1400px]:pt-8 pt-16 pb-16 w-full light dark:background text-black dark:text-white flex justify-center items-center ">
+    <section id='hero' className="h-auto max-[1500px]:pt-2 pt-16 pb-16 w-full light dark:background text-black dark:text-white flex justify-center items-center ">
       {/* bg-gradient-to-b from-[#111111] via-[#7149c6a9] to-[#111111] backdrop-blur-3xl */}
 
       <div className="layout-container flex flex-row max-[850px]:flex-col justify-between max-[850px]:justify-center items-center gap-y-8">
