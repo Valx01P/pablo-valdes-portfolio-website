@@ -2,11 +2,13 @@
 import React from 'react'
 import { useTheme } from "@/app/lib/store";
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 
 
 const DetailsSidebar = () => {
+  const pathname = usePathname();
 
   const { darkMode, toggleDarkMode } = useTheme();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -55,6 +57,9 @@ const DetailsSidebar = () => {
         {/* Desktop  Menu */}
         <div className={`${!isMobileMenuOpen && "hidden"} fixed h-full top-0 left-[70px] w-full`}>
           <div className='fixed h-full top-0 w-1/2 max-[900px]:w-2/3 light-3-gradient dark:dark-gradient-2'>
+            <button onClick={toggleMobileMenu} className="bg-inherit text-black dark:text-white p-2 absolute top-4 right-4">
+              {mobileIcon}
+            </button>
             <div className='flex flex-col gap-4 items-center justify-center w-full h-full pb-8'>
               <div>
                 <h1 className='text-3xl roboto-bold text-black dark:text-white pb-8 px-6 text-center text-wrap'>Project Navigation Menu</h1>
@@ -62,31 +67,37 @@ const DetailsSidebar = () => {
                           
               <div>
                 <Link href="/theoretical-stonk-plays">
-                  <h1 className='text-2xl roboto-bold text-black dark:text-white grow'>Theoretical Stonk Plays</h1>
+                  <h1 className={`text-2xl roboto-bold text-wrap text-center ${pathname === '/theoretical-stonk-plays' ? 'text-blue-500' : 'text-black dark:text-white'} grow`}>Theoretical Stonk Plays</h1>
                 </Link>
               </div>
 
               <div>
                 <Link href="/practical-synth-theme">
-                  <h1 className='text-2xl roboto-bold text-black dark:text-white grow'>Practical Synth Theme</h1>
+                  <h1 className={`text-2xl roboto-bold text-wrap text-center ${pathname === '/practical-synth-theme' ? 'text-blue-500' : 'text-black dark:text-white'} grow`}>Practical Synth Theme</h1>
                 </Link>
               </div>
               
               <div>
                 <Link href="/general-planner">
-                  <h1 className='text-2xl roboto-bold text-black dark:text-white grow'>General Planner</h1>
+                  <h1 className={`text-2xl roboto-bold ${pathname === '/general-planner' ? 'text-blue-500' : 'text-black dark:text-white'} grow`}>General Planner</h1>
                 </Link>
               </div>
 
               <div>
                 <Link href="/portfolio">
-                  <h1 className='text-2xl roboto-bold text-black dark:text-white grow'>Portfolio</h1>
+                  <h1 className={`text-2xl roboto-bold ${pathname === '/portfolio' ? 'text-blue-500' : 'text-black dark:text-white'} grow`}>Portfolio</h1>
                 </Link>
               </div>
 
               <div>
                 <Link href="/iserver">
-                  <h1 className='text-2xl roboto-bold text-black dark:text-white grow'>iServer</h1>
+                  <h1 className={`text-2xl roboto-bold ${pathname === '/iserver' ? 'text-blue-500' : 'text-black dark:text-white'} grow`}>iServer</h1>
+                </Link>
+              </div>
+
+              <div>
+                <Link href="/misc">
+                  <h1 className={`text-2xl roboto-bold pt-8 ${pathname === '/misc' ? 'text-blue-500' : 'text-black dark:text-white'} grow`}>Misc Projects (4)</h1>
                 </Link>
               </div>
             </div>
@@ -98,7 +109,7 @@ const DetailsSidebar = () => {
     </nav>
 
     {/* Mobile Nav */}
-    <nav className={`${darkMode && "dark"} h-[70px] w-full bg-transparent text-black dark:text-white fixed min-[430px]:hidden p-1`}>
+    <nav className={`${darkMode && "dark"} h-[70px] w-full bg-transparent text-black dark:text-white fixed min-[431px]:hidden p-1`}>
       <div className='flex flex-row gap-8 light-2-gradient dark:dark-gradient h-full flex-1 items-center rounded-full border-2px border-black px-4'>
 
         <div className='flex flex-row gap-6 justify-between flex-1 px-1'>
@@ -137,31 +148,37 @@ const DetailsSidebar = () => {
                         
             <div>
               <Link href="/theoretical-stonk-plays">
-                <h1 className='text-2xl roboto-bold text-black dark:text-white grow'>Theoretical Stonk Plays</h1>
+                <h1 className={`text-2xl roboto-bold text-wrap text-center ${pathname === '/theoretical-stonk-plays' ? 'text-blue-500' : 'text-black dark:text-white'} grow`}>Theoretical Stonk Plays</h1>
               </Link>
             </div>
 
             <div>
               <Link href="/practical-synth-theme">
-                <h1 className='text-2xl roboto-bold text-black dark:text-white grow'>Practical Synth Theme</h1>
+                <h1 className={`text-2xl roboto-bold text-wrap text-center ${pathname === '/practical-synth-theme' ? 'text-blue-500' : 'text-black dark:text-white'} grow`}>Practical Synth Theme</h1>
               </Link>
             </div>
             
             <div>
               <Link href="/general-planner">
-                <h1 className='text-2xl roboto-bold text-black dark:text-white grow'>General Planner</h1>
+                <h1 className={`text-2xl roboto-bold ${pathname === '/general-planner' ? 'text-blue-500' : 'text-black dark:text-white'} grow`}>General Planner</h1>
               </Link>
             </div>
 
             <div>
               <Link href="/portfolio">
-                <h1 className='text-2xl roboto-bold text-black dark:text-white grow'>Portfolio</h1>
+                <h1 className={`text-2xl roboto-bold ${pathname === '/portfolio' ? 'text-blue-500' : 'text-black dark:text-white'} grow`}>Portfolio</h1>
               </Link>
             </div>
 
             <div>
               <Link href="/iserver">
-                <h1 className='text-2xl roboto-bold text-black dark:text-white grow'>iServer</h1>
+                <h1 className={`text-2xl roboto-bold ${pathname === '/iserver' ? 'text-blue-500' : 'text-black dark:text-white'} grow`}>iServer</h1>
+              </Link>
+            </div>
+
+            <div>
+              <Link href="/misc">
+                <h1 className={`text-2xl roboto-bold ${pathname === '/misc' ? 'text-blue-500' : 'text-black dark:text-white'} grow`}>Misc Projects (4)</h1>
               </Link>
             </div>
           </div>

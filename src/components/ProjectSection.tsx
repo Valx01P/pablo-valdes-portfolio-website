@@ -163,7 +163,7 @@ const ProjectSection = ( props: ProjectProps ) => {
               </div>
             </div>
             <div className='max-[420px]:text-sm flex max-[420px]:flex-col max-[420px]:items-center flex-row text-xl gap-4'>
-              <Link href="/theoretical-stonks-plays" title='Open details page for this project' className='btn-transition-light dark:btn-transition-dark border-2 rounded-sm bg-transparent py-1 pl-3.5 pr-4 hover:scale-110 text-black dark:text-white border-black dark:border-white relative'>Details
+              <Link href="/theoretical-stonk-plays" title='Open details page for this project' className='btn-transition-light dark:btn-transition-dark border-2 rounded-sm bg-transparent py-1 pl-3.5 pr-4 hover:scale-110 text-black dark:text-white border-black dark:border-white relative'>Details
               {arrow}
               </Link>
               <div className='max-[420px]:text-sm flex flex-row text-xl gap-4 items-center'>
@@ -237,7 +237,7 @@ const ProjectSection = ( props: ProjectProps ) => {
               </div>
             </div>
             <div className='max-[420px]:text-sm flex max-[420px]:flex-col max-[420px]:items-center flex-row text-xl gap-4'>
-              <Link href="/" title='Open details page for these lesser projects' className='btn-transition-light dark:btn-transition-dark border-2 rounded-sm bg-transparent py-1 pl-3.5 pr-4 hover:scale-110 text-black dark:text-white border-black dark:border-white relative'>Details
+              <Link href="/misc" title='Open details page for these lesser projects' className='btn-transition-light dark:btn-transition-dark border-2 rounded-sm bg-transparent py-1 pl-3.5 pr-4 hover:scale-110 text-black dark:text-white border-black dark:border-white relative'>Details
               {arrow}
               </Link>
             </div>

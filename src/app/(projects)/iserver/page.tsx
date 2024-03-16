@@ -3,7 +3,7 @@ import { useTheme } from "@/app/lib/store";
 
 export default function IServer() {
 
-  const { darkMode, toggleDarkMode } = useTheme();
+  const { darkMode } = useTheme();
 
   const currentYear = new Date().getFullYear();
 
@@ -11,7 +11,7 @@ export default function IServer() {
     <main className={`${darkMode && "dark"} w-auto dark:bg-yt light-gradient text-black dark:text-white h-auto`}>
       <div className="dark:bg-yt light py-8 h-full flex flex-col flex-1 justify-center items-center max-[430px]:ml-[0px] ml-[70px] max-[430px]:pt-[70px]">
         <div>
-          <h1 className="max-[420px]:text-xl text-black dark:text-white text-3xl">Portfolio Project</h1>
+          <h1 className="max-[420px]:text-xl text-black dark:text-white text-3xl">iServer Project</h1>
         </div>
         <div>
           <h1 className="max-[420px]:text-lg text-black dark:text-white text-2xl">Video Preview</h1>
@@ -20,24 +20,24 @@ export default function IServer() {
         <iframe className="yt-img" width="1120" height="630" src="https://www.youtube.com/embed/zKs-zxrPh6E" title="iServer Website - Project 4 - By Pablo Valdes" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>        </div>
         <div className="text-wrap px-4 py-4">
           <h1 className="max-[420px]:text-xl text-black dark:text-white text-3xl">Description</h1>
-          <p className="max-[420px]:text-sm text-black dark:text-white">My Full Stack Developer Portfolio, this website is deployed via Vercel onto my own domain, pablovaldes.com. The website has a light, dark, and swag theme, each made for best visual appeal, the site is also responsive on mobile devices. I&apos;ve also added a form with validation for users to send me email messages and a project details page for in depth details on any of my given project. I used Figma to create some assets such as the chess pieces in the hero section and box in the misc project card. For icons I went with various sources like from ironscout and fontawesome. For fonts I used googlefonts to get fonts like Merriweather and Roboto.</p>
+          <p className="max-[420px]:text-sm text-black dark:text-white">This project is a website all about uploading images, design inspired by imgbb.com. In this project I&apos;ve implement third party auth using clerk, so what that means is that most page routes in the website are protected and the only way to access these protected routes are to authenticate with clerk. Once you do, you&apos;ll be redirected to your dashboard where you&apos;ll be able to upload images and then be able to get the links to those saved images to use them on websites or simply share them. You can delete your own images and delete your own account if you wish, however deleting your account consequently deletes all your images. The website is mobile responsive and was made with the purpose of understanding third party auth solutions, webhooks, and image uploading to a database.</p>
         </div>
         <div className="text-wrap px-4">
           <h1 className="max-[420px]:text-xl text-black dark:text-white text-3xl">Tech Used</h1>
-          <p className="max-[420px]:text-sm text-black dark:text-white">I used Nextjs, Typescript, and TailwindCSS to make the majority of the site. I used Zustand since I wanted to share theme state globally so other page routes could access them. Using this theme state I was able to conditionally apply CSS classes to element blocks and create light, dark, and swag themes. For email sending I used Resend, so basically after configuring the DNS records on my website to use Resend I was able to make a POST api route so when the messages submitted from my form would be sent to me I&apos;d catch the POST requests and then using Resend and email templates I was able to process the form data so I could receive the messages via my email. And to make sure the data I got from the contact form was more or less not random gibberish I used Zod with React Hook Form for form validation. I also added a toast on succession of the form submitting to let users know if their message was successfully sent or not.</p>
+          <p className="max-[420px]:text-sm text-black dark:text-white">For this project I mainly used Nextjs, Typescript, TailwindCSS, and shadcn. I also used uploadthing for image uploading, clerk for authentication, and mongodb as a database. The main logic of the website was done when a user makes an account with clerk, which then using webhooks would give our database the same data to make our own user which we could then use to associate images with that specific user and delete them and their images when they delete their account using our clerk auth. Doing that required creating a relatively simple serverless API, the project works as seen in the preview video, however sometimes for some unknown reasons the clerk authentication does not work for some people, I&apos;ve gone on the clerk discord and had a developer check out my app, but they haven&apos;t had a problem signing up or logging in. Unfortunately my friends have had some problems signing up using my clerk auth, my best guess is because of some google security reasons, so in the future I will likely be making my own auth from scratch or using auth providers like Github and Google directly to guarantee working auth anywhere.</p>
         </div>
         <div className="text-wrap px-4 py-4">
           <h1 className="max-[420px]:text-xl text-black dark:text-white text-3xl">Key take away</h1>
-          <p className="max-[420px]:text-sm text-black dark:text-white">In this project of mine you currently find yourself in, it&apos;s one of my most thoughtful works yet and I truly hope you&apos;ve noticed. It&apos;s my portfolio website of course, but much more than that, it&apos;s a showcase of my design skills, up until now I haven&apos;t made many projects that focus on design or even responsiveness, I&apos;ve been focused on the logic side and learning new skills. In this focus, I realize now, what was lost. I hadn&apos;t been able to notice that the true beauty of a website isn&apos;t just it&apos;s logic, but the culmination of that hand and hand with an inspired and responsive design, and although it took me this long to realize this truth, this portfolio marks the day that I understood what true beauty is and this lesson is one I will take with me through all future projects.</p>
+          <p className="max-[420px]:text-sm text-black dark:text-white">The most crucial thing I&apos;ve learned in this project are webhooks for sure. Before this project I never even knew webhooks exist, but now I understand their importance when working with third party app solutions. On a lesser note I gained a somewhat better understanding of how image uploading works, but I still feel as I need to do just another project with images to really nail it down, likely one where I just turn uploaded images into base64 strings and store that in a database, just spit balling here though. In any case I&apos;ve also learned a bit more on auth and how third party solutions can be used, which while I do like, I feel as I should implement my own auth to have more control over it, which while some may see as a waste of time, I&apos;m certain it&apos;ll be a good learning experience. In short, this project gave me a better understanding of webhooks, image uploading, and third party auth solutions.</p>
         </div>
         <div className="flex max-[850px]:justify-center max-[850px]:items-center w-full px-4 pb-4 pt-8 flex-row items-start gap-6">
           <div>
-            <a href="/">
+            <a href="https://image-transfer-site-master.vercel.app/" target="_blank" rel="noopener noreferrer" title='Go to the deployed live site'>
               <h1 className="max-[420px]:text-xl text-blue-500 underline text-2xl grow">Live Site</h1>
             </a>
           </div>
           <div>
-            <a href="/">
+            <a href="https://github.com/Valx01P/image-transfer-site-master" target="_blank" rel="noopener noreferrer" title='View the Github Repository for this project'>
               <h1 className="max-[420px]:text-xl text-blue-500 underline text-2xl grow">Source Code</h1>
             </a>
           </div>

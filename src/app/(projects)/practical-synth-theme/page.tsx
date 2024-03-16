@@ -3,7 +3,7 @@ import { useTheme } from "@/app/lib/store";
 
 export default function Practical_Synth_Theme() {
 
-  const { darkMode, toggleDarkMode } = useTheme();
+  const { darkMode } = useTheme();
 
   const currentYear = new Date().getFullYear();
 
@@ -11,7 +11,7 @@ export default function Practical_Synth_Theme() {
     <main className={`${darkMode && "dark"} w-auto dark:bg-yt light-gradient text-black dark:text-white h-auto`}>
       <div className="dark:bg-yt light py-8 h-full flex flex-col flex-1 justify-center items-center max-[430px]:ml-[0px] ml-[70px] max-[430px]:pt-[70px]">
         <div>
-          <h1 className="max-[420px]:text-xl text-black dark:text-white text-3xl">Portfolio Project</h1>
+          <h1 className="max-[420px]:text-xl text-black dark:text-white text-balance text-center text-3xl">Practical Synth Theme Project</h1>
         </div>
         <div>
           <h1 className="max-[420px]:text-lg text-black dark:text-white text-2xl">Video Preview</h1>
@@ -21,24 +21,24 @@ export default function Practical_Synth_Theme() {
         </div>
         <div className="text-wrap px-4 py-4">
           <h1 className="max-[420px]:text-xl text-black dark:text-white text-3xl">Description</h1>
-          <p className="max-[420px]:text-sm text-black dark:text-white">My Full Stack Developer Portfolio, this website is deployed via Vercel onto my own domain, pablovaldes.com. The website has a light, dark, and swag theme, each made for best visual appeal, the site is also responsive on mobile devices. I&apos;ve also added a form with validation for users to send me email messages and a project details page for in depth details on any of my given project. I used Figma to create some assets such as the chess pieces in the hero section and box in the misc project card. For icons I went with various sources like from ironscout and fontawesome. For fonts I used googlefonts to get fonts like Merriweather and Roboto.</p>
+          <p className="max-[420px]:text-sm text-black dark:text-white">In this project I create a Visual Studio Code Extension, this extension changes the the Visual Studio Code Theme to my specific one named Practical Synth Theme. I made this Theme because I couldn&apos;t find any Synthwave or Cyberpunk like themes that I liked, most just gave me eye strain, didn&spos;t captivate me, or just had too much contrast that I couldn&apos;t focus on actually coding with them, so I made one that satisfied all the criteria I wanted.</p>
         </div>
         <div className="text-wrap px-4">
           <h1 className="max-[420px]:text-xl text-black dark:text-white text-3xl">Tech Used</h1>
-          <p className="max-[420px]:text-sm text-black dark:text-white">I used Nextjs, Typescript, and TailwindCSS to make the majority of the site. I used Zustand since I wanted to share theme state globally so other page routes could access them. Using this theme state I was able to conditionally apply CSS classes to element blocks and create light, dark, and swag themes. For email sending I used Resend, so basically after configuring the DNS records on my website to use Resend I was able to make a POST api route so when the messages submitted from my form would be sent to me I&apos;d catch the POST requests and then using Resend and email templates I was able to process the form data so I could receive the messages via my email. And to make sure the data I got from the contact form was more or less not random gibberish I used Zod with React Hook Form for form validation. I also added a toast on succession of the form submitting to let users know if their message was successfully sent or not.</p>
+          <p className="max-[420px]:text-sm text-black dark:text-white">This wasn&apos;t that logically impressive of a project, it was more of a designing like project, I used &apos;yo code&apos; to begin the development of my vscode theme extension. Afterwards once I restyled all the main vscode classes in the theme json I had then created an Azure developer account and uploaded my extension to the Visual Studio Marketplace where you can see it live right now and download it if you&apos;d like.</p>
         </div>
         <div className="text-wrap px-4 py-4">
           <h1 className="max-[420px]:text-xl text-black dark:text-white text-3xl">Key take away</h1>
-          <p className="max-[420px]:text-sm text-black dark:text-white">In this project of mine you currently find yourself in, it&apos;s one of my most thoughtful works yet and I truly hope you&apos;ve noticed. It&apos;s my portfolio website of course, but much more than that, it&apos;s a showcase of my design skills, up until now I haven&apos;t made many projects that focus on design or even responsiveness, I&apos;ve been focused on the logic side and learning new skills. In this focus, I realize now, what was lost. I hadn&apos;t been able to notice that the true beauty of a website isn&apos;t just it&apos;s logic, but the culmination of that hand and hand with an inspired and responsive design, and although it took me this long to realize this truth, this portfolio marks the day that I understood what true beauty is and this lesson is one I will take with me through all future projects.</p>
+          <p className="max-[420px]:text-sm text-black dark:text-white">This project, my Visual Studio Code Extension, it was less of me just trying to do a project for the sake of improving my coding ability or learning something and more of me just creating something for it&apos;s actual application and use. So I didn&apos;t get too many meaningful takeaways from this project, other than just a sick theme and the strengthened belief that you can create anything you put your mind to.</p>
         </div>
         <div className="flex max-[850px]:justify-center max-[850px]:items-center w-full px-4 pb-4 pt-8 flex-row items-start gap-6">
           <div>
-            <a href="/">
-              <h1 className="max-[420px]:text-xl text-blue-500 underline text-2xl grow">Live Site</h1>
+            <a href="https://marketplace.visualstudio.com/items?itemName=PabloValdes019.practical-synth" target="_blank" rel="noopener noreferrer" title='View live on Visual Studio Marketplace' >
+              <h1 className="max-[420px]:text-xl text-blue-500 underline text-2xl grow">Marketplace Extension</h1>
             </a>
           </div>
           <div>
-            <a href="/">
+            <a href="https://github.com/Valx01P/practical-synth" target="_blank" rel="noopener noreferrer" title='View the Github Repository for this project' >
               <h1 className="max-[420px]:text-xl text-blue-500 underline text-2xl grow">Source Code</h1>
             </a>
           </div>

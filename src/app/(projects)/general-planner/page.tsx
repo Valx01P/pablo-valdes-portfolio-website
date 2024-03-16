@@ -3,7 +3,7 @@ import { useTheme } from "@/app/lib/store";
 
 export default function General_Planner() {
 
-  const { darkMode, toggleDarkMode } = useTheme();
+  const { darkMode } = useTheme();
 
   const currentYear = new Date().getFullYear();
 
@@ -11,7 +11,7 @@ export default function General_Planner() {
     <main className={`${darkMode && "dark"} w-auto dark:bg-yt light-gradient text-black dark:text-white h-auto`}>
       <div className="dark:bg-yt light py-8 h-full flex flex-col flex-1 justify-center items-center max-[430px]:ml-[0px] ml-[70px] max-[430px]:pt-[70px]">
         <div>
-          <h1 className="max-[420px]:text-xl text-black dark:text-white text-3xl">Portfolio Project</h1>
+          <h1 className="max-[420px]:text-xl text-black dark:text-white text-balance text-center text-3xl">General Planner Project</h1>
         </div>
         <div>
           <h1 className="max-[420px]:text-lg text-black dark:text-white text-2xl">Video Preview</h1>
@@ -21,24 +21,24 @@ export default function General_Planner() {
         </div>
         <div className="text-wrap px-4 py-4">
           <h1 className="max-[420px]:text-xl text-black dark:text-white text-3xl">Description</h1>
-          <p className="max-[420px]:text-sm text-black dark:text-white">My Full Stack Developer Portfolio, this website is deployed via Vercel onto my own domain, pablovaldes.com. The website has a light, dark, and swag theme, each made for best visual appeal, the site is also responsive on mobile devices. I&apos;ve also added a form with validation for users to send me email messages and a project details page for in depth details on any of my given project. I used Figma to create some assets such as the chess pieces in the hero section and box in the misc project card. For icons I went with various sources like from ironscout and fontawesome. For fonts I used googlefonts to get fonts like Merriweather and Roboto.</p>
+          <p className="max-[420px]:text-sm text-black dark:text-white">My first Full Stack project, a seemingly simple general planner where you can keep track of info, income, contacts, and users if your an Admin. This website has a frontend and backend each deployed separately using onRender. On logging in a user receives an access token that lets them access the website&apos;s protected routes and if their role is a user then they can only see their own content and nothing from other users. However, if the current user has the role of an admin they can see other user data and even create new users. Now a user upon logging in also receives a refresh token, so when their access token runs out they can get a new one, and when that refresh token runs out, then and only then will they be required to login again. The purpose of a refresh token is to implement persisted login, so if a user doesn&apos;t want to stay logged in for a long duration they can choose to opt out of persisted login and not receive a refresh token, this is helpful when using a computer you regularly don&apos;t use. Both the user and admin roles can create content and both can edit or delete their own content, but only the admin can edit or delete user content besides their own.</p>
         </div>
         <div className="text-wrap px-4">
           <h1 className="max-[420px]:text-xl text-black dark:text-white text-3xl">Tech Used</h1>
-          <p className="max-[420px]:text-sm text-black dark:text-white">I used Nextjs, Typescript, and TailwindCSS to make the majority of the site. I used Zustand since I wanted to share theme state globally so other page routes could access them. Using this theme state I was able to conditionally apply CSS classes to element blocks and create light, dark, and swag themes. For email sending I used Resend, so basically after configuring the DNS records on my website to use Resend I was able to make a POST api route so when the messages submitted from my form would be sent to me I&apos;d catch the POST requests and then using Resend and email templates I was able to process the form data so I could receive the messages via my email. And to make sure the data I got from the contact form was more or less not random gibberish I used Zod with React Hook Form for form validation. I also added a toast on succession of the form submitting to let users know if their message was successfully sent or not.</p>
+          <p className="max-[420px]:text-sm text-black dark:text-white">I mainly used React, Redux, CSS, Javascript, Node, Express, and MongoDB for this project. I took advantage of many useful npm packages, such as ones for encrypting passwords and creating cookies. I used Mongoose to simply working with MongoDB schemas. And in the frontend I used Redux to manage auth state and RTK query to communicate with my backend API. The login form I have uses Regex (Regular Expressions) for username and password validation. Unlike most of my recent projects, for this one I simply used pure CSS and my (at the time) poor design skills. For making the backend server API, I made use of the MVC design pattern, that is Model View Controller, simply put, I&apos;d make my database model and abstract the API route logic in a controller which would then process API requests and this would typically make changes to the frontend or views, depending on the http request.</p>
         </div>
         <div className="text-wrap px-4 py-4">
           <h1 className="max-[420px]:text-xl text-black dark:text-white text-3xl">Key take away</h1>
-          <p className="max-[420px]:text-sm text-black dark:text-white">In this project of mine you currently find yourself in, it&apos;s one of my most thoughtful works yet and I truly hope you&apos;ve noticed. It&apos;s my portfolio website of course, but much more than that, it&apos;s a showcase of my design skills, up until now I haven&apos;t made many projects that focus on design or even responsiveness, I&apos;ve been focused on the logic side and learning new skills. In this focus, I realize now, what was lost. I hadn&apos;t been able to notice that the true beauty of a website isn&apos;t just it&apos;s logic, but the culmination of that hand and hand with an inspired and responsive design, and although it took me this long to realize this truth, this portfolio marks the day that I understood what true beauty is and this lesson is one I will take with me through all future projects.</p>
+          <p className="max-[420px]:text-sm text-black dark:text-white">This was a tough one, while making this application would be simple enough for me now and would likely only take me a week or two, when I made this website I didn&apos;t have any experience creating a full stack application and much less deploying it. Needless to say I was in tutorial hell making this project and drilling in my brain all the frontend and backend concepts to create this website until I finally understood those crucial concepts enough to make something remotely similar to what I was thinking of, this took me a little over a month to complete. This project was my hardest simply because I lacked so many crucial skills at the time of making it, likewise this project was crucial in my foundational knowledge for that very same reason, and while it isn&apos;t too responsive or very complex in terms of functionality for users, I believe this was my best project in terms of learning. It&apos;s helped me rethink my way of learning, that is to say I now believe learning should be challenging, out of the frying pan and into the fire, that&apos;s truly how you learn the best.</p>
         </div>
         <div className="flex max-[850px]:justify-center max-[850px]:items-center w-full px-4 pb-4 pt-8 flex-row items-start gap-6">
           <div>
-            <a href="/">
+            <a href="https://general-planner.onrender.com/" target="_blank" rel="noopener noreferrer" title='Go to the deployed live site' >
               <h1 className="max-[420px]:text-xl text-blue-500 underline text-2xl grow">Live Site</h1>
             </a>
           </div>
           <div>
-            <a href="/">
+            <a href="https://github.com/Valx01P/generalplanner" target="_blank" rel="noopener noreferrer" title='View the Github Repository for this project' >
               <h1 className="max-[420px]:text-xl text-blue-500 underline text-2xl grow">Source Code</h1>
             </a>
           </div>

@@ -81,7 +81,10 @@ body {
     max-[900px]:max-w-[600px] max-[900px]:max-h-[330px]
     max-[700px]:max-w-[400px] max-[700px]:max-h-[230px]
     max-[500px]:max-w-[300px] max-[500px]:max-h-[300px]
-    max-[430px]:max-w-[220px] max-[430px]:max-h-[400px];
+    max-[430px]:max-w-[330px] max-[430px]:max-h-[400px]
+    max-[360px]:max-w-[280px] max-[360px]:max-h-[400px]
+    max-[300px]:max-w-[240px] max-[300px]:max-h-[400px]
+    max-[250px]:max-w-[220px] max-[250px]:max-h-[400px];
   }
 
   .send-btn {

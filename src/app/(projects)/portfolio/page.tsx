@@ -3,7 +3,7 @@ import { useTheme } from "@/app/lib/store";
 
 export default function Portfolio() {
 
-  const { darkMode, toggleDarkMode } = useTheme();
+  const { darkMode } = useTheme();
   const currentYear = new Date().getFullYear();
 
   return ( //if darkMode is true, add the dark class to the main element
@@ -25,7 +25,7 @@ export default function Portfolio() {
         </div>
         <div className="text-wrap px-4">
           <h1 className="max-[420px]:text-xl text-black dark:text-white text-3xl">Tech Used</h1>
-          <p className="max-[420px]:text-sm text-black dark:text-white">I used Nextjs, Typescript, and TailwindCSS to make the majority of the site. I used Zustand since I wanted to share theme state globally so other page routes could access them. Using this theme state I was able to conditionally apply CSS classes to element blocks and create light, dark, and swag themes. For email sending I used Resend, so basically after configuring the DNS records on my website to use Resend I was able to make a POST api route so when the messages submitted from my form would be sent to me I&apos;d catch the POST requests and then using Resend and email templates I was able to process the form data so I could receive the messages via my email. And to make sure the data I got from the contact form was more or less not random gibberish I used Zod with React Hook Form for form validation. I also added a toast on succession of the form submitting to let users know if their message was successfully sent or not.</p>
+          <p className="max-[420px]:text-sm text-black dark:text-white">I used Nextjs, Typescript, and TailwindCSS to make the majority of the site. I used Zustand since I wanted to share theme state globally so other page routes could access them. Using this theme state I was able to conditionally apply CSS classes to element blocks and create light, dark, and swag themes. For email sending I used Resend, so basically after configuring the DNS records on my website to use Resend I was able to make a POST api route so when the messages submitted from my form would be sent to me I&apos;d catch the POST requests and then using Resend and email templates I was able to process the form data so I could receive the messages via my email. And to make sure the data I got from the contact form was more or less not random gibberish I used Zod with React Hook Form for form validation. But even with these precautions I&apos;ve also rate limited the API route to send me emails, so a given user cannot send me more than 3 emails per 10 minutes based on their ip address. Furthermore I&apos;ve added a toast (a brief message) when a user submits the form, if the submission is successful then they will be given a success toast, if they have been rate limited or encounter an error then they will be given an unsuccessful toast with the reason why.</p>
         </div>
         <div className="text-wrap px-4 py-4">
           <h1 className="max-[420px]:text-xl text-black dark:text-white text-3xl">Key take away</h1>
@@ -33,12 +33,12 @@ export default function Portfolio() {
         </div>
         <div className="flex max-[850px]:justify-center max-[850px]:items-center w-full px-4 pb-4 pt-8 flex-row items-start gap-6">
           <div>
-            <a href="/">
+            <a href="/" title='Go to the deployed live site' >
               <h1 className="max-[420px]:text-xl text-blue-500 underline text-2xl grow">Live Site</h1>
             </a>
           </div>
           <div>
-            <a href="/">
+            <a href="https://github.com/Valx01P/pablo-valdes-portfolio-website" target="_blank" rel="noopener noreferrer" title='View the Github Repository for this project' >
               <h1 className="max-[420px]:text-xl text-blue-500 underline text-2xl grow">Source Code</h1>
             </a>
           </div>
