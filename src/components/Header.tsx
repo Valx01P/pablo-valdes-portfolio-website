@@ -57,7 +57,7 @@ type HeaderProps = {
           <a href='https://github.com/Valx01P' target="_blank" rel="noopener noreferrer" className='flex text-black max-[350px]:hidden'>
             <Image src={`/${githubIconFileName}`} title='View my Github profile' width={30} height={30} alt="github icon" className='hover:scale-125' />
           </a>
-          <a href='https://www.linkedin.com/in/pablo-valdes-98a91124a/' target="_blank" rel="noopener noreferrer" className='flex text-black max-[350px]:hidden'>
+          <a href='https://www.linkedin.com/in/pablovaldes01/' target="_blank" rel="noopener noreferrer" className='flex text-black max-[350px]:hidden'>
             <Image src={`/${linkedinIconFileName}`} title='View my LinkedIn profile' width={32} height={32} alt="linkedin icon" className='hover:scale-125' />
           </a>
           <a href="/Pablo_Valdes_Resume.pdf" title='Open resume in new tab' target="_blank" rel="noopener noreferrer">
@@ -73,7 +73,7 @@ type HeaderProps = {
           <a href='https://github.com/Valx01P' target="_blank" rel="noopener noreferrer" className='flex text-black min-[350px]:hidden'>
             <Image src={`/${githubIconFileName}`} width={20} height={20} alt="github icon" className='hover:scale-125' />
           </a>
-          <a href='https://www.linkedin.com/in/pablo-valdes-98a91124a/' target="_blank" rel="noopener noreferrer" className='flex text-black min-[350px]:hidden'>
+          <a href='https://www.linkedin.com/in/pablovaldes01/' target="_blank" rel="noopener noreferrer" className='flex text-black min-[350px]:hidden'>
             <Image src={`/${linkedinIconFileName}`} width={22} height={22} alt="linkedin icon" className='hover:scale-125' />
           </a>
           <a href="/Pablo_Valdes_Resume.pdf" title='Open resume in new tab' target="_blank" rel="noopener noreferrer">

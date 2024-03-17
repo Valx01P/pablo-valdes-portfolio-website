@@ -48,7 +48,7 @@ const AboutSection = (props: AboutProps) => {
 
           <div className='flex flex-1 flex-col h-auto gap-2'>
             <h2 className='text-black dark:text-white text-3xl border-gradient-2 dark:border-gradient w-auto pt-5 leading-10 max-[420px]:text-lg'>Still curious?</h2>
-            <p className='text-black dark:text-white text-xl leading-10 max-[420px]:text-sm'>I really appreciate your interest, for more about my academics, organizations, and much more, you can visit my <span className='underline dark:no-underline roboto-medium-italic text-violet-500 text-2xl max-[420px]:text-base'><a href="https://www.linkedin.com/in/pablo-valdes-98a91124a/" target="_blank">LinkedIn</a></span>, thank you!</p>            
+            <p className='text-black dark:text-white text-xl leading-10 max-[420px]:text-sm'>I really appreciate your interest, for more about my academics, organizations, and much more, you can visit my <span className='underline dark:no-underline roboto-medium-italic text-violet-500 text-2xl max-[420px]:text-base'><a href="https://www.linkedin.com/in/pablovaldes01/" target="_blank">LinkedIn</a></span>, thank you!</p>            
           </div>
         </div>
       </div>
