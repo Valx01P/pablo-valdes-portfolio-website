@@ -45,7 +45,7 @@ const ToolSection = (props: ToolProps) => {
             <div className='flex max-[1040px]:gap-2 flex-1 flex-col gap-4'>
               <h3 className='text-black dark:text-white text-3xl dark:border-gradient-bottom border-gradient-bottom-2 max-[420px]:text-xl max-[1040px]:flex w-min'>Other</h3>
               <div className='flex max-[1040px]:gap-6 max-[1040px]:py-2 max-[1040px]:flex-row max-[1040px]:flex-wrap flex-col gap-4'>
-              <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>UploadThing</p>
+              <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Python</p>
                 <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Typescript</p>
                 <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Javascript</p>
                 <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Git/Github</p>
