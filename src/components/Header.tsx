@@ -60,7 +60,7 @@ type HeaderProps = {
           <a href='https://www.linkedin.com/in/pablovaldes01/' target="_blank" rel="noopener noreferrer" className='flex text-black max-[350px]:hidden'>
             <Image src={`/${linkedinIconFileName}`} title='View my LinkedIn profile' width={32} height={32} alt="linkedin icon" className='hover:scale-125' />
           </a>
-          <a href="/Pablo, Valdes.pdf" title='Open resume in new tab' target="_blank" rel="noopener noreferrer">
+          <a href="/Pablo_Valdes_Resume.pdf" title='Open resume in new tab' target="_blank" rel="noopener noreferrer">
             <button className="align-center bg-transparent resume-btn-light dark:resume-btn-dark p-2 rounded-lg max-sm:p-1.5 max-[350px]:hidden">
               Resume
             </button>
