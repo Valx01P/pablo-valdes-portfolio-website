@@ -79,16 +79,16 @@ const ContactSection = (props: ContactProps) => {
                   <h1 className='text-black dark:text-white text-4xl roboto-bold flex-1 pt-8 max-[420px]:text-xl'>Let&apos;s Connect!</h1>
                   <div className='flex max-[1200px]:justify-center justify-start items-center gap-4 pt-3'>
                     <a href='https://github.com/Valx01P' target="_blank" rel="noopener noreferrer" title='View my Github profile' className='flex text-black max-[420px]:hidden'>
-                      <Image src={`/${githubIconFileName}`} width={45} height={45} alt="github icon" className='hover:scale-125' />
+                      <Image src={`/svg/${githubIconFileName}`} width={45} height={45} alt="github icon" className='hover:scale-125' />
                     </a>
                     <a href='https://www.linkedin.com/in/pablovaldes01/' target="_blank" rel="noopener noreferrer" title='View my LinkedIn profile' className='flex text-black max-[420px]:hidden'>
-                      <Image src={`/${linkedinIconFileName}`} width={48} height={48} alt="linkedin icon" className='hover:scale-125' />
+                      <Image src={`/svg/${linkedinIconFileName}`} width={48} height={48} alt="linkedin icon" className='hover:scale-125' />
                     </a>
                     <a href='https://github.com/Valx01P' target="_blank" rel="noopener noreferrer" className='flex text-black min-[420px]:hidden'>
-                      <Image src={`/${githubIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
+                      <Image src={`/svg/${githubIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
                     </a>
                     <a href='https://www.linkedin.com/in/pablovaldes01/' target="_blank" rel="noopener noreferrer" className='flex text-black min-[420px]:hidden'>
-                      <Image src={`/${linkedinIconFileName}`} width={32} height={32} alt="linkedin icon" className='hover:scale-125' />
+                      <Image src={`/svg/${linkedinIconFileName}`} width={32} height={32} alt="linkedin icon" className='hover:scale-125' />
                     </a>
                   </div>
                 </div>

@@ -44,7 +44,7 @@ const DetailsSidebar = () => {
           </div>
           <div>
             <button onClick={toggleDarkMode} title='Theme switcher' className="bg-inherit text-black dark:text-white p-2">
-              <Image src={`/${toggleIconFileName}`} width={30} height={30} alt="dark mode" className='hover:scale-125' />
+              <Image src={`/svg/${toggleIconFileName}`} width={30} height={30} alt="dark mode" className='hover:scale-125' />
             </button>
           </div>
           <div>
@@ -123,7 +123,7 @@ const DetailsSidebar = () => {
             </div>
             <div>
               <button onClick={toggleDarkMode} title='Theme switcher' className="bg-inherit text-black dark:text-white p-2">
-                <Image src={`/${toggleIconFileName}`} width={28} height={28} alt="dark mode" className='hover:scale-125' />
+                <Image src={`/svg/${toggleIconFileName}`} width={28} height={28} alt="dark mode" className='hover:scale-125' />
               </button>
             </div>
           </div>

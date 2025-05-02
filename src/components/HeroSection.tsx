@@ -25,7 +25,7 @@ const HeroSection = (props: HeroProps) => {
         <p className='max-[420px]:text-xl mb-28 max-[850px]:mb-2 roboto-medium-italic text-quote max-[600px]:mob-text-quote max-[600px]:text-center text-black dark:text-white'>“Never stop dreaming,<br/> never stop believing,<br/> never give up,<br/> never stop trying,<br/> and never stop learning.” <br/>– Roy Bennett</p>
         </div>
         <div className='px-4 max-[850px]:mb-6'>
-          <Image src={`/${piecesRightFileName}`} width={700} height={350} alt="chess icon" />  
+          <Image src={`/svg/${piecesRightFileName}`} width={700} height={350} alt="chess icon" />  
         </div>
       </div>
     </section>

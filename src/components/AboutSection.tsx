@@ -9,7 +9,7 @@ type AboutProps = {
 }
 
 const AboutSection = (props: AboutProps) => {
-  const myselfFileName = props.darkMode ? 'casual-me.png' : 'casual-me-2.png';
+  const myselfFileName = props.darkMode ? 'linkedin-me-dark.webp' : 'linkedin-me.webp';
 
   return (
     <section id='about' className='pt-12 light-2 dark:background-2 w-full text-black dark:text-white flex justify-center'>
@@ -42,7 +42,7 @@ const AboutSection = (props: AboutProps) => {
               </p>
             </div>
             <div className='flex flex-1 justify-center max-[1400px]:me-img w-auto pt-5'>
-              <Image src={`/${myselfFileName}`} width={1080} height={1080} alt="chess icon" className='rounded-lg cursor-pointer' onClick={props.toggleDarkMode} />
+              <Image src={`/images/${myselfFileName}`} width={1080} height={1080} alt="chess icon" className='rounded-lg cursor-pointer' onClick={props.toggleDarkMode} />
             </div>
           </div>
 

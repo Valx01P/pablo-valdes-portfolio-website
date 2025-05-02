@@ -12,7 +12,7 @@ const ProjectSection = ( props: ProjectProps ) => {
 
   const githubIconFileName = props.darkMode ? 'github-light-2.svg' : 'github-dark-2.svg';
   const eyeIconFileName = props.darkMode ? 'eye-light.svg' : 'eye-dark.svg';
-  const portfolioSiteFileName = props.darkMode ? 'portfolio-site-2.png' : 'portfolio-site.png';
+  const portfolioSiteFileName = props.darkMode ? 'portfolio-site.webp' : 'portfolio-site-dark.webp';
   const arrow = props.darkMode ? (
     <svg className="absolute top-0 right-0 w-[16px] h-[16px]" width="28" height="28" fill={`#fff`} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path d="m16.004 9.414-8.607 8.607-1.414-1.414L14.59 8H7.004V6h11v11h-2V9.414Z"></path>
@@ -32,7 +32,7 @@ const ProjectSection = ( props: ProjectProps ) => {
         {/* Project 1 */}
         <div className={`${props.swagMode && "swag-bg-card"} max-[1420px]:flex-col h-auto w-full flex flex-row mt-16 mb-4 p-8 light-card dark:background-card rounded-lg`}>
           <div className='max-[1420px]:w-auto flex max-[1420px]:justify-center w-1/2 items-center'>
-            <Image src={`/${portfolioSiteFileName}`} width={700} height={350} alt="project preview" onClick={props.toggleDarkMode} className='cursor-pointer border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
+            <Image src={`/images/${portfolioSiteFileName}`} width={700} height={350} alt="project preview" onClick={props.toggleDarkMode} className='cursor-pointer border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
           </div>
           <div className='max-[1420px]:w-full flex max-[1420px]:items-center max-[1420px]:pt-8 flex-col items-start gap-4 roboto-medium w-1/2 px-4'>
             <h1 className='max-[420px]:text-xl max-[450px]:text-center text-black dark:text-white text-4xl'>My Portfolio</h1>
@@ -60,10 +60,10 @@ const ProjectSection = ( props: ProjectProps ) => {
               </Link>
               <div className='max-[420px]:text-sm flex flex-row text-xl gap-4 items-center'>
               <a href="https://github.com/Valx01P/pablo-valdes-portfolio-website" target="_blank" rel="noopener noreferrer" title='View the Github Repository for this project' >
-                <Image src={`/${githubIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
+                <Image src={`/svg/${githubIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
               </a>
               <a href="/" title='Go to the deployed live site'>
-                <Image src={`/${eyeIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
+                <Image src={`/svg/${eyeIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
               </a>
               </div>
             </div>
@@ -97,22 +97,22 @@ const ProjectSection = ( props: ProjectProps ) => {
               </Link>
               <div className='max-[420px]:text-sm flex flex-row text-xl gap-4 items-center'>
               <a href="https://github.com/Valx01P/image-transfer-site-master" target="_blank" rel="noopener noreferrer" title='View the Github Repository for this project' >
-                <Image src={`/${githubIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
+                <Image src={`/svg/${githubIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
               </a>
               <a href="https://image-transfer-site-master.vercel.app/" target="_blank" rel="noopener noreferrer" title='Go to the deployed live site'>
-                <Image src={`/${eyeIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
+                <Image src={`/svg/${eyeIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
               </a>
               </div>
             </div>
           </div>
           <div className='max-[1420px]:w-auto flex max-[1420px]:justify-center w-1/2 items-center'>
-            <Image src={`/i-server-site.png`} width={750} height={350} alt="project preview" className='border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
+            <Image src={`/images/i-server-site.webp`} width={750} height={350} alt="project preview" className='border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
           </div>
         </div>
         {/* Project 3 */}
         <div className={`${props.swagMode && "swag-bg-card"} max-[1420px]:flex-col h-auto w-full flex flex-row my-4 p-8 light-card dark:background-card rounded-lg`}>
           <div className='max-[1420px]:w-auto flex max-[1420px]:justify-center w-1/2 items-center'>
-            <Image src={`/practical-synth-extension.png`} width={700} height={350} alt="project preview" className='border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
+            <Image src={`/images/practical-synth-extension.webp`} width={700} height={350} alt="project preview" className='border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
           </div>
           <div className='max-[1420px]:w-full flex max-[1420px]:items-center max-[1420px]:pt-8 flex-col items-start gap-4 roboto-medium w-1/2 px-4'>
             <h1 className='max-[420px]:text-xl max-[450px]:text-center flex flex-wrap text-balance text-center justify-center text-black dark:text-white text-4xl'>Practical Synth Theme</h1>
@@ -131,10 +131,10 @@ const ProjectSection = ( props: ProjectProps ) => {
               </Link>
               <div className='max-[420px]:text-sm flex flex-row text-xl gap-4 items-center'>
               <a href="https://github.com/Valx01P/practical-synth" target="_blank" rel="noopener noreferrer" title='View the Github Repository for this project' >
-                <Image src={`/${githubIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
+                <Image src={`/svg/${githubIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
               </a>
               <a href="https://marketplace.visualstudio.com/items?itemName=PabloValdes019.practical-synth" target="_blank" rel="noopener noreferrer" title='View live on Visual Studio Marketplace'>
-                <Image src={`/${eyeIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
+                <Image src={`/svg/${eyeIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
               </a>
               </div>
             </div>
@@ -168,22 +168,22 @@ const ProjectSection = ( props: ProjectProps ) => {
               </Link>
               <div className='max-[420px]:text-sm flex flex-row text-xl gap-4 items-center'>
               <a href="https://github.com/Valx01P/theoretical-stock-plays-site" target="_blank" rel="noopener noreferrer" title='View the Github Repository for this project' >
-                <Image src={`/${githubIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
+                <Image src={`/svg/${githubIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
               </a>
               <a href="https://theoretical-stock-plays-site.vercel.app/" target="_blank" rel="noopener noreferrer" title='Go to the deployed live site'>
-                <Image src={`/${eyeIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
+                <Image src={`/svg/${eyeIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
               </a>
               </div>
             </div>
           </div>
           <div className='max-[1420px]:w-auto flex max-[1420px]:justify-center w-1/2 items-center'>
-            <Image src={`/t-stonk-plays-site.png`} width={750} height={350} alt="project preview" className='border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
+            <Image src={`/images/t-stonk-plays-site.webp`} width={750} height={350} alt="project preview" className='border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
           </div>
         </div>
         {/* Project 5 */}
         <div className={`${props.swagMode && "swag-bg-card"} max-[1420px]:flex-col h-auto w-full flex flex-row my-4 p-8 light-card dark:background-card rounded-lg`}>
           <div className='max-[1420px]:w-auto flex max-[1420px]:justify-center w-1/2 items-center'>
-            <Image src={`/g-planner-site.png`} width={700} height={350} alt="project preview" className='border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
+            <Image src={`/images/g-planner-site.webp`} width={700} height={350} alt="project preview" className='border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
           </div>
           <div className='max-[1420px]:w-full flex max-[1420px]:items-center max-[1420px]:pt-8 flex-col items-start gap-4 roboto-medium w-1/2 px-4'>
             <h1 className='max-[420px]:text-xl max-[450px]:text-center flex flex-wrap text-balance text-center justify-center text-black dark:text-white text-4xl'>General Planner</h1>
@@ -214,10 +214,10 @@ const ProjectSection = ( props: ProjectProps ) => {
               </Link>
               <div className='max-[420px]:text-sm flex flex-row text-xl gap-4 items-center'>
               <a href="https://github.com/Valx01P/generalplanner" target="_blank" rel="noopener noreferrer" title='View the Github Repository for this project' >
-                <Image src={`/${githubIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
+                <Image src={`/svg/${githubIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
               </a>
               <a href="https://general-planner.onrender.com/" target="_blank" rel="noopener noreferrer" title='Go to the deployed live site'>
-                <Image src={`/${eyeIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
+                <Image src={`/svg/${eyeIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
               </a>
               </div>
             </div>
@@ -243,7 +243,7 @@ const ProjectSection = ( props: ProjectProps ) => {
             </div>
           </div>
           <div className='max-[1420px]:w-auto flex max-[1420px]:justify-center w-1/2 items-center'>
-            <Image src={`/misc-box.svg`} width={550} height={350} alt="project preview" className='border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
+            <Image src={`/svg/misc-box.svg`} width={550} height={350} alt="project preview" className='border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
           </div>
         </div>
       </div>
