@@ -1,72 +1,104 @@
 import React from 'react'
 
 type ToolProps = {
-    darkMode: boolean;
-    swagMode: boolean;
-  };
+  darkMode: boolean;
+  swagMode: boolean;
+};
 
 const ToolSection = (props: ToolProps) => {  
   return (
     <section id='tools' className='pt-12 light-2 dark:background-2 w-full text-black dark:text-white flex justify-center'>
       <div className='h-auto layout-container flex flex-col justify-center align-middle px-4'>
         <div className='h-auto w-full flex flex-1 max-[850px]:justify-center'>
-          <h1 className='text-black dark:text-white text-section-title merriweather-bold max-[420px]:text-4xl'>Tools</h1>
+          <h1 className='text-black dark:text-white text-section-title merriweather-bold max-[420px]:text-4xl'>My Skills</h1>
         </div>
+        
         {/* Tool content */}
-        <div className={`${props.swagMode && "swag-bg"} flex flex-col h-auto w-full mt-16 mb-4 p-8 pb-12 light-card dark:background-card rounded-lg gap-4`}>
-          <h2 className='text-black dark:text-white px-4 py-4 text-3xl max-[420px]:text-xl'>Here are some of the tools I&apos;ve used in designing, creating, and deploying projects.</h2>
-          <div className='flex max-[1040px]:flex-col max-[1040px]:gap-6 flex-row flex-wrap px-4 roboto-medium'>
-            <div className='flex max-[1040px]:gap-2 flex-1 flex-col gap-4'>
-              <h3 className='text-black dark:text-white text-3xl dark:border-gradient-bottom border-gradient-bottom-2 max-[420px]:text-xl max-[1040px]:flex w-min'>Backend</h3>
-              <div className='flex max-[1040px]:gap-6 max-[1040px]:py-2 max-[1040px]:flex-row max-[1040px]:flex-wrap flex-col gap-4'>
-                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Express.js</p>
-                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>MongoDB</p>
-                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Postman</p>
-                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Node.js</p>
-                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>EJS</p>
+        <div className={`${props.swagMode && "swag-bg"} flex flex-col h-auto w-full mt-16 mb-4 p-8 pb-12 light-card dark:background-card rounded-lg gap-6`}>
+          
+          {/* Grid layout for desktop, column for mobile */}
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8'>
+            {/* Languages */}
+            <div>
+              <h2 className='text-black dark:text-white text-2xl roboto-medium mb-4 dark:border-gradient-bottom border-gradient-bottom-2 pb-1 w-min'>
+                Languages
+              </h2>
+              <div className='flex flex-wrap gap-2 md:gap-3'>
+                {['TypeScript', 'Python', 'JavaScript', 'Java', 'SQL', 'HTML', 'CSS', 'C++'].map((tool) => (
+                  <span key={tool} className='text-black dark:text-white text-base md:text-xl px-3 py-1 border border-transparent background rounded-full hover:scale-110 transition-transform'>
+                    {tool}
+                  </span>
+                ))}
               </div>
             </div>
-            <div className='flex max-[1040px]:gap-2 flex-1 flex-col gap-4'>
-              <h3 className='text-black dark:text-white text-3xl dark:border-gradient-bottom border-gradient-bottom-2 max-[420px]:text-xl max-[1040px]:flex w-min'>Frontend</h3>
-              <div className='flex max-[1040px]:gap-6 max-[1040px]:py-2 max-[1040px]:flex-row max-[1040px]:flex-wrap flex-col gap-4'>
-                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Tailwind CSS</p>
-                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Shadcn/UI</p>
-                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Bootstrap</p>
-                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Zustand</p>
-                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>React.js</p>
-                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Next.js</p>
-                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>jQuery</p>
-                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Redux</p>
-                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>HTML</p>
-                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>CSS</p>
-                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Zod</p>
+            
+            {/* Frameworks */}
+            <div>
+              <h2 className='text-black dark:text-white text-2xl roboto-medium mb-4 dark:border-gradient-bottom border-gradient-bottom-2 pb-1 w-min'>
+                Frameworks
+              </h2>
+              <div className='flex flex-wrap gap-2 md:gap-3'>
+                {['React', 'Next.js', 'Express', 'FastAPI', 'Java Spring Boot', 'Tailwind CSS'].map((tool) => (
+                  <span key={tool} className='text-black dark:text-white text-base md:text-xl px-3 py-1 border border-transparent background rounded-full hover:scale-110 transition-transform'>
+                    {tool}
+                  </span>
+                ))}
               </div>
             </div>
-            <div className='flex max-[1040px]:gap-2 flex-1 flex-col gap-4'>
-              <h3 className='text-black dark:text-white text-3xl dark:border-gradient-bottom border-gradient-bottom-2 max-[420px]:text-xl max-[1040px]:flex w-min'>Other</h3>
-              <div className='flex max-[1040px]:gap-6 max-[1040px]:py-2 max-[1040px]:flex-row max-[1040px]:flex-wrap flex-col gap-4'>
-              <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Python</p>
-                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Typescript</p>
-                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Javascript</p>
-                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Git/Github</p>
-                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>OnRender</p>
-                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>VS Code</p>
-                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Resend</p>
-                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Vercel</p>
-                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Clerk</p>
-                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Unix</p>
-                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>APIs</p>
+            
+            {/* Backend Technologies */}
+            <div>
+              <h2 className='text-black dark:text-white text-2xl roboto-medium mb-4 dark:border-gradient-bottom border-gradient-bottom-2 pb-1 w-max'>
+                Backend
+              </h2>
+              <div className='flex flex-wrap gap-2 md:gap-3'>
+                {['Node.js', 'MongoDB', 'Postgres', 'Redis', 'Supabase'].map((tool) => (
+                  <span key={tool} className='text-black dark:text-white text-base md:text-xl px-3 py-1 border border-transparent background rounded-full hover:scale-110 transition-transform'>
+                    {tool}
+                  </span>
+                ))}
               </div>
             </div>
-            <div className='flex max-[1040px]:gap-2 flex-1 flex-col gap-4'>
-              <h3 className='text-black dark:text-white text-3xl dark:border-gradient-bottom border-gradient-bottom-2 max-[420px]:text-xl max-[1040px]:flex w-min'>Design</h3>
-              <div className='flex max-[1040px]:gap-6 max-[1040px]:py-2 max-[1040px]:flex-row max-[1040px]:flex-wrap flex-col gap-4'>
-              <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Microsoft Whiteboard</p>
-                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Browser Extensions</p>
-                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Chrome Dev Tools</p>
-                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Adobe Express</p>
-                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Figma</p>
-                <p className='text-black dark:text-white text-2xl max-[420px]:text-base'>Canva</p>
+            
+            {/* DevOps & Cloud */}
+            <div>
+              <h2 className='text-black dark:text-white text-2xl roboto-medium mb-4 dark:border-gradient-bottom border-gradient-bottom-2 pb-1 w-max'>
+                DevOps & Cloud
+              </h2>
+              <div className='flex flex-wrap gap-2 md:gap-3'>
+                {['Git', 'GitHub', 'Docker', 'Nginx', 'AWS', 'S3', 'Vercel', 'Terraform', 'OnRender'].map((tool) => (
+                  <span key={tool} className='text-black dark:text-white text-base md:text-xl px-3 py-1 border border-transparent background rounded-full hover:scale-110 transition-transform'>
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </div>
+            
+            {/* Tools & APIs */}
+            <div>
+              <h2 className='text-black dark:text-white text-2xl roboto-medium mb-4 dark:border-gradient-bottom border-gradient-bottom-2 pb-1 w-max'>
+                Tools & APIs
+              </h2>
+              <div className='flex flex-wrap gap-2 md:gap-3'>
+                {['VS Code', 'IntelliJ', 'Postman', 'Figma', 'Web APIs', 'Chrome Dev Tools', 'Resend', 'Clerk', 'GCP'].map((tool) => (
+                  <span key={tool} className='text-black dark:text-white text-base md:text-xl px-3 py-1 border border-transparent background rounded-full hover:scale-110 transition-transform'>
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </div>
+            
+            {/* Currently Exploring */}
+            <div>
+              <h2 className='text-black dark:text-white text-2xl roboto-medium mb-4 dark:border-gradient-bottom border-gradient-bottom-2 pb-1 w-max'>
+                Currently Exploring
+              </h2>
+              <div className='flex flex-wrap gap-2 md:gap-3'>
+                {['GraphQL', 'Kubernetes', 'AI/ML', 'WebSockets', 'WebRTC'].map((tool) => (
+                  <span key={tool} className='text-black dark:text-white text-base md:text-xl px-3 py-1 border border-transparent background rounded-full hover:scale-110 transition-transform'>
+                    {tool}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
@@ -77,4 +109,3 @@ const ToolSection = (props: ToolProps) => {
 }
 
 export default ToolSection
-// alt p elements; max-[1040px]:flex max-[1040px]:flex-wrap max-[1040px]:text-balance max-[1040px]:text-center max-[1040px]:border-2 max-[1040px]:rounded-full max-[1040px]:border-transparent max-[1040px]:py-1 px-3 max-[1040px]:background max-[1040px]:hover:scale-110
