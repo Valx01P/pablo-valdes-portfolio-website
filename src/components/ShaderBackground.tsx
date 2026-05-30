@@ -64,17 +64,17 @@ void main() {
   // film grain
   float g = hash(gl_FragCoord.xy + fract(u_time)) * 0.05;
 
-  // --- dark / noir palette ---
-  vec3 ink = vec3(0.035, 0.035, 0.045);
-  vec3 crimson = vec3(0.42, 0.03, 0.09);
+  // --- dark palette: blue embers over ink (SWAPPED) ---
+  vec3 ink = vec3(0.035, 0.035, 0.05);
+  vec3 blue = vec3(0.05, 0.13, 0.46);
   float ember = smoothstep(0.45, 0.95, f);
-  vec3 darkCol = mix(ink, crimson, ember * 0.55);
+  vec3 darkCol = mix(ink, blue, ember * 0.6);
   darkCol *= vig;
   darkCol += g - 0.025;
 
-  // --- light / warm paper palette ---
-  vec3 paper = vec3(0.96, 0.93, 0.85);
-  vec3 sand = vec3(0.86, 0.78, 0.65);
+  // --- light palette: original warm cream / tan ---
+  vec3 paper = vec3(0.96, 0.93, 0.86);
+  vec3 sand = vec3(0.90, 0.80, 0.62);
   vec3 lightCol = mix(paper, sand, f * 0.45);
   lightCol *= mix(0.9, 1.0, vig);
   lightCol += g * 0.4 - 0.02;

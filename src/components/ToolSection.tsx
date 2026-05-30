@@ -93,6 +93,24 @@ const groups: { title: string; skills: Skill[] }[] = [
   },
 ];
 
+// Brand colors per skill. Logos that are normally black/white use a mid gray
+// so they stay visible on both the cream (day) and noir (night) backgrounds.
+const brand: Record<string, string> = {
+  TypeScript: '#3178C6', Python: '#3776AB', JavaScript: '#EAB308', Java: '#E76F00',
+  SQL: '#00758F', HTML: '#E34F26', CSS: '#1572B6', 'C++': '#00599C',
+  React: '#61DAFB', 'Next.js': '#9CA3AF', Express: '#9CA3AF', FastAPI: '#009688',
+  'Spring Boot': '#6DB33F', 'Tailwind CSS': '#06B6D4',
+  'Node.js': '#5FA04E', MongoDB: '#47A248', Postgres: '#4169E1', Redis: '#DC382D',
+  Supabase: '#3ECF8E', WebSockets: '#9CA3AF',
+  Git: '#F05032', GitHub: '#9CA3AF', Docker: '#2496ED', Kubernetes: '#326CE5',
+  Nginx: '#009639', AWS: '#FF9900', Vercel: '#9CA3AF', Terraform: '#7B42BC',
+  'GitHub Actions': '#2088FF',
+  Playwright: '#2EAD33', Vitest: '#6E9F18', Postman: '#FF6C37', Figma: '#F24E1E',
+  Twilio: '#F22F46', Stripe: '#635BFF', OpenAI: '#10A37F', Resend: '#9CA3AF',
+  GCP: '#4285F4',
+  GraphQL: '#E10098', 'AI / ML': '#8B5CF6', WebRTC: '#5B8DEF',
+};
+
 const ToolSection = (props: ToolProps) => {
   return (
     <section id='tools' className='pt-16 section-surface w-full text-black dark:text-white flex justify-center'>
@@ -114,7 +132,7 @@ const ToolSection = (props: ToolProps) => {
                       key={name}
                       className='chip inline-flex items-center gap-1.5 text-black/75 dark:text-white/80 text-xs roboto-medium px-2.5 py-1 rounded-full hover:scale-105 transition-transform'
                     >
-                      <Icon className='text-[0.95rem] text-[var(--accent-bright)]' aria-hidden="true" />
+                      <Icon className='text-[0.95rem] shrink-0' style={{ color: brand[name] || 'currentColor' }} aria-hidden="true" />
                       {name}
                     </span>
                   ))}

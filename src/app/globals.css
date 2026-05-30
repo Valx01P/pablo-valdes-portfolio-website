@@ -22,19 +22,18 @@ svg {
   --crimson-deep: #7a0d1c;
   --crimson-ink: #2b0008;
 
-  /* Theme-driven accent: blue in light mode, crimson in dark mode.
-     Use these (not the raw crimson vars) for anything that should adapt. */
-  --accent: #1d4ed8;
-  --accent-bright: #2563eb;
-  --accent-deep: #1e3a8a;
-  --accent-glow: rgba(37, 99, 235, 0.4);
+  /* Theme-driven accent: RED in light mode, BLUE in dark mode. */
+  --accent: #c8102e;
+  --accent-bright: #d11f2d;
+  --accent-deep: #7a0d1c;
+  --accent-glow: rgba(200, 16, 46, 0.42);
 }
 
 .dark {
-  --accent: var(--crimson);
-  --accent-bright: var(--crimson-bright);
-  --accent-deep: var(--crimson-deep);
-  --accent-glow: rgba(225, 29, 42, 0.5);
+  --accent: #2563eb;
+  --accent-bright: #3b82f6;
+  --accent-deep: #1e3a8a;
+  --accent-glow: rgba(59, 130, 246, 0.5);
 }
 
 /* Dark noir fallback shown behind the WebGL shader before it paints. */
@@ -147,7 +146,7 @@ body {
   }
   .dark .glass {
     background-color: rgba(14, 14, 18, 0.42);
-    border: 1px solid rgba(225, 29, 42, 0.22);
+    border: 1px solid rgba(59, 130, 246, 0.22);
     box-shadow: 0 10px 36px -16px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.06);
   }
 
@@ -161,8 +160,8 @@ body {
     box-shadow: 0 12px 34px -16px rgba(60, 30, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.45);
   }
   .dark .glass-hover:hover {
-    border-color: rgba(225, 29, 42, 0.55);
-    box-shadow: 0 16px 44px -14px rgba(225, 29, 42, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    border-color: rgba(59, 130, 246, 0.55);
+    box-shadow: 0 16px 44px -14px rgba(59, 130, 246, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
 
   /* Small transparent bordered pill (tags, chips). */
@@ -190,13 +189,13 @@ body {
   .border-gradient {
     border-top-width: 2px;
     border-style: solid;
-    border-image: linear-gradient(to right, var(--crimson-bright) 0%, var(--crimson-deep) 50%, rgba(60, 6, 16, 0.2) 100%) 1;
+    border-image: linear-gradient(to right, var(--accent-bright) 0%, var(--accent-deep) 50%, rgba(30, 58, 138, 0.2) 100%) 1;
   }
 
   .border-gradient-bottom {
     border-bottom-width: 2px;
     border-style: solid;
-    border-image: linear-gradient(to right, var(--crimson) 0%, var(--crimson-deep) 100%) 1;
+    border-image: linear-gradient(to right, var(--accent) 0%, var(--accent-deep) 100%) 1;
   }
 
   .border-gradient-2 {
@@ -235,15 +234,15 @@ body {
   /* Swag mode surfaces — cool reddish / black gradients layered over the glass
      (swag forces dark context). */
   .swag-bg {
-    background: radial-gradient(circle at 50% 0%, rgba(225, 29, 42, 0.18) 0%, rgba(0, 0, 0, 0.42) 72%);
+    background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.18) 0%, rgba(0, 0, 0, 0.42) 72%);
   }
 
   .swag-bg-contact {
-    background: linear-gradient(90deg, rgba(122, 13, 28, 0.34) 0%, rgba(12, 10, 12, 0.45) 55%, rgba(0, 0, 0, 0.48) 100%);
+    background: linear-gradient(90deg, rgba(30, 58, 138, 0.34) 0%, rgba(12, 10, 12, 0.45) 55%, rgba(0, 0, 0, 0.48) 100%);
   }
 
   .swag-bg-card {
-    background: linear-gradient(180deg, rgba(122, 13, 28, 0.32) 0%, rgba(14, 10, 12, 0.44) 55%, rgba(0, 0, 0, 0.48) 100%);
+    background: linear-gradient(180deg, rgba(30, 58, 138, 0.32) 0%, rgba(14, 10, 12, 0.44) 55%, rgba(0, 0, 0, 0.48) 100%);
   }
   
   .swag-t {
@@ -277,7 +276,7 @@ body {
   
   .background-card {
     background-color: rgba(28, 28, 31, 0.92);
-    border: 1px solid rgba(225, 29, 42, 0.14);
+    border: 1px solid rgba(59, 130, 246, 0.14);
     box-shadow: 0 10px 40px -12px rgba(0, 0, 0, 0.8);
   }
 
@@ -311,7 +310,7 @@ body {
 
   .light-card {
     background-color: rgba(247, 213, 162, 0.94);
-    border: 1px solid rgba(122, 13, 28, 0.18);
+    border: 1px solid rgba(30, 58, 138, 0.18);
     box-shadow: 0 10px 30px -14px rgba(80, 40, 0, 0.5);
   }
 
@@ -341,22 +340,21 @@ body {
   }
 
   .resume-btn-dark {
-    border: 1.5px solid var(--crimson);
-    color: var(--crimson-bright);
+    border: 1.5px solid var(--accent);
+    color: var(--accent-bright);
     transition: transform 0.4s ease; /* Transition for smooth color and border change */
   }
 
   .resume-btn-light {
     border: 1.5px solid #000;
     color: #000;
-    transition: transform 0.8s ease; /* Adjust the duration and timing function as needed */
-    /* transition: border-color 0s ease, color 0.6s ease; */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   }
 
   .resume-btn-dark:hover {
-    background-color: var(--crimson);
+    background-color: var(--accent);
     color: #ffffff;
-    box-shadow: 0 0 12px 4px rgba(225, 29, 42, 0.5); /* crimson glow on hover */
+    box-shadow: 0 0 12px 4px rgba(59, 130, 246, 0.5); /* crimson glow on hover */
     --tw-scale-x: 1.10;
     --tw-scale-y: 1.10;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -555,15 +553,14 @@ body {
   } */
 
   .resume-btn-light:hover {
-    --tw-scale-x: 1.12;
-    --tw-scale-y: 1.12;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    background-color: #000;
+    color: #ffffff;
   }
 
   .btn-transition-dark {
     color: white;
     overflow: hidden;
-    background: linear-gradient(to right, var(--crimson-deep), var(--crimson-bright) 50%, white 50%);
+    background: linear-gradient(to right, var(--accent-deep), var(--accent-bright) 50%, white 50%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -574,7 +571,7 @@ body {
 
   .btn-transition-dark:hover {
     background-position: 0 100%;
-    border-color: var(--crimson);
+    border-color: var(--accent);
   }
 
   /* Light-mode Details link — blue/black, no red, no grow. */
@@ -598,7 +595,7 @@ body {
   .text-transition-dark {
     color: white;
     overflow: hidden;
-    background: linear-gradient(to right, var(--crimson-deep), var(--crimson-bright) 50%, white 50%);
+    background: linear-gradient(to right, var(--accent-deep), var(--accent-bright) 50%, white 50%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
