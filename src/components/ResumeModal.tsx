@@ -27,7 +27,7 @@ const ResumeModal = () => {
       onClick={closeResume}
       role="dialog"
       aria-modal="true"
-      aria-label="Résumé"
+      aria-label="Resume"
       className="dark fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6 bg-black/70 backdrop-blur-sm"
     >
       <div
@@ -36,7 +36,7 @@ const ResumeModal = () => {
       >
         {/* toolbar */}
         <div className="flex items-center justify-between gap-2 px-3 sm:px-4 py-2.5 bg-[#0c0c10] border-b border-white/10">
-          <h2 className="text-white roboto-bold text-sm shrink-0">Résumé</h2>
+          <h2 className="text-white roboto-bold text-sm shrink-0">Resume</h2>
           <div className="flex items-center gap-2">
             <a
               href={PDF}
@@ -55,7 +55,7 @@ const ResumeModal = () => {
             </a>
             <button
               onClick={closeResume}
-              aria-label="Close résumé"
+              aria-label="Close resume"
               className="text-white/70 hover:text-white text-2xl leading-none px-1"
             >
               &times;
@@ -63,7 +63,7 @@ const ResumeModal = () => {
           </div>
         </div>
         {/* pdf preview */}
-        <iframe src={`${PDF}#view=FitH`} title="Résumé — Pablo Valdes" className="flex-1 w-full bg-white" />
+        <iframe src={`${PDF}#view=FitH`} title="Resume — Pablo Valdes" className="flex-1 w-full bg-white" />
       </div>
     </div>
   );

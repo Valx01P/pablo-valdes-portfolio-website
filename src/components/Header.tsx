@@ -68,7 +68,7 @@ type HeaderProps = {
           <a href='https://www.linkedin.com/in/pablovaldes01/' target="_blank" rel="noopener noreferrer" className='flex text-black max-[350px]:hidden'>
             <Image src={`/svg/${linkedinIconFileName}`} title='View my LinkedIn profile' width={24} height={24} alt="linkedin icon" className='hover:scale-125' />
           </a>
-          <button onClick={openResume} title='View résumé' className="align-center bg-transparent resume-btn-light dark:resume-btn-dark text-sm py-1 px-3 rounded-md max-[350px]:hidden">
+          <button onClick={openResume} title='View resume' className="align-center bg-transparent resume-btn-light dark:resume-btn-dark text-sm py-1 px-3 rounded-md max-[350px]:hidden">
             Resume
           </button>
           <button onClick={props.toggleDarkMode} title='Theme switcher' className="bg-transparent text-black dark:text-white p-1.5 max-[350px]:hidden">
@@ -82,7 +82,7 @@ type HeaderProps = {
           <a href='https://www.linkedin.com/in/pablovaldes01/' target="_blank" rel="noopener noreferrer" className='flex text-black min-[350px]:hidden'>
             <Image src={`/svg/${linkedinIconFileName}`} width={22} height={22} alt="linkedin icon" className='hover:scale-125' />
           </a>
-          <button onClick={openResume} title='View résumé' className="bg-transparent resume-btn-light dark:resume-btn-dark text-xs py-1 px-2 rounded-md min-[350px]:hidden">
+          <button onClick={openResume} title='View resume' className="bg-transparent resume-btn-light dark:resume-btn-dark text-xs py-1 px-2 rounded-md min-[350px]:hidden">
             Resume
           </button>
           <button onClick={props.toggleDarkMode} className="bg-transparent text-black dark:text-white p-1 min-[350px]:hidden">
