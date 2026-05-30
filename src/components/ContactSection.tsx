@@ -65,9 +65,9 @@ const ContactSection = (props: ContactProps) => {
               {/* CTA */}
               <div className='flex flex-col max-[1200px]:w-full max-[1200px]:pb-4 max-[1200px]:text-center max-[1200px]:pr-0 w-1/2 pr-8 gap-2'>
                 <h1 className='text-black dark:text-white text-xl roboto-bold'>Get In Touch</h1>
-                <p className='dark:text-white flex text-sm leading-relaxed'>Have a question or want to work together? Send me a message and let&apos;s talk!</p>
+                <p className='dark:text-white text-sm leading-relaxed'>Have a question or want to work together? Send me a message and let&apos;s talk!</p>
                 <h1 className='text-black dark:text-white text-xl roboto-bold pt-5'>Availability</h1>
-                <p className='dark:text-white flex text-sm leading-relaxed'>Currently available for freelance or full-time positions. Contact me for any inquiries.</p>
+                <p className='dark:text-white text-sm leading-relaxed'>Currently available for freelance or full-time positions. Contact me for any inquiries.</p>
                 <div>
                   <h1 className='text-black dark:text-white text-xl roboto-bold flex-1 pt-5'>Let&apos;s Connect!</h1>
                   <div className='flex max-[1200px]:justify-center justify-start items-center gap-4 pt-3'>
@@ -81,9 +81,9 @@ const ContactSection = (props: ContactProps) => {
                 </div>
               </div>
               {/* Form Start */}
-              <div className='flex flex-1 justify-center items-center'>
-                <form onSubmit={handleSubmit(sendEmail)} autoComplete="off" className={`${props.swagMode ? "swag-bg-contact" : "chip"} flex max-[1200px]:w-full w-full max-w-[460px] p-[clamp(1rem,2.2vw,1.5rem)] rounded-xl`}>
-                  <div className='flex flex-1 flex-col gap-4 max-[200px]:w-1/5 max-[250px]:w-1/4 max-[290px]:w-1/3 max-[420px]:w-1/2 max-[380px]:w-2/3 max-[440px]:w-4/5'>
+              <div className='flex flex-1 justify-center items-start'>
+                <form onSubmit={handleSubmit(sendEmail)} autoComplete="off" className={`${props.swagMode ? "swag-bg-contact" : "chip"} w-full max-w-[540px] p-[clamp(1rem,2.2vw,1.5rem)] rounded-xl`}>
+                  <div className='flex flex-col gap-4 w-full'>
                     {/* First Name & Last Name Inputs */}
                     <div className='flex gap-4 max-[720px]:flex-col'>
                       <div className='flex flex-1 flex-col max-[420px]:text-sm'>
