@@ -15,24 +15,36 @@ svg {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+
+  /* Noir crimson accent palette */
+  --crimson: #e11d2a;
+  --crimson-bright: #ff2740;
+  --crimson-deep: #7a0d1c;
+  --crimson-ink: #2b0008;
+
+  /* Theme-driven accent: blue in light mode, crimson in dark mode.
+     Use these (not the raw crimson vars) for anything that should adapt. */
+  --accent: #1d4ed8;
+  --accent-bright: #2563eb;
+  --accent-deep: #1e3a8a;
+  --accent-glow: rgba(37, 99, 235, 0.4);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.dark {
+  --accent: var(--crimson);
+  --accent-bright: var(--crimson-bright);
+  --accent-deep: var(--crimson-deep);
+  --accent-glow: rgba(225, 29, 42, 0.5);
+}
+
+/* Dark noir fallback shown behind the WebGL shader before it paints. */
+html {
+  background-color: #0e0e10;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: transparent;
 }
 
 /* .general-bg {
@@ -99,18 +111,14 @@ body {
   }
 
   .send-btn {
-    background: rgb(3,0,57);
-    background: linear-gradient(90deg, rgba(3,0,57,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(90deg, var(--accent-deep) 0%, var(--accent) 50%, var(--accent-bright) 100%);
     color: #ffffff;
-    transition: transform 0.4s ease; /* Transition for smooth color and border change */
+    transition: box-shadow 0.4s ease, filter 0.3s ease;
   }
   .send-btn:hover {
-    background-color: #1494f6;
     color: #ffffff;
-    box-shadow: 0 0 10px 5px rgba(38, 128, 197, 0.7); /* Add a glow effect on hover */
-    --tw-scale-x: 1.04;
-    --tw-scale-y: 1.04;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    filter: brightness(1.08);
+    box-shadow: 0 0 12px 4px var(--accent-glow);
   }
 
   .text-balance {
@@ -121,6 +129,50 @@ body {
   }
   .background-2 {
     background-color: #212121;
+  }
+
+  /* Sections are fully transparent — the noir shader is the backdrop. */
+  .section-surface {
+    background-color: transparent;
+  }
+
+  /* Glassmorphism — translucent, bordered, blurred. The default surface for
+     every card/panel so the shader stays visible through the whole site. */
+  .glass {
+    background-color: rgba(255, 250, 242, 0.34);
+    border: 1px solid rgba(80, 40, 20, 0.22);
+    backdrop-filter: blur(12px) saturate(1.1);
+    -webkit-backdrop-filter: blur(12px) saturate(1.1);
+    box-shadow: 0 8px 30px -16px rgba(60, 30, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  }
+  .dark .glass {
+    background-color: rgba(14, 14, 18, 0.42);
+    border: 1px solid rgba(225, 29, 42, 0.22);
+    box-shadow: 0 10px 36px -16px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+
+  /* Subtle border highlight on hover for interactive glass cards.
+     No scale/lift (no "grow"), and no colored glow in light mode. */
+  .glass-hover {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .glass-hover:hover {
+    border-color: rgba(80, 40, 20, 0.4);
+    box-shadow: 0 12px 34px -16px rgba(60, 30, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  }
+  .dark .glass-hover:hover {
+    border-color: rgba(225, 29, 42, 0.55);
+    box-shadow: 0 16px 44px -14px rgba(225, 29, 42, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  /* Small transparent bordered pill (tags, chips). */
+  .chip {
+    background-color: rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(80, 40, 20, 0.25);
+  }
+  .dark .chip {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.16);
   }
   .background-3 {
     /* background-color: #6d6c6c; */
@@ -138,15 +190,13 @@ body {
   .border-gradient {
     border-top-width: 2px;
     border-style: solid;
-    border-image: linear-gradient(to right, rgba(0,212,255,1) 0%, rgb(13, 13, 163) 50%, rgb(0, 81, 255) 100%) 1;
-    /* border-image: linear-gradient(to right, darkblue, darkorchid) 1; */
+    border-image: linear-gradient(to right, var(--crimson-bright) 0%, var(--crimson-deep) 50%, rgba(60, 6, 16, 0.2) 100%) 1;
   }
 
   .border-gradient-bottom {
     border-bottom-width: 2px;
     border-style: solid;
-    border-image: linear-gradient(to right, rgba(0,212,255,1), rgb(0, 81, 255)) 1;
-    /* border-image: linear-gradient(to right, darkblue, darkorchid) 1; */
+    border-image: linear-gradient(to right, var(--crimson) 0%, var(--crimson-deep) 100%) 1;
   }
 
   .border-gradient-2 {
@@ -172,9 +222,9 @@ body {
   } 
  
 
+  /* Footer "swag" orb — theme accent (blue in light, crimson in dark). */
   .swag-bg-btn {
-    background: rgb(3,0,57);
-    background: linear-gradient(90deg, rgba(3,0,57,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    background: radial-gradient(circle at 35% 30%, var(--accent-bright) 0%, var(--accent) 45%, var(--accent-deep) 100%);
   }
 
   .no-swag-bg-btn {
@@ -182,20 +232,18 @@ body {
     background: radial-gradient(circle, rgba(13,15,17,1) 0%, rgba(109,108,108,1) 0%, rgba(22,22,22,1) 100%);
   }
 
+  /* Swag mode surfaces — cool reddish / black gradients layered over the glass
+     (swag forces dark context). */
   .swag-bg {
-    background: rgb(13,15,17);
-    background: radial-gradient(circle, rgba(13,15,17,1) 0%, rgb(65, 62, 62) 0%, rgba(22,22,22,1) 100%);
-    /* box-shadow: 0 0 10px 5px rgba(88, 88, 88, 0.7); */
+    background: radial-gradient(circle at 50% 0%, rgba(225, 29, 42, 0.18) 0%, rgba(0, 0, 0, 0.42) 72%);
   }
 
   .swag-bg-contact {
-    background: rgb(13,15,17);
-    background: linear-gradient(90deg, rgba(13,15,17,1) 0%, rgb(56, 55, 55) 50%, rgb(11, 11, 11) 100%);
+    background: linear-gradient(90deg, rgba(122, 13, 28, 0.34) 0%, rgba(12, 10, 12, 0.45) 55%, rgba(0, 0, 0, 0.48) 100%);
   }
 
   .swag-bg-card {
-    background: rgb(13,15,17);
-    background: linear-gradient(180deg, rgba(13,15,17,1) 0%, rgb(56, 55, 55) 50%, rgb(11, 11, 11) 100%);
+    background: linear-gradient(180deg, rgba(122, 13, 28, 0.32) 0%, rgba(14, 10, 12, 0.44) 55%, rgba(0, 0, 0, 0.48) 100%);
   }
   
   .swag-t {
@@ -228,7 +276,9 @@ body {
   }
   
   .background-card {
-    background-color: #2b2a2a;
+    background-color: rgba(28, 28, 31, 0.92);
+    border: 1px solid rgba(225, 29, 42, 0.14);
+    box-shadow: 0 10px 40px -12px rgba(0, 0, 0, 0.8);
   }
 
   .bg-yt {
@@ -260,7 +310,9 @@ body {
   }
 
   .light-card {
-    background-color: rgb(247, 213, 162);
+    background-color: rgba(247, 213, 162, 0.94);
+    border: 1px solid rgba(122, 13, 28, 0.18);
+    box-shadow: 0 10px 30px -14px rgba(80, 40, 0, 0.5);
   }
 
   .light-2-gradient {
@@ -289,8 +341,8 @@ body {
   }
 
   .resume-btn-dark {
-    border: 1.5px solid rgb(59 130 246);
-    color: rgb(59 130 246);
+    border: 1.5px solid var(--crimson);
+    color: var(--crimson-bright);
     transition: transform 0.4s ease; /* Transition for smooth color and border change */
   }
 
@@ -302,9 +354,9 @@ body {
   }
 
   .resume-btn-dark:hover {
-    background-color: rgb(59 130 246);
+    background-color: var(--crimson);
     color: #ffffff;
-    box-shadow: 0 0 10px 5px rgba(38, 128, 197, 0.7); /* Add a glow effect on hover */
+    box-shadow: 0 0 12px 4px rgba(225, 29, 42, 0.5); /* crimson glow on hover */
     --tw-scale-x: 1.10;
     --tw-scale-y: 1.10;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -329,7 +381,7 @@ body {
   }
 
   .swag:hover {
-    box-shadow: 0 0 10px 5px rgba(38, 157, 197, 0.7); /* Add a glow effect on hover */
+    box-shadow: 0 0 10px 5px var(--accent-glow); /* glow matches the orb's accent color */
     --tw-scale-x: 1.10;
     --tw-scale-y: 1.10;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -509,55 +561,44 @@ body {
   }
 
   .btn-transition-dark {
-    /* position: relative;
-    display: inline-block; */
-    /* font-size: 2em; */
-    /* font-weight: 800; */
     color: white;
     overflow: hidden;
-    background: linear-gradient(to right, #2680c5, #1494f6 50%, white 50%);
+    background: linear-gradient(to right, var(--crimson-deep), var(--crimson-bright) 50%, white 50%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 200% 100%;
     background-position: 100%;
-    transition: background-position 275ms ease, transform 0.5s ease, border-color 0.4s ease;
-  }
-  
-  .btn-transition-dark:hover {
-    background-position: 0 100%;
-    border-color: #2680c5;
-    --tw-scale-x: 1.25;
-    --tw-scale-y: 1.25;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-    /* text-shadow: 0 0 4px #1494f6; */
+    transition: background-position 275ms ease, border-color 0.4s ease;
   }
 
+  .btn-transition-dark:hover {
+    background-position: 0 100%;
+    border-color: var(--crimson);
+  }
+
+  /* Light-mode Details link — blue/black, no red, no grow. */
   .btn-transition-light {
-    /* position: relative;
-    display: inline-block; */
-    /* font-size: 2em; */
-    /* font-weight: 800; */
+    color: #111;
+    overflow: hidden;
+    background: linear-gradient(to right, var(--accent-deep), var(--accent-bright) 50%, #111 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     background-size: 200% 100%;
     background-position: 100%;
-    transition: background-position 275ms ease, transform 0.5s ease;
+    transition: background-position 275ms ease, border-color 0.4s ease;
   }
-  
+
   .btn-transition-light:hover {
     background-position: 0 100%;
-    --tw-scale-x: 1.25;
-    --tw-scale-y: 1.25;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    border-color: var(--accent);
   }
 
   .text-transition-dark {
-    /* position: relative;
-    display: inline-block; */
-    /* font-size: 2em; */
-    /* font-weight: 800; */
     color: white;
     overflow: hidden;
-    background: linear-gradient(to right, #2680c5, #1494f6 50%, white 50%);
+    background: linear-gradient(to right, var(--crimson-deep), var(--crimson-bright) 50%, white 50%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -565,103 +606,76 @@ body {
     background-position: 100%;
     transition: background-position 275ms ease, transform 0.5s ease;
   }
-  
+
   .text-transition-dark:hover {
     background-position: 0 100%;
-    --tw-scale-x: 1.25;
-    --tw-scale-y: 1.25;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-    /* text-shadow: 0 0 4px #1494f6; */
   }
 
   .text-transition-light {
-    /* position: relative;
-    display: inline-block; */
-    /* font-size: 2em; */
-    /* font-weight: 800; */
     color: black;
     overflow: hidden;
-    background: linear-gradient(to right, #c52626, #f41414 50%, black 50%);
+    background: linear-gradient(to right, var(--accent-deep), var(--accent-bright) 50%, black 50%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 200% 100%;
     background-position: 100%;
-    transition: background-position 275ms ease, transform 0.5s ease;
-  }
-  
-  .text-transition-light:hover {
-    background-position: 0 100%;
-    --tw-scale-x: 1.25;
-    --tw-scale-y: 1.25;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    transition: background-position 275ms ease;
   }
 
+  .text-transition-light:hover {
+    background-position: 0 100%;
+  }
+
+  /* Fluid type — smaller, professional scale. clamp(min, preferred, max). */
   .text-small {
-    font-size: 2.8rem;
-    line-height: 2.8rem;
+    font-size: clamp(1.05rem, 0.9rem + 0.7vw, 1.6rem);
+    line-height: 1.1;
   }
 
   .text-small-2 {
-    font-size: 2.9rem;
-    line-height: 2.8rem;
+    font-size: clamp(1.1rem, 0.92rem + 0.75vw, 1.65rem);
+    line-height: 1.1;
   }
 
   .text-heading {
-    font-size: 5rem;
-    line-height: 5.5rem;
+    font-size: clamp(2.4rem, 1.5rem + 4vw, 4.75rem);
+    line-height: 1.06;
+    text-wrap: balance;
   }
 
   .text-subheading {
-    font-size: 2.2rem;
-    line-height: 2.6rem;
+    font-size: clamp(1.05rem, 0.85rem + 0.85vw, 1.7rem);
+    line-height: 1.25;
   }
 
   .text-lesser-subheading {
-    font-size: 1.8rem;
-    line-height: 2rem;
+    font-size: clamp(0.92rem, 0.8rem + 0.55vw, 1.35rem);
+    line-height: 1.25;
   }
-  
+
   .text-quote {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-display: italic;
+    font-size: clamp(0.85rem, 0.76rem + 0.4vw, 1.15rem);
+    line-height: 1.5;
+    font-style: italic;
   }
 
   .text-section-title {
-    font-size: 3.5rem;
-    line-height: 4rem;
+    font-size: clamp(1.6rem, 1.15rem + 2vw, 2.5rem);
+    line-height: 1.1;
+    text-wrap: balance;
   }
 
-  /* mobile versions */
-  
-  .mob-text-small {
-    font-size: 2.2rem;
-    line-height: 2.2rem;
-  }
-
+  /* Legacy mobile aliases — kept so existing markup keeps working, now also fluid. */
+  .mob-text-small { font-size: clamp(1.05rem, 0.9rem + 0.7vw, 1.6rem); line-height: 1.1; }
   .mob-text-heading {
-    font-size: 4rem;
-    line-height: 6rem;
-    justify-self: center;
-    text-wrap: wrap;
+    font-size: clamp(2.4rem, 1.5rem + 4vw, 4.75rem);
+    line-height: 1.06;
+    text-wrap: balance;
   }
-
-  .mob-text-subheading {
-    font-size: 2rem;
-    line-height: 2.6rem;
-  }
-
-  .mob-text-lesser-subheading {
-    font-size: 1.4rem;
-    line-height: 2rem;
-  }
-  
-  .mob-text-quote {
-    font-size: 1.2rem;
-    line-height: 2rem;
-    font-display: italic;
-  }
+  .mob-text-subheading { font-size: clamp(1.05rem, 0.85rem + 0.85vw, 1.7rem); line-height: 1.25; }
+  .mob-text-lesser-subheading { font-size: clamp(0.92rem, 0.8rem + 0.55vw, 1.35rem); line-height: 1.25; }
+  .mob-text-quote { font-size: clamp(0.85rem, 0.76rem + 0.4vw, 1.15rem); line-height: 1.5; font-style: italic; }
   
   /* .css-orb {
     background-image: radial-gradient(ellipse at 50% 50%, rgb(107 96 255 / 1) 0%, rgb(133 124 255 / 0) 56.61%);

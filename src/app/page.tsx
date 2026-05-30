@@ -2,6 +2,7 @@
 import { useTheme } from "./lib/store";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import ExperienceSection from "@/components/ExperienceSection";
 import ProjectSection from "@/components/ProjectSection";
 import ToolSection from "@/components/ToolSection";
 import AboutSection from "@/components/AboutSection";
@@ -13,9 +14,10 @@ export default function Home() {
   const { darkMode, toggleDarkMode, swagMode, toggleSwagMode } = useTheme();
 
   return ( //if darkMode is true, add the dark class to the main element
-    <main className={`${darkMode && "dark"} light dark:background text-black dark:text-white h-auto`}>
+    <main className={`${darkMode && "dark"} bg-transparent text-black dark:text-white h-auto`}>
       <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} swagMode={swagMode} />
       <HeroSection darkMode={darkMode} swagMode={swagMode} />
+      <ExperienceSection darkMode={darkMode} swagMode={swagMode} />
       <ProjectSection darkMode={darkMode} toggleDarkMode={toggleDarkMode} swagMode={swagMode} />
       <ToolSection darkMode={darkMode} swagMode={swagMode} />
       <AboutSection darkMode={darkMode} toggleDarkMode={toggleDarkMode} swagMode={swagMode} />

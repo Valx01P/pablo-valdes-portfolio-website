@@ -1,6 +1,9 @@
+"use client";
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { projects, type Project } from '@/app/lib/data'
+import { useLightbox } from '@/app/lib/lightbox'
 
 type ProjectProps = {
   darkMode: boolean;
@@ -8,243 +11,103 @@ type ProjectProps = {
   swagMode: boolean;
 };
 
-const ProjectSection = ( props: ProjectProps ) => {
+const ProjectSection = (props: ProjectProps) => {
 
+  const { open } = useLightbox();
   const githubIconFileName = props.darkMode ? 'github-light-2.svg' : 'github-dark-2.svg';
   const eyeIconFileName = props.darkMode ? 'eye-light.svg' : 'eye-dark.svg';
-  const portfolioSiteFileName = props.darkMode ? 'portfolio-site.webp' : 'portfolio-site-dark.webp';
-  const arrow = props.darkMode ? (
-    <svg className="absolute top-0 right-0 w-[16px] h-[16px]" width="28" height="28" fill={`#fff`} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="m16.004 9.414-8.607 8.607-1.414-1.414L14.59 8H7.004V6h11v11h-2V9.414Z"></path>
-    </svg>
-  ) : (
-    <svg className="absolute top-0 right-0 w-[16px] h-[16px]" width="28" height="28" fill={`#000`} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="m16.004 9.414-8.607 8.607-1.414-1.414L14.59 8H7.004V6h11v11h-2V9.414Z"></path>
-    </svg>
-  );
+  const linkedinIconFileName = props.darkMode ? 'linkedin-light.svg' : 'linkedin-dark.svg';
+
+  const resolveImage = (p: Project) => {
+    if (props.darkMode && p.imageDark) return p.imageDark;
+    return p.image;
+  };
+
+  const Media = ({ p }: { p: Project }) => {
+    const img = resolveImage(p);
+    if (!img) {
+      return (
+        <div className='relative w-full aspect-[16/10] flex flex-col items-center justify-center gap-1.5 border-b border-dashed border-[var(--accent-deep)] dark:border-[var(--accent)]/60 text-black/45 dark:text-white/55'>
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="2" />
+            <circle cx="8.5" cy="8.5" r="1.5" />
+            <path d="m21 15-5-5L5 21" />
+          </svg>
+          <span className='roboto-medium text-xs tracking-wide'>Preview coming soon</span>
+        </div>
+      );
+    }
+    return (
+      <button
+        type="button"
+        onClick={() => open(`/images/${img}`, `${p.title} preview`)}
+        title="Click to enlarge"
+        className='relative block w-full aspect-[16/10] overflow-hidden cursor-zoom-in'
+      >
+        <Image
+          src={`/images/${img}`}
+          alt={`${p.title} preview`}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className='object-cover object-top transition-transform duration-300 hover:scale-[1.03]'
+        />
+      </button>
+    );
+  };
 
   return (
-    <section id='projects' className='pt-16 light-2 dark:background-2 w-full text-black dark:text-white flex justify-center'>
-      <div className='h-auto layout-container flex flex-col justify-center align-middle items-start px-4'>
-        <div className='h-auto w-full flex flex-1 max-[850px]:justify-center'>
-          <h1 className='text-black dark:text-white text-section-title merriweather-bold max-[420px]:text-4xl'>Projects</h1>
+    <section id='projects' className='pt-16 section-surface w-full text-black dark:text-white flex justify-center'>
+      <div className='h-auto layout-container flex flex-col justify-center items-start px-4'>
+        <div className='w-full flex max-[850px]:justify-center mb-8'>
+          <h1 className='text-black dark:text-white text-section-title merriweather-bold'>Projects</h1>
         </div>
-        {/* Project 1 */}
-        <div className={`${props.swagMode && "swag-bg-card"} max-[1420px]:flex-col h-auto w-full flex flex-row mt-16 mb-4 p-8 light-card dark:background-card rounded-lg`}>
-          <div className='max-[1420px]:w-auto flex max-[1420px]:justify-center w-1/2 items-center'>
-            <Image src={`/images/${portfolioSiteFileName}`} width={700} height={350} alt="project preview" onClick={props.toggleDarkMode} className='cursor-pointer border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
-          </div>
-          <div className='max-[1420px]:w-full flex max-[1420px]:items-center max-[1420px]:pt-8 flex-col items-start gap-4 roboto-medium w-1/2 px-4'>
-            <h1 className='max-[420px]:text-xl max-[450px]:text-center text-black dark:text-white text-4xl'>My Portfolio</h1>
-            <p className='max-[420px]:text-base max-[1420px]:w-auto flex max-[1420px]:text-balance max-[1420px]:text-center text-black dark:text-white text-2xl w-4/5'>The culmination of my skills & growing confidence as a Full Stack Web Developer.</p>
-            <div className='max-[420px]:text-sm flex flex-row flex-wrap justify-center gap-3 text-xl'>
-              <div className='border-2 rounded-full border-transparent py-1 px-3 background text-white hover:scale-110'>
-                Next.js
+
+        <div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[clamp(0.85rem,1.6vw,1.4rem)]'>
+          {projects.map((p) => (
+            <article key={p.slug} className={`${props.swagMode && "swag-bg-card"} glass glass-hover rounded-xl overflow-hidden flex flex-col`}>
+              <Media p={p} />
+              <div className='flex flex-col gap-2.5 p-[clamp(0.9rem,1.8vw,1.25rem)] flex-1'>
+                <div className='flex items-baseline justify-between gap-2'>
+                  <h3 className='text-black dark:text-white text-base roboto-bold leading-tight'>{p.title}</h3>
+                  <span className='text-black/45 dark:text-white/45 roboto-medium text-xs shrink-0'>{p.year}</span>
+                </div>
+                <p className='text-black/75 dark:text-white/70 text-[0.8rem] leading-relaxed line-clamp-3 flex-1'>{p.blurb}</p>
+                <div className='flex flex-wrap gap-1.5'>
+                  {p.tags.slice(0, 5).map((t) => (
+                    <span key={t} className='chip text-black/70 dark:text-white/75 text-[0.66rem] roboto-medium px-2 py-0.5 rounded-full transition-colors'>
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <div className='flex items-center justify-between pt-1.5 mt-auto border-t border-black/10 dark:border-white/10'>
+                  <Link
+                    href={p.slug}
+                    title='Open details page for this project'
+                    className='btn-transition-light dark:btn-transition-dark text-sm roboto-medium pt-1.5'
+                  >
+                    Details →
+                  </Link>
+                  <div className='flex flex-row gap-3 items-center pt-1.5'>
+                    {p.links.github && (
+                      <a href={p.links.github} target="_blank" rel="noopener noreferrer" title='View the Github Repository'>
+                        <Image src={`/svg/${githubIconFileName}`} width={20} height={20} alt="github icon" className='hover:scale-125 opacity-80 hover:opacity-100' />
+                      </a>
+                    )}
+                    {(p.links.live || p.links.marketplace) && (
+                      <a href={(p.links.live || p.links.marketplace)!} target={(p.links.live || p.links.marketplace)!.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" title='Go to the live site'>
+                        <Image src={`/svg/${eyeIconFileName}`} width={20} height={20} alt="live site icon" className='hover:scale-125 opacity-80 hover:opacity-100' />
+                      </a>
+                    )}
+                    {p.links.post && (
+                      <a href={p.links.post} target="_blank" rel="noopener noreferrer" title='View the LinkedIn post'>
+                        <Image src={`/svg/${linkedinIconFileName}`} width={20} height={20} alt="LinkedIn post icon" className='hover:scale-125 opacity-80 hover:opacity-100' />
+                      </a>
+                    )}
+                  </div>
+                </div>
               </div>
-              <div className='border-2 rounded-full border-transparent py-1 px-3 background text-white hover:scale-110'>
-                Tailwind.css
-              </div>
-              <div className='border-2 rounded-full border-transparent py-1 px-3 background text-white hover:scale-110'>
-                Typescript
-              </div>
-              <div className='border-2 rounded-full border-transparent py-1 px-3 background text-white hover:scale-110'>
-                Zustand
-              </div>
-              <div className='border-2 rounded-full border-transparent py-1 px-3 background text-white hover:scale-110'>
-                Resend
-              </div>
-            </div>
-            <div className='max-[420px]:text-sm flex max-[420px]:flex-col max-[420px]:items-center flex-row text-xl gap-4'>
-              <Link href="/portfolio" title='Open details page for this project' className='btn-transition-light dark:btn-transition-dark border-2 rounded-sm bg-transparent py-1 pl-3.5 pr-4 hover:scale-110 text-black dark:text-white border-black dark:border-white relative'>Details
-              {arrow}
-              </Link>
-              <div className='max-[420px]:text-sm flex flex-row text-xl gap-4 items-center'>
-              <a href="https://github.com/Valx01P/pablo-valdes-portfolio-website" target="_blank" rel="noopener noreferrer" title='View the Github Repository for this project' >
-                <Image src={`/svg/${githubIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
-              </a>
-              <a href="/" title='Go to the deployed live site'>
-                <Image src={`/svg/${eyeIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
-              </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* Project 2 */}
-        <div className={`${props.swagMode && "swag-bg-card"} flex max-[1420px]:flex-col-reverse max-[1420px]:justify-center h-auto w-full flex-row my-4 p-8 light-card dark:background-card rounded-lg`}>
-          <div className='max-[1420px]:w-full flex max-[1420px]:items-center max-[1420px]:pt-8 flex-col items-start gap-4 roboto-medium w-1/2 px-4'>
-            <h1 className='max-[420px]:text-xl text-black dark:text-white text-4xl'>iServer</h1>
-            <p className='max-[420px]:text-base max-[1420px]:w-auto flex max-[1420px]:text-balance max-[1420px]:text-center text-black dark:text-white text-2xl w-4/5'>An image uploading website with third party auth, design inspired by imgbb.com. Made to statically serve image urls for websites.</p>
-            <div className='max-[420px]:text-sm flex flex-row flex-wrap justify-center gap-3 text-xl'>
-              <div className='border-2 rounded-full border-transparent py-1 px-3 background text-white hover:scale-110'>
-                Next.js
-              </div>
-              <div className='border-2 rounded-full border-transparent py-1 px-3 background text-white hover:scale-110'>
-                Tailwind.css
-              </div>
-              <div className='border-2 rounded-full border-transparent py-1 px-3 background text-white hover:scale-110'>
-                Typescript
-              </div>
-              <div className='border-2 rounded-full border-transparent py-1 px-3 background text-white hover:scale-110'>
-                MongoDB
-              </div>
-              <div className='border-2 rounded-full border-transparent py-1 px-3 background text-white hover:scale-110'>
-                Clerk
-              </div>
-            </div>
-            <div className='max-[420px]:text-sm flex max-[420px]:flex-col max-[420px]:items-center flex-row text-xl gap-4'>
-              <Link href="/iserver" title='Open details page for this project' className='btn-transition-light dark:btn-transition-dark border-2 rounded-sm bg-transparent py-1 pl-3.5 pr-4 hover:scale-110 text-black dark:text-white border-black dark:border-white relative'>Details
-              {arrow}
-              </Link>
-              <div className='max-[420px]:text-sm flex flex-row text-xl gap-4 items-center'>
-              <a href="https://github.com/Valx01P/image-transfer-site-master" target="_blank" rel="noopener noreferrer" title='View the Github Repository for this project' >
-                <Image src={`/svg/${githubIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
-              </a>
-              <a href="https://image-transfer-site-master.vercel.app/" target="_blank" rel="noopener noreferrer" title='Go to the deployed live site'>
-                <Image src={`/svg/${eyeIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
-              </a>
-              </div>
-            </div>
-          </div>
-          <div className='max-[1420px]:w-auto flex max-[1420px]:justify-center w-1/2 items-center'>
-            <Image src={`/images/i-server-site.webp`} width={750} height={350} alt="project preview" className='border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
-          </div>
-        </div>
-        {/* Project 3 */}
-        <div className={`${props.swagMode && "swag-bg-card"} max-[1420px]:flex-col h-auto w-full flex flex-row my-4 p-8 light-card dark:background-card rounded-lg`}>
-          <div className='max-[1420px]:w-auto flex max-[1420px]:justify-center w-1/2 items-center'>
-            <Image src={`/images/practical-synth-extension.webp`} width={700} height={350} alt="project preview" className='border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
-          </div>
-          <div className='max-[1420px]:w-full flex max-[1420px]:items-center max-[1420px]:pt-8 flex-col items-start gap-4 roboto-medium w-1/2 px-4'>
-            <h1 className='max-[420px]:text-xl max-[450px]:text-center flex flex-wrap text-balance text-center justify-center text-black dark:text-white text-4xl'>Practical Synth Theme</h1>
-            <p className='max-[420px]:text-base max-[1420px]:w-auto max-[1420px]:text-balance max-[1420px]:text-center text-black dark:text-white text-2xl w-4/5'>My solution to a visually pleasing SynthWave Theme for Visual Studio Code. I could never find one I liked, so I made my own for everyday use.</p>
-            <div className='max-[420px]:text-sm flex flex-row flex-wrap justify-center gap-3 text-xl'>
-              <div className='border-2 rounded-full border-transparent py-1 px-3 background text-white hover:scale-110'>
-                CSS
-              </div>
-              <div className='border-2 rounded-full border-transparent py-1 px-3 background text-white hover:scale-110'>
-                JSON
-              </div>
-            </div>
-            <div className='max-[420px]:text-sm flex max-[420px]:flex-col max-[420px]:items-center flex-row text-xl gap-4'>
-              <Link href="/practical-synth-theme" title='Open details page for this project' className='btn-transition-light dark:btn-transition-dark border-2 rounded-sm bg-transparent py-1 pl-3.5 pr-4 hover:scale-110 text-black dark:text-white border-black dark:border-white relative'>Details
-              {arrow}
-              </Link>
-              <div className='max-[420px]:text-sm flex flex-row text-xl gap-4 items-center'>
-              <a href="https://github.com/Valx01P/practical-synth" target="_blank" rel="noopener noreferrer" title='View the Github Repository for this project' >
-                <Image src={`/svg/${githubIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
-              </a>
-              <a href="https://marketplace.visualstudio.com/items?itemName=PabloValdes019.practical-synth" target="_blank" rel="noopener noreferrer" title='View live on Visual Studio Marketplace'>
-                <Image src={`/svg/${eyeIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
-              </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* Project 4 */}
-        <div className={`${props.swagMode && "swag-bg-card"} flex max-[1420px]:flex-col-reverse max-[1420px]:justify-center h-auto w-full flex-row my-4 p-8 light-card dark:background-card rounded-lg`}>
-          <div className='max-[1420px]:w-full flex max-[1420px]:items-center max-[1420px]:pt-8 flex-col items-start gap-4 roboto-medium w-1/2 px-4'>
-            <h1 className='max-[420px]:text-xl max-[450px]:text-center flex flex-wrap text-balance text-center justify-center text-black dark:text-white text-4xl'>Theoretical Stonk Plays</h1>
-            <p className='max-[420px]:text-base max-[1420px]:w-auto flex max-[1420px]:text-balance max-[1420px]:text-center text-black dark:text-white text-2xl w-4/5'>My favorite project, uses a third party API to get stock aggregate data for charts. Allows user to form theoretical stock plays based on state actions.</p>
-            <div className='max-[420px]:text-sm flex flex-row flex-wrap justify-center gap-3 text-xl'>
-              <div className='border-2 rounded-full border-transparent py-1 px-3 background text-white hover:scale-110'>
-                Next.js
-              </div>
-              <div className='border-2 rounded-full border-transparent py-1 px-3 background text-white hover:scale-110'>
-                Tailwind.css
-              </div>
-              <div className='border-2 rounded-full border-transparent py-1 px-3 background text-white hover:scale-110'>
-                Typescript
-              </div>
-              <div className='flex flex-wrap text-balance text-center border-2 rounded-full border-transparent py-1 px-3 background text-white hover:scale-110'>
-                Polygon.io API
-              </div>
-              <div className='border-2 rounded-full border-transparent py-1 px-3 background text-white hover:scale-110'>
-                Zustand
-              </div>
-            </div>
-            <div className='max-[420px]:text-sm flex max-[420px]:flex-col max-[420px]:items-center flex-row text-xl gap-4'>
-              <Link href="/theoretical-stonk-plays" title='Open details page for this project' className='btn-transition-light dark:btn-transition-dark border-2 rounded-sm bg-transparent py-1 pl-3.5 pr-4 hover:scale-110 text-black dark:text-white border-black dark:border-white relative'>Details
-              {arrow}
-              </Link>
-              <div className='max-[420px]:text-sm flex flex-row text-xl gap-4 items-center'>
-              <a href="https://github.com/Valx01P/theoretical-stock-plays-site" target="_blank" rel="noopener noreferrer" title='View the Github Repository for this project' >
-                <Image src={`/svg/${githubIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
-              </a>
-              <a href="https://theoretical-stock-plays-site.vercel.app/" target="_blank" rel="noopener noreferrer" title='Go to the deployed live site'>
-                <Image src={`/svg/${eyeIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
-              </a>
-              </div>
-            </div>
-          </div>
-          <div className='max-[1420px]:w-auto flex max-[1420px]:justify-center w-1/2 items-center'>
-            <Image src={`/images/t-stonk-plays-site.webp`} width={750} height={350} alt="project preview" className='border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
-          </div>
-        </div>
-        {/* Project 5 */}
-        <div className={`${props.swagMode && "swag-bg-card"} max-[1420px]:flex-col h-auto w-full flex flex-row my-4 p-8 light-card dark:background-card rounded-lg`}>
-          <div className='max-[1420px]:w-auto flex max-[1420px]:justify-center w-1/2 items-center'>
-            <Image src={`/images/g-planner-site.webp`} width={700} height={350} alt="project preview" className='border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
-          </div>
-          <div className='max-[1420px]:w-full flex max-[1420px]:items-center max-[1420px]:pt-8 flex-col items-start gap-4 roboto-medium w-1/2 px-4'>
-            <h1 className='max-[420px]:text-xl max-[450px]:text-center flex flex-wrap text-balance text-center justify-center text-black dark:text-white text-4xl'>General Planner</h1>
-            <p className='max-[420px]:text-base max-[1420px]:w-auto max-[1420px]:text-balance max-[1420px]:text-center text-black dark:text-white text-2xl w-4/5'>Authentication routes and permissions, a dedicated Frontend and Backend API. My first Full Stack project and a priceless learning experience.</p>
-            <div className='max-[420px]:text-sm flex flex-row flex-wrap max-[1120px]:justify-center justify-start gap-3 text-xl'>
-              <div className='border-2 rounded-full border-transparent py-1 px-3 background text-white hover:scale-110'>
-                React
-              </div>
-              <div className='border-2 rounded-full border-transparent py-1 px-3 background text-white hover:scale-110'>
-                Redux
-              </div>
-              <div className='border-2 rounded-full border-transparent py-1 px-3 background text-white hover:scale-110'>
-                MongoDB
-              </div>
-              <div className='border-2 rounded-full border-transparent py-1 px-3 background text-white hover:scale-110'>
-                Node
-              </div>
-              <div className='border-2 rounded-full border-transparent py-1 px-3 background text-white hover:scale-110'>
-                Express
-              </div>
-              <div className='border-2 rounded-full border-transparent py-1 px-3 background text-white hover:scale-110'>
-                Javascript
-              </div>
-            </div>
-            <div className='max-[420px]:text-sm flex max-[420px]:flex-col max-[420px]:items-center flex-row text-xl gap-4'>
-              <Link href="/general-planner" title='Open details page for this project' className='btn-transition-light dark:btn-transition-dark border-2 rounded-sm bg-transparent py-1 pl-3.5 pr-4 hover:scale-110 text-black dark:text-white border-black dark:border-white relative'>Details
-              {arrow}
-              </Link>
-              <div className='max-[420px]:text-sm flex flex-row text-xl gap-4 items-center'>
-              <a href="https://github.com/Valx01P/generalplanner" target="_blank" rel="noopener noreferrer" title='View the Github Repository for this project' >
-                <Image src={`/svg/${githubIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
-              </a>
-              <a href="https://general-planner.onrender.com/" target="_blank" rel="noopener noreferrer" title='Go to the deployed live site'>
-                <Image src={`/svg/${eyeIconFileName}`} width={30} height={30} alt="github icon" className='hover:scale-125' />
-              </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* Misc. Projects */}
-        <div className={`${props.swagMode && "swag-bg-card"} flex max-[1420px]:flex-col-reverse max-[1420px]:justify-center h-auto w-full flex-row my-4 p-8 light-card dark:background-card rounded-lg`}>
-          <div className='max-[1420px]:w-full flex max-[1420px]:items-center max-[1420px]:pt-8 flex-col items-start gap-4 roboto-medium w-1/2 px-4'>
-            <h1 className='max-[420px]:text-xl max-[450px]:text-center flex flex-wrap text-balance text-center justify-center text-black dark:text-white text-4xl'>Misc. Projects</h1>
-            <p className='max-[420px]:text-base max-[1420px]:w-auto flex max-[1420px]:text-balance max-[1420px]:text-center text-black dark:text-white text-2xl w-4/5'>An assortment of miscellaneous projects not given much attention here as they were for simple practice, experimentation, or basic learning from when I started my journey coding.</p>
-            <div className='max-[420px]:text-sm flex flex-row flex-wrap justify-center gap-3 text-xl'>
-              <div className='flex flex-wrap text-balance text-center border-2 rounded-full border-transparent py-1 px-3 background text-white hover:scale-110'>
-                Web Development
-              </div>
-              <div className='border-2 rounded-full border-transparent py-1 px-3 background text-white hover:scale-110'>
-                C++
-              </div>
-            </div>
-            <div className='max-[420px]:text-sm flex max-[420px]:flex-col max-[420px]:items-center flex-row text-xl gap-4'>
-              <Link href="/misc" title='Open details page for these lesser projects' className='btn-transition-light dark:btn-transition-dark border-2 rounded-sm bg-transparent py-1 pl-3.5 pr-4 hover:scale-110 text-black dark:text-white border-black dark:border-white relative'>Details
-              {arrow}
-              </Link>
-            </div>
-          </div>
-          <div className='max-[1420px]:w-auto flex max-[1420px]:justify-center w-1/2 items-center'>
-            <Image src={`/svg/misc-box.svg`} width={550} height={350} alt="project preview" className='border-2 border-black shadow-lg shadow-black dark:shadow-white'/>
-          </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
@@ -252,5 +115,3 @@ const ProjectSection = ( props: ProjectProps ) => {
 }
 
 export default ProjectSection
-
-

@@ -1,6 +1,6 @@
-import React from 'react'
+"use client";
 import Image from 'next/image';
-import Link from 'next/link';
+import { useLightbox } from '@/app/lib/lightbox'
 
 type AboutProps = {
   darkMode: boolean;
@@ -9,46 +9,47 @@ type AboutProps = {
 }
 
 const AboutSection = (props: AboutProps) => {
-  const myselfFileName = props.darkMode ? 'linkedin-me-dark.webp' : 'linkedin-me.webp';
+  const { open } = useLightbox();
+  const myselfFileName = 'linkedin-me.webp'; // props.darkMode ? 'linkedin-me-dark.webp' : 'linkedin-me.webp';
 
   return (
-    <section id='about' className='pt-12 light-2 dark:background-2 w-full text-black dark:text-white flex justify-center'>
-      <div className='h-auto layout-container flex flex-col justify-center align-middle px-4'>
-        <div className='h-auto w-full flex flex-1 max-[850px]:justify-center'>
-          <h1 className='text-black dark:text-white text-section-title merriweather-bold max-[420px]:text-4xl'>About</h1>
+    <section id='about' className='pt-16 section-surface w-full text-black dark:text-white flex justify-center'>
+      <div className='h-auto layout-container flex flex-col justify-center px-4'>
+        <div className='w-full flex max-[850px]:justify-center mb-8'>
+          <h1 className='text-black dark:text-white text-section-title merriweather-bold'>About</h1>
         </div>
-        {/* About content */}
-        <div className={`${props.swagMode && "swag-bg"} flex flex-col h-auto w-full mt-16 mb-4 p-8 pb-12 light-card dark:background-card rounded-lg gap-6 roboto-medium dark:roboto-regular`}>
 
-          <div className='flex flex-1 flex-col h-auto gap-2'>
-            <h2 className='text-black dark:text-white text-3xl leading-10 max-[420px]:text-lg'>How it started</h2>
-            <p className='text-black dark:text-white text-xl leading-10 max-[420px]:text-sm'>Long ago, back when I was 17 years old in 11th grade, my good friend Jeremiah told me how he was gonna start coding, before hand 
-              I had always thought of coding as something difficult and complex, but since he was doing it, I figured it wouldn&apos;t be &quot;that hard&quot; for 
-              me to try. Naturally I got curious in making websites as I always thought it would be cool to create any kind of website I imagined if I learned how. 
-              In the beginning, I struggled, nevertheless I continued, and as I progressed further I realized I ultimately wanted to do Fullstack development as I wanted to expand my breadth 
-              of knowledge and I figured it would help me learn more anyways.
+        <div className={`${props.swagMode && "swag-bg"} glass rounded-xl p-[clamp(1.1rem,2.6vw,2rem)] flex max-[900px]:flex-col gap-[clamp(1.25rem,3vw,2.5rem)] items-center`}>
+          {/* Bio */}
+          <div className='flex flex-col gap-4 flex-1 roboto-regular order-2 max-[900px]:order-1'>
+            <p className='text-black dark:text-white text-[clamp(0.9rem,0.82rem+0.4vw,1.05rem)] leading-relaxed'>
+              Hey there! I&apos;m Pablo Valdes, a Full-Stack Web Developer, with secondary interests in Cloud Computing, Robotics, and a strong interest in AI.
+            </p>
+            <p className='text-black dark:text-white text-[clamp(0.9rem,0.82rem+0.4vw,1.05rem)] leading-relaxed'>
+              I&apos;m a rising Senior at <span className='text-[var(--accent-bright)] roboto-medium'><a href="https://www.fiu.edu/" target="_blank" rel="noopener noreferrer">Florida International University</a></span>, pursuing a BS in Computer Science. I love speaking with others and working with enthusiastic, hardworking, and creative people. In my free time I&apos;ve helped others in their career goals, assisted numerous local software projects and developer groups, and dabbled in Robotics, AI, and lots of Full-Stack Web, Mobile, and Cloud development efforts.
+            </p>
+            <div className='pt-1'>
+              <h2 className='text-black dark:text-white text-sm roboto-bold tracking-wide'>Disclaimer:</h2>
+              <p className='text-black/65 dark:text-white/60 text-[clamp(0.78rem,0.72rem+0.3vw,0.9rem)] leading-relaxed italic'>
+                All opinions and comments expressed here are solely my own and do not represent or reflect the views, values, or policies of any organization(s) I&apos;m affiliated with.
+              </p>
+            </div>
+            <p className='text-black/75 dark:text-white/70 text-[clamp(0.85rem,0.78rem+0.35vw,0.95rem)]'>
+              For more about my work and background, visit my <span className='text-[var(--accent-bright)] roboto-medium'><a href="https://www.linkedin.com/in/pablovaldes01/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>. Thank you!
             </p>
           </div>
 
-          <div className='flex flex-1 flew-row max-[1400px]:flex-col h-auto max-[1400px]:gap-4 max-[1400px]:justify-center max-[1400px]:items-center border-gradient-2 dark:border-gradient'>
-            <div className='flex flex-1 flex-col gap-2'>
-              <h2 className='text-black dark:text-white text-3xl leading-10 w-auto pt-5 max-[420px]:text-lg'>How it&apos;s going</h2>
-              <p className='text-black dark:text-white text-xl leading-10 mr-8 max-[420px]:text-sm'>About two years later, after a long journey of learning, experimenting, struggling, and so much more, I improved my Fullstack Development skills drastically. 
-                Now as a 19 year old Fullstack Developer I&apos;ve become more confident in my skills to create websites and their functional logic, but most importantly, I&apos;ve become 
-                confident in my skills to learn new concepts and tech, and more critically, how to problem solve and learn from mistakes effectively. Regarding my education, I&apos;m 
-                currently a sophomore at <span className='underline dark:no-underline text-blue-500 roboto-medium-italic text-2xl max-[420px]:text-base'><a href='https://www.mdc.edu/' target="_blank">Miami Dade College</a></span>, nearly ready to transfer to <span className='underline dark:no-underline roboto-medium-italic text-red-500 text-2xl max-[420px]:text-base'><a href="https://www.fiu.edu/" target="_blank">Florida International University</a></span> to continue my pursuit of a B.A. in Computer Science. 
-                My academic achievements have also led me to being a recipient of the Cambridge Aice Diploma / Bright Futures Scholarship that covers my College tuition, and these same achievements 
-                have also gifted me a fellowship in <span className='underline dark:no-underline roboto-medium-italic text-green-500 text-2xl max-[420px]:text-base'><a href="https://mlt.org/" target="_blank">MLT</a></span>, a program for <span className='underline dark:no-underline roboto-medium-italic text-fuchsia-500 text-2xl max-[420px]:text-base'><a href="https://www.youtube.com/watch?v=z7bWsvmUA8g" target="_blank">diverse talent</a></span> that I am truly grateful to be a part of.
-              </p>
-            </div>
-            <div className='flex flex-1 justify-center max-[1400px]:me-img w-auto pt-5'>
-              <Image src={`/images/${myselfFileName}`} width={1080} height={1080} alt="chess icon" className='rounded-lg cursor-pointer' onClick={props.toggleDarkMode} />
-            </div>
-          </div>
-
-          <div className='flex flex-1 flex-col h-auto gap-2'>
-            <h2 className='text-black dark:text-white text-3xl border-gradient-2 dark:border-gradient w-auto pt-5 leading-10 max-[420px]:text-lg'>Still curious?</h2>
-            <p className='text-black dark:text-white text-xl leading-10 max-[420px]:text-sm'>I really appreciate your interest, for more about my academics, organizations, and much more, you can visit my <span className='underline dark:no-underline roboto-medium-italic text-violet-500 text-2xl max-[420px]:text-base'><a href="https://www.linkedin.com/in/pablovaldes01/" target="_blank">LinkedIn</a></span>, thank you!</p>            
+          {/* Photo */}
+          <div className='shrink-0 order-1 max-[900px]:order-2 w-[clamp(180px,28vw,300px)]'>
+            <Image
+              src={`/images/${myselfFileName}`}
+              width={1080}
+              height={1080}
+              alt="Pablo Valdes"
+              title="Click to enlarge"
+              className='rounded-xl cursor-zoom-in w-full h-auto border border-black/15 dark:border-white/10'
+              onClick={() => open(`/images/${myselfFileName}`, 'Pablo Valdes')}
+            />
           </div>
         </div>
       </div>

@@ -5,21 +5,21 @@ export const metadata: Metadata = {
   title: "Details",
   description: "Project Details Page",
   icons: {
-    icon: '/icon-two.svg'
-  }
+    icon: "/icon-two.svg",
+  },
 };
 
-export default function RootLayout({
+// Nested layout under the root layout — must not render <html>/<body>.
+// The fixed sidebar lays itself out; pages add their own left offset.
+export default function ProjectsLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="bg-yt flex justify-between">
-          <DetailsSidebar />
-          {children}
-      </body>
-    </html>
+    <>
+      <DetailsSidebar />
+      {children}
+    </>
   );
 }

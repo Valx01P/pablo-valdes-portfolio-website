@@ -1,106 +1,126 @@
 import React from 'react'
+import type { IconType } from 'react-icons'
+import {
+  SiTypescript, SiPython, SiJavascript, SiCplusplus, SiHtml5, SiCss,
+  SiReact, SiNextdotjs, SiExpress, SiFastapi, SiSpringboot, SiTailwindcss,
+  SiNodedotjs, SiMongodb, SiPostgresql, SiRedis, SiSupabase, SiSocketdotio,
+  SiGit, SiGithub, SiDocker, SiKubernetes, SiNginx, SiVercel, SiTerraform, SiGithubactions,
+  SiVitest, SiPostman, SiFigma, SiTwilio, SiStripe, SiOpenai, SiResend, SiGooglecloud,
+  SiGraphql, SiWebrtc,
+} from 'react-icons/si'
+import { FaJava, FaDatabase, FaBrain, FaAws } from 'react-icons/fa'
+import { FaMasksTheater } from 'react-icons/fa6'
 
 type ToolProps = {
   darkMode: boolean;
   swagMode: boolean;
 };
 
-const ToolSection = (props: ToolProps) => {  
+type Skill = { name: string; Icon: IconType };
+
+const groups: { title: string; skills: Skill[] }[] = [
+  {
+    title: 'Languages',
+    skills: [
+      { name: 'TypeScript', Icon: SiTypescript },
+      { name: 'Python', Icon: SiPython },
+      { name: 'JavaScript', Icon: SiJavascript },
+      { name: 'Java', Icon: FaJava },
+      { name: 'SQL', Icon: FaDatabase },
+      { name: 'HTML', Icon: SiHtml5 },
+      { name: 'CSS', Icon: SiCss },
+      { name: 'C++', Icon: SiCplusplus },
+    ],
+  },
+  {
+    title: 'Frameworks',
+    skills: [
+      { name: 'React', Icon: SiReact },
+      { name: 'Next.js', Icon: SiNextdotjs },
+      { name: 'Express', Icon: SiExpress },
+      { name: 'FastAPI', Icon: SiFastapi },
+      { name: 'Spring Boot', Icon: SiSpringboot },
+      { name: 'Tailwind CSS', Icon: SiTailwindcss },
+    ],
+  },
+  {
+    title: 'Backend',
+    skills: [
+      { name: 'Node.js', Icon: SiNodedotjs },
+      { name: 'MongoDB', Icon: SiMongodb },
+      { name: 'Postgres', Icon: SiPostgresql },
+      { name: 'Redis', Icon: SiRedis },
+      { name: 'Supabase', Icon: SiSupabase },
+      { name: 'WebSockets', Icon: SiSocketdotio },
+    ],
+  },
+  {
+    title: 'DevOps & Cloud',
+    skills: [
+      { name: 'Git', Icon: SiGit },
+      { name: 'GitHub', Icon: SiGithub },
+      { name: 'Docker', Icon: SiDocker },
+      { name: 'Kubernetes', Icon: SiKubernetes },
+      { name: 'Nginx', Icon: SiNginx },
+      { name: 'AWS', Icon: FaAws },
+      { name: 'Vercel', Icon: SiVercel },
+      { name: 'Terraform', Icon: SiTerraform },
+      { name: 'GitHub Actions', Icon: SiGithubactions },
+    ],
+  },
+  {
+    title: 'Tools & APIs',
+    skills: [
+      { name: 'Playwright', Icon: FaMasksTheater },
+      { name: 'Vitest', Icon: SiVitest },
+      { name: 'Postman', Icon: SiPostman },
+      { name: 'Figma', Icon: SiFigma },
+      { name: 'Twilio', Icon: SiTwilio },
+      { name: 'Stripe', Icon: SiStripe },
+      { name: 'OpenAI', Icon: SiOpenai },
+      { name: 'Resend', Icon: SiResend },
+      { name: 'GCP', Icon: SiGooglecloud },
+    ],
+  },
+  {
+    title: 'Currently Exploring',
+    skills: [
+      { name: 'GraphQL', Icon: SiGraphql },
+      { name: 'AI / ML', Icon: FaBrain },
+      { name: 'WebRTC', Icon: SiWebrtc },
+      { name: 'Kubernetes', Icon: SiKubernetes },
+    ],
+  },
+];
+
+const ToolSection = (props: ToolProps) => {
   return (
-    <section id='tools' className='pt-12 light-2 dark:background-2 w-full text-black dark:text-white flex justify-center'>
-      <div className='h-auto layout-container flex flex-col justify-center align-middle px-4'>
-        <div className='h-auto w-full flex flex-1 max-[850px]:justify-center'>
-          <h1 className='text-black dark:text-white text-section-title merriweather-bold max-[420px]:text-4xl'>My Skills</h1>
+    <section id='tools' className='pt-16 section-surface w-full text-black dark:text-white flex justify-center'>
+      <div className='h-auto layout-container flex flex-col justify-center px-4'>
+        <div className='w-full flex max-[850px]:justify-center mb-8'>
+          <h1 className='text-black dark:text-white text-section-title merriweather-bold'>My Skills</h1>
         </div>
-        
-        {/* Tool content */}
-        <div className={`${props.swagMode && "swag-bg"} flex flex-col h-auto w-full mt-16 mb-4 p-8 pb-12 light-card dark:background-card rounded-lg gap-6`}>
-          
-          {/* Grid layout for desktop, column for mobile */}
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8'>
-            {/* Languages */}
-            <div>
-              <h2 className='text-black dark:text-white text-2xl roboto-medium mb-4 dark:border-gradient-bottom border-gradient-bottom-2 pb-1 w-min'>
-                Languages
-              </h2>
-              <div className='flex flex-wrap gap-2 md:gap-3'>
-                {['TypeScript', 'Python', 'JavaScript', 'Java', 'SQL', 'HTML', 'CSS', 'C++'].map((tool) => (
-                  <span key={tool} className='text-black dark:text-white text-base md:text-xl px-3 py-1 border border-transparent background rounded-full hover:scale-110 transition-transform'>
-                    {tool}
-                  </span>
-                ))}
+
+        <div className={`${props.swagMode && "swag-bg"} glass rounded-xl p-[clamp(1.1rem,2.4vw,2rem)]`}>
+          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-7'>
+            {groups.map((group) => (
+              <div key={group.title}>
+                <h2 className='text-black dark:text-white text-sm uppercase tracking-wider roboto-bold mb-3 pb-1 w-fit dark:border-gradient-bottom border-gradient-bottom-2'>
+                  {group.title}
+                </h2>
+                <div className='flex flex-wrap gap-2'>
+                  {group.skills.map(({ name, Icon }) => (
+                    <span
+                      key={name}
+                      className='chip inline-flex items-center gap-1.5 text-black/75 dark:text-white/80 text-xs roboto-medium px-2.5 py-1 rounded-full hover:scale-105 transition-transform'
+                    >
+                      <Icon className='text-[0.95rem] text-[var(--accent-bright)]' aria-hidden="true" />
+                      {name}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
-            
-            {/* Frameworks */}
-            <div>
-              <h2 className='text-black dark:text-white text-2xl roboto-medium mb-4 dark:border-gradient-bottom border-gradient-bottom-2 pb-1 w-min'>
-                Frameworks
-              </h2>
-              <div className='flex flex-wrap gap-2 md:gap-3'>
-                {['React', 'Next.js', 'Express', 'FastAPI', 'Java Spring Boot', 'Tailwind CSS'].map((tool) => (
-                  <span key={tool} className='text-black dark:text-white text-base md:text-xl px-3 py-1 border border-transparent background rounded-full hover:scale-110 transition-transform'>
-                    {tool}
-                  </span>
-                ))}
-              </div>
-            </div>
-            
-            {/* Backend Technologies */}
-            <div>
-              <h2 className='text-black dark:text-white text-2xl roboto-medium mb-4 dark:border-gradient-bottom border-gradient-bottom-2 pb-1 w-max'>
-                Backend
-              </h2>
-              <div className='flex flex-wrap gap-2 md:gap-3'>
-                {['Node.js', 'MongoDB', 'Postgres', 'Redis', 'Supabase'].map((tool) => (
-                  <span key={tool} className='text-black dark:text-white text-base md:text-xl px-3 py-1 border border-transparent background rounded-full hover:scale-110 transition-transform'>
-                    {tool}
-                  </span>
-                ))}
-              </div>
-            </div>
-            
-            {/* DevOps & Cloud */}
-            <div>
-              <h2 className='text-black dark:text-white text-2xl roboto-medium mb-4 dark:border-gradient-bottom border-gradient-bottom-2 pb-1 w-max'>
-                DevOps & Cloud
-              </h2>
-              <div className='flex flex-wrap gap-2 md:gap-3'>
-                {['Git', 'GitHub', 'Docker', 'Nginx', 'AWS', 'S3', 'Vercel', 'Terraform', 'OnRender'].map((tool) => (
-                  <span key={tool} className='text-black dark:text-white text-base md:text-xl px-3 py-1 border border-transparent background rounded-full hover:scale-110 transition-transform'>
-                    {tool}
-                  </span>
-                ))}
-              </div>
-            </div>
-            
-            {/* Tools & APIs */}
-            <div>
-              <h2 className='text-black dark:text-white text-2xl roboto-medium mb-4 dark:border-gradient-bottom border-gradient-bottom-2 pb-1 w-max'>
-                Tools & APIs
-              </h2>
-              <div className='flex flex-wrap gap-2 md:gap-3'>
-                {['VS Code', 'IntelliJ', 'Postman', 'Figma', 'Web APIs', 'Chrome Dev Tools', 'Resend', 'Clerk', 'GCP'].map((tool) => (
-                  <span key={tool} className='text-black dark:text-white text-base md:text-xl px-3 py-1 border border-transparent background rounded-full hover:scale-110 transition-transform'>
-                    {tool}
-                  </span>
-                ))}
-              </div>
-            </div>
-            
-            {/* Currently Exploring */}
-            <div>
-              <h2 className='text-black dark:text-white text-2xl roboto-medium mb-4 dark:border-gradient-bottom border-gradient-bottom-2 pb-1 w-max'>
-                Currently Exploring
-              </h2>
-              <div className='flex flex-wrap gap-2 md:gap-3'>
-                {['GraphQL', 'Kubernetes', 'AI/ML', 'WebSockets', 'WebRTC'].map((tool) => (
-                  <span key={tool} className='text-black dark:text-white text-base md:text-xl px-3 py-1 border border-transparent background rounded-full hover:scale-110 transition-transform'>
-                    {tool}
-                  </span>
-                ))}
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

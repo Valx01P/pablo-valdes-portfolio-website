@@ -2,10 +2,13 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
+import BackgroundLayer from "@/components/BackgroundLayer";
+import Lightbox from "@/components/Lightbox";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://pablovaldes.com"),
   title: "Pablo Valdes | Full Stack Developer",
   description: "My full stack developer portfolio website",
   icons: {
@@ -47,7 +50,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className + " background"}>
+      <body className={inter.className}>
+        <BackgroundLayer />
+        <Lightbox />
         <Toaster position="bottom-right" toastOptions={{ duration: 3000 }} />
         {children}
       </body>

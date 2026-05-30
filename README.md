@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pablo Valdes — Portfolio
+
+A noir / Persona-inspired full-stack developer portfolio. Built with **Next.js 16**, **React 19**, **TypeScript**, and **Tailwind CSS**, with a custom WebGL shader background, fluid `clamp()`-based typography, and light / dark / "swag" themes.
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To send contact-form emails locally, set `RESEND_API_KEY` in `.env.local` (the form degrades gracefully without it).
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Editing content
 
-## Learn More
+All site content lives in **`src/app/lib/data.ts`** — edit it there and the home sections, project detail pages, and project sidebar all update automatically.
 
-To learn more about Next.js, take a look at the following resources:
+- **`experience`** / **`education`** — drive the Experience section.
+- **`projects`** — drive the Projects section, the `(projects)` sidebar nav, and detail pages.
+  - To add a project: add an entry (newest first). Set `image: null` to show a styled "preview coming soon" placeholder, or drop a file in `public/images/` and reference its filename.
+  - Older projects keep their YouTube walkthroughs in their own page files under `src/app/(projects)/<slug>/`. Newer projects render from the `detail` field via the shared `ProjectDetail` component (no walkthrough).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Architecture notes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **`ShaderBackground.tsx`** — raw WebGL noir fog shader (no dependencies). Theme-aware and respects `prefers-reduced-motion`. Mounted globally via `BackgroundLayer.tsx` in the root layout.
+- **Typography** — fluid `clamp()` utilities in `globals.css` (`.text-heading`, `.text-section-title`, etc.) scale smoothly from mobile to desktop.
+- **Theme** — Zustand store (`src/app/lib/store.ts`); dark mode uses a crimson accent, light mode a warm paper tone.
 
-## Deploy on Vercel
+## Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Deployed on [Vercel](https://vercel.com) to [pablovaldes.com](https://pablovaldes.com).
