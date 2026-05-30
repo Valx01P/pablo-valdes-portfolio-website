@@ -4,11 +4,11 @@ import {
   SiTypescript, SiPython, SiJavascript, SiCplusplus, SiHtml5, SiCss,
   SiReact, SiNextdotjs, SiExpress, SiFastapi, SiSpringboot, SiTailwindcss,
   SiNodedotjs, SiMongodb, SiPostgresql, SiRedis, SiSupabase, SiSocketdotio,
-  SiGit, SiGithub, SiDocker, SiKubernetes, SiNginx, SiVercel, SiTerraform, SiGithubactions,
+  SiGit, SiGithub, SiGitlab, SiDocker, SiKubernetes, SiNginx, SiVercel, SiTerraform, SiGithubactions,
   SiVitest, SiPostman, SiFigma, SiTwilio, SiStripe, SiOpenai, SiResend, SiGooglecloud,
-  SiGraphql, SiWebrtc,
+  SiWebrtc, SiGsap, SiFlask, SiOpengl, SiThreedotjs, SiNixos, SiGoogleanalytics,
 } from 'react-icons/si'
-import { FaJava, FaDatabase, FaBrain, FaAws } from 'react-icons/fa'
+import { FaJava, FaDatabase, FaBrain, FaAws, FaNetworkWired } from 'react-icons/fa'
 import { FaMasksTheater } from 'react-icons/fa6'
 
 type ToolProps = {
@@ -40,6 +40,7 @@ const groups: { title: string; skills: Skill[] }[] = [
       { name: 'Express', Icon: SiExpress },
       { name: 'FastAPI', Icon: SiFastapi },
       { name: 'Spring Boot', Icon: SiSpringboot },
+      { name: 'Flask', Icon: SiFlask },
       { name: 'Tailwind CSS', Icon: SiTailwindcss },
     ],
   },
@@ -59,6 +60,7 @@ const groups: { title: string; skills: Skill[] }[] = [
     skills: [
       { name: 'Git', Icon: SiGit },
       { name: 'GitHub', Icon: SiGithub },
+      { name: 'GitLab', Icon: SiGitlab },
       { name: 'Docker', Icon: SiDocker },
       { name: 'Kubernetes', Icon: SiKubernetes },
       { name: 'Nginx', Icon: SiNginx },
@@ -66,6 +68,7 @@ const groups: { title: string; skills: Skill[] }[] = [
       { name: 'Vercel', Icon: SiVercel },
       { name: 'Terraform', Icon: SiTerraform },
       { name: 'GitHub Actions', Icon: SiGithubactions },
+      { name: 'GCP', Icon: SiGooglecloud },
     ],
   },
   {
@@ -79,16 +82,19 @@ const groups: { title: string; skills: Skill[] }[] = [
       { name: 'Stripe', Icon: SiStripe },
       { name: 'OpenAI', Icon: SiOpenai },
       { name: 'Resend', Icon: SiResend },
-      { name: 'GCP', Icon: SiGooglecloud },
+      { name: 'Google Analytics', Icon: SiGoogleanalytics },
     ],
   },
   {
     title: 'Currently Exploring',
     skills: [
-      { name: 'GraphQL', Icon: SiGraphql },
+      { name: 'gRPC', Icon: FaNetworkWired },
+      { name: 'GSAP', Icon: SiGsap },
+      { name: 'OpenGL', Icon: SiOpengl },
+      { name: 'Three.js', Icon: SiThreedotjs },
       { name: 'AI / ML', Icon: FaBrain },
       { name: 'WebRTC', Icon: SiWebrtc },
-      { name: 'Kubernetes', Icon: SiKubernetes },
+      { name: 'Flox', Icon: SiNixos },
     ],
   },
 ];
@@ -99,16 +105,18 @@ const brand: Record<string, string> = {
   TypeScript: '#3178C6', Python: '#3776AB', JavaScript: '#EAB308', Java: '#E76F00',
   SQL: '#00758F', HTML: '#E34F26', CSS: '#1572B6', 'C++': '#00599C',
   React: '#61DAFB', 'Next.js': '#9CA3AF', Express: '#9CA3AF', FastAPI: '#009688',
-  'Spring Boot': '#6DB33F', 'Tailwind CSS': '#06B6D4',
+  'Spring Boot': '#6DB33F', Flask: '#9CA3AF', 'Tailwind CSS': '#06B6D4',
   'Node.js': '#5FA04E', MongoDB: '#47A248', Postgres: '#4169E1', Redis: '#DC382D',
   Supabase: '#3ECF8E', WebSockets: '#9CA3AF',
-  Git: '#F05032', GitHub: '#9CA3AF', Docker: '#2496ED', Kubernetes: '#326CE5',
+  Git: '#F05032', GitHub: '#9CA3AF', GitLab: '#FC6D26', Docker: '#2496ED', Kubernetes: '#326CE5',
   Nginx: '#009639', AWS: '#FF9900', Vercel: '#9CA3AF', Terraform: '#7B42BC',
   'GitHub Actions': '#2088FF',
   Playwright: '#2EAD33', Vitest: '#6E9F18', Postman: '#FF6C37', Figma: '#F24E1E',
   Twilio: '#F22F46', Stripe: '#635BFF', OpenAI: '#10A37F', Resend: '#9CA3AF',
+  'Google Analytics': '#E37400',
   GCP: '#4285F4',
-  GraphQL: '#E10098', 'AI / ML': '#8B5CF6', WebRTC: '#5B8DEF',
+  gRPC: '#9CA3AF', GSAP: '#0AE448', OpenGL: '#5586A4', 'Three.js': '#9CA3AF',
+  'AI / ML': '#8B5CF6', WebRTC: '#5B8DEF', Flox: '#7EBAE4',
 };
 
 const ToolSection = (props: ToolProps) => {
