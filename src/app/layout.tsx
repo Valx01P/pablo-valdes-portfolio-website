@@ -64,9 +64,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/images/portfolio-site-dark.webp",
-        width: 1200,
-        height: 630,
+        url: "/images/new/portfolio-site-dark.webp",
+        width: 2552,
+        height: 1462,
         alt: "Pablo Valdes — Full Stack Developer portfolio"
       }
     ],
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Pablo Valdes | Full Stack Developer",
     description: DESCRIPTION,
-    images: ["/images/portfolio-site-dark.webp"]
+    images: ["/images/new/portfolio-site-dark.webp"]
   }
 };
 
@@ -94,7 +94,7 @@ export default function RootLayout({
     url: SITE_URL,
     jobTitle: "Full Stack Developer",
     description: DESCRIPTION,
-    image: `${SITE_URL}/images/portfolio-site-dark.webp`,
+    image: `${SITE_URL}/images/new/portfolio-site-dark.webp`,
     sameAs: [
       "https://github.com/Valx01P",
       "https://www.linkedin.com/in/pablovaldes01/",
