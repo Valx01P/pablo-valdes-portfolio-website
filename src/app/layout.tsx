@@ -4,6 +4,7 @@ import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import BackgroundLayer from "@/components/BackgroundLayer";
 import Lightbox from "@/components/Lightbox";
+import ResumeModal from "@/components/ResumeModal";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -53,6 +54,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <BackgroundLayer />
         <Lightbox />
+        <ResumeModal />
         <Toaster position="bottom-right" toastOptions={{ duration: 3000 }} />
         {children}
       </body>

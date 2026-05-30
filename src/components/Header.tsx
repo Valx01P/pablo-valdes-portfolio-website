@@ -1,14 +1,16 @@
 "use client";
 import Image from 'next/image';
 import Link from 'next/link';
+import { useResume } from '@/app/lib/resume';
 
 type HeaderProps = {
   darkMode: boolean;
   toggleDarkMode: () => void;
   swagMode: boolean;
 };
-  
+
   const Header = (props: HeaderProps) => {
+  const { openResume } = useResume();
   const githubIconFileName = props.darkMode ? 'github-light-2.svg' : 'github-dark-2.svg';
   const linkedinIconFileName = props.darkMode ? 'linkedin-light.svg' : 'linkedin-dark.svg';
   const toggleIconFileName = props.darkMode ? 'sun-2.svg' : 'moon.svg';
@@ -66,11 +68,9 @@ type HeaderProps = {
           <a href='https://www.linkedin.com/in/pablovaldes01/' target="_blank" rel="noopener noreferrer" className='flex text-black max-[350px]:hidden'>
             <Image src={`/svg/${linkedinIconFileName}`} title='View my LinkedIn profile' width={24} height={24} alt="linkedin icon" className='hover:scale-125' />
           </a>
-          <a href="/pdf/Pablo_Valdes_Resume.pdf" title='Open resume in new tab' target="_blank" rel="noopener noreferrer">
-            <button className="align-center bg-transparent resume-btn-light dark:resume-btn-dark text-sm py-1 px-3 rounded-md max-[350px]:hidden">
-              Resume
-            </button>
-          </a>
+          <button onClick={openResume} title='View résumé' className="align-center bg-transparent resume-btn-light dark:resume-btn-dark text-sm py-1 px-3 rounded-md max-[350px]:hidden">
+            Resume
+          </button>
           <button onClick={props.toggleDarkMode} title='Theme switcher' className="bg-transparent text-black dark:text-white p-1.5 max-[350px]:hidden">
             <Image src={`/svg/${toggleIconFileName}`} width={22} height={22} alt="theme switcher" className='hover:scale-125 opacity-80 hover:opacity-100' />
           </button>
@@ -82,11 +82,9 @@ type HeaderProps = {
           <a href='https://www.linkedin.com/in/pablovaldes01/' target="_blank" rel="noopener noreferrer" className='flex text-black min-[350px]:hidden'>
             <Image src={`/svg/${linkedinIconFileName}`} width={22} height={22} alt="linkedin icon" className='hover:scale-125' />
           </a>
-          <a href="/pdf/Pablo_Valdes_Resume.pdf" title='Open resume in new tab' target="_blank" rel="noopener noreferrer">
-            <button className="bg-transparent resume-btn-light dark:resume-btn-dark text-xs py-1 px-2 rounded-md min-[350px]:hidden">
-              Resume
-            </button>
-          </a>
+          <button onClick={openResume} title='View résumé' className="bg-transparent resume-btn-light dark:resume-btn-dark text-xs py-1 px-2 rounded-md min-[350px]:hidden">
+            Resume
+          </button>
           <button onClick={props.toggleDarkMode} className="bg-transparent text-black dark:text-white p-1 min-[350px]:hidden">
             <Image src={`/svg/${toggleIconFileName}`} width={20} height={20} alt="theme switcher" className='hover:scale-125 opacity-80' />
           </button>
