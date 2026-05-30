@@ -81,9 +81,9 @@ const ContactSection = (props: ContactProps) => {
                 </div>
               </div>
               {/* Form Start */}
-              <div className='flex flex-1 justify-center items-start'>
-                <form onSubmit={handleSubmit(sendEmail)} autoComplete="off" className={`${props.swagMode ? "swag-bg-contact" : "chip"} w-full max-w-[540px] p-[clamp(1rem,2.2vw,1.5rem)] rounded-xl`}>
-                  <div className='flex flex-col gap-4 w-full'>
+              <div className='flex flex-1 justify-center items-center'>
+                <form onSubmit={handleSubmit(sendEmail)} autoComplete="off" className={`${props.swagMode ? "swag-bg-contact" : "chip"} flex max-[1200px]:w-full w-full max-w-[460px] p-[clamp(1rem,2.2vw,1.5rem)] rounded-xl`}>
+                  <div className='flex flex-1 flex-col gap-4 max-[200px]:w-1/5 max-[250px]:w-1/4 max-[290px]:w-1/3 max-[420px]:w-1/2 max-[380px]:w-2/3 max-[440px]:w-4/5'>
                     {/* First Name & Last Name Inputs */}
                     <div className='flex gap-4 max-[720px]:flex-col'>
                       <div className='flex flex-1 flex-col max-[420px]:text-sm'>
