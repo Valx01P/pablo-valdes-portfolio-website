@@ -626,7 +626,7 @@ body {
 
   /* Fluid type — smaller, professional scale. clamp(min, preferred, max). */
   .text-small {
-    font-size: clamp(1.05rem, 0.9rem + 0.7vw, 1.6rem);
+    font-size: clamp(1.1rem, 0.95rem + 0.75vw, 1.75rem);
     line-height: 1.1;
   }
 
@@ -636,23 +636,23 @@ body {
   }
 
   .text-heading {
-    font-size: clamp(2.4rem, 1.5rem + 4vw, 4.75rem);
+    font-size: clamp(2.6rem, 1.6rem + 4.4vw, 5.25rem);
     line-height: 1.06;
     text-wrap: balance;
   }
 
   .text-subheading {
-    font-size: clamp(1.05rem, 0.85rem + 0.85vw, 1.7rem);
+    font-size: clamp(1.15rem, 0.92rem + 0.92vw, 1.85rem);
     line-height: 1.25;
   }
 
   .text-lesser-subheading {
-    font-size: clamp(0.92rem, 0.8rem + 0.55vw, 1.35rem);
+    font-size: clamp(1rem, 0.85rem + 0.6vw, 1.5rem);
     line-height: 1.25;
   }
 
   .text-quote {
-    font-size: clamp(0.85rem, 0.76rem + 0.4vw, 1.15rem);
+    font-size: clamp(0.92rem, 0.8rem + 0.45vw, 1.3rem);
     line-height: 1.5;
     font-style: italic;
   }
@@ -664,15 +664,15 @@ body {
   }
 
   /* Legacy mobile aliases — kept so existing markup keeps working, now also fluid. */
-  .mob-text-small { font-size: clamp(1.05rem, 0.9rem + 0.7vw, 1.6rem); line-height: 1.1; }
+  .mob-text-small { font-size: clamp(1.1rem, 0.95rem + 0.75vw, 1.75rem); line-height: 1.1; }
   .mob-text-heading {
-    font-size: clamp(2.4rem, 1.5rem + 4vw, 4.75rem);
+    font-size: clamp(2.6rem, 1.6rem + 4.4vw, 5.25rem);
     line-height: 1.06;
     text-wrap: balance;
   }
-  .mob-text-subheading { font-size: clamp(1.05rem, 0.85rem + 0.85vw, 1.7rem); line-height: 1.25; }
-  .mob-text-lesser-subheading { font-size: clamp(0.92rem, 0.8rem + 0.55vw, 1.35rem); line-height: 1.25; }
-  .mob-text-quote { font-size: clamp(0.85rem, 0.76rem + 0.4vw, 1.15rem); line-height: 1.5; font-style: italic; }
+  .mob-text-subheading { font-size: clamp(1.15rem, 0.92rem + 0.92vw, 1.85rem); line-height: 1.25; }
+  .mob-text-lesser-subheading { font-size: clamp(1rem, 0.85rem + 0.6vw, 1.5rem); line-height: 1.25; }
+  .mob-text-quote { font-size: clamp(0.92rem, 0.8rem + 0.45vw, 1.3rem); line-height: 1.5; font-style: italic; }
   
   /* .css-orb {
     background-image: radial-gradient(ellipse at 50% 50%, rgb(107 96 255 / 1) 0%, rgb(133 124 255 / 0) 56.61%);
