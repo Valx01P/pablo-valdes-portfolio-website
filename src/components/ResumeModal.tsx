@@ -32,7 +32,7 @@ const ResumeModal = () => {
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="w-full max-w-[900px] h-[92vh] flex flex-col rounded-xl overflow-hidden shadow-2xl border border-white/10 bg-[#0c0c10]"
+        className="w-full max-w-[580px] h-[92vh] flex flex-col rounded-xl overflow-hidden shadow-2xl border border-white/10 bg-[#0c0c10]"
       >
         {/* toolbar */}
         <div className="flex items-center justify-between gap-2 px-3 sm:px-4 py-2.5 bg-[#0c0c10] border-b border-white/10">
@@ -63,7 +63,7 @@ const ResumeModal = () => {
           </div>
         </div>
         {/* pdf preview */}
-        <iframe src={`${PDF}#view=FitH`} title="Resume — Pablo Valdes" className="flex-1 w-full bg-white" />
+        <iframe src={`${PDF}#page=1&view=FitH`} title="Resume — Pablo Valdes" className="flex-1 w-full bg-white" />
       </div>
     </div>
   );
